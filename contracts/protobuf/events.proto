@@ -1,0 +1,81 @@
+syntax = "proto3";
+
+package tradingbot.contracts.v1;
+
+// This protobuf file is a language-neutral draft. The Python Pydantic models are
+// currently the authoritative contracts for Phase 1. Generate protobuf bindings
+// later once service interfaces stabilize.
+
+message PriceLevel {
+  string price = 1;
+  string quantity = 2;
+}
+
+message EventEnvelope {
+  string schema_version = 1;
+  string event_id = 2;
+  string event_type = 3;
+  string source = 4;
+  string venue = 5;
+  string market_type = 6;
+  string symbol = 7;
+  int64 event_time_ms = 8;
+  int64 received_time_ms = 9;
+  string trace_id = 10;
+}
+
+message RawAggTradeEvent {
+  EventEnvelope envelope = 1;
+  int64 agg_trade_id = 2;
+  string price = 3;
+  string quantity = 4;
+  int64 first_trade_id = 5;
+  int64 last_trade_id = 6;
+  int64 trade_time_ms = 7;
+  bool is_buyer_maker = 8;
+  string aggressor_side = 9;
+}
+
+message DepthUpdateEvent {
+  EventEnvelope envelope = 1;
+  int64 first_update_id = 2;
+  int64 final_update_id = 3;
+  optional int64 previous_final_update_id = 4;
+  repeated PriceLevel bids = 5;
+  repeated PriceLevel asks = 6;
+}
+
+message SignalEvent {
+  EventEnvelope envelope = 1;
+  string signal_id = 2;
+  string strategy_id = 3;
+  string side = 4;
+  string outcome = 5;
+  string entry_candidate = 6;
+  string stop = 7;
+  string target_1 = 8;
+  optional string target_2 = 9;
+  string final_score = 10;
+  string expected_net_return_bps = 11;
+  int64 expires_at_ms = 12;
+}
+
+message AnchoredVwapEvent {
+  EventEnvelope envelope = 1;
+  string avwap_id = 2;
+  string anchor_name = 3;
+  string anchor_type = 4;
+  int64 anchor_time_ms = 5;
+  string anchor_price = 6;
+  string avwap = 7;
+  string slope = 8;
+  optional string upper_band_1 = 9;
+  optional string lower_band_1 = 10;
+  optional string band_z_score = 11;
+  string distance_from_price_bps = 12;
+  string confirmation = 13;
+  string confirmation_score = 14;
+  bool is_reclaim = 15;
+  bool is_failure = 16;
+  optional string sweep_id = 17;
+}

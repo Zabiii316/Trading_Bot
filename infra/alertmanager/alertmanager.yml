@@ -1,0 +1,20 @@
+global:
+  resolve_timeout: 2m
+
+route:
+  receiver: default-null
+  group_by: ['alertname', 'venue', 'symbol']
+  group_wait: 5s
+  group_interval: 30s
+  repeat_interval: 30m
+  routes:
+    - matchers:
+        - severity="critical"
+      receiver: critical-webhook
+
+receivers:
+  - name: default-null
+  - name: critical-webhook
+    webhook_configs:
+      - url: http://monitoring-api:8080/health
+        send_resolved: true

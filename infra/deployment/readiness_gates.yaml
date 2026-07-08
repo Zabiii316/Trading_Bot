@@ -1,0 +1,29 @@
+version: 1
+gates:
+  build:
+    min_tests: 100
+    immutable_commit_required: true
+    immutable_image_tag_required: true
+  operational_health:
+    require_risk_engine: true
+    require_monitoring: true
+    require_reconciliation: true
+    require_order_book_sequence_health: true
+    max_open_critical_alerts: 0
+    max_stale_components: 0
+  emergency_drills:
+    required:
+      - cancel_all
+      - emergency_flatten
+      - reconciliation_rebuild
+      - service_restart
+    target_latency_ms: 5000
+  security:
+    withdrawal_permissions_must_be_disabled: true
+    secrets_manager_required: true
+    live_trading_requires_explicit_opt_in: true
+  capital:
+    micro_live_max_allocation_pct: 0.01
+    pilot_live_max_allocation_pct: 0.03
+    controlled_live_max_allocation_pct: 0.10
+    full_live_requires_investment_committee: true

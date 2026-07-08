@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "event_type": "signal.generated",
+  "source": "signal_engine",
+  "venue": "binance_usdm",
+  "market_type": "perpetual_futures",
+  "symbol": "BTCUSDT",
+  "event_time_ms": 1783086821000,
+  "received_time_ms": 1783086821000,
+  "strategy_id": "sweep_orderflow_avwap_v1",
+  "side": "long",
+  "outcome": "bullish_rejection",
+  "entry_candidate": "62018.0",
+  "stop": "61950.0",
+  "target_1": "62086.0",
+  "target_2": "62172.0",
+  "liquidity_score": "0.81",
+  "order_flow_score": "0.76",
+  "avwap_score": "0.72",
+  "regime_score": "0.68",
+  "execution_score": "0.84",
+  "final_score": "0.77",
+  "expected_net_return_bps": "14.2",
+  "expires_at_ms": 1783086881000,
+  "feature_snapshot_id": "00000000-0000-4000-8000-000000000001",
+  "rationale": [
+    "Downside liquidity sweep reclaimed",
+    "Order-flow delta shifted positive",
+    "Price reclaimed event AVWAP"
+  ]
+}

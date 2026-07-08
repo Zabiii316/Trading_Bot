@@ -1,0 +1,84 @@
+groups:
+  - name: trading-bot-critical
+    interval: 5s
+    rules:
+      - alert: TradingComponentDown
+        expr: trading_component_up == 0
+        for: 15s
+        labels:
+          severity: critical
+        annotations:
+          summary: "Trading component is down"
+          description: "Component {{ $labels.component }} is reporting down or stale."
+
+      - alert: TradingComponentNotReady
+        expr: trading_component_ready == 0
+        for: 30s
+        labels:
+          severity: warning
+        annotations:
+          summary: "Trading component is not ready"
+          description: "Component {{ $labels.component }} is live but not ready."
+
+      - alert: OrderBookSequenceUnhealthy
+        expr: trading_orderbook_sequence_healthy == 0
+        for: 5s
+        labels:
+          severity: critical
+        annotations:
+          summary: "Order book sequence is unhealthy"
+          description: "{{ $labels.venue }} {{ $labels.symbol }} book sequence is unhealthy; execution should halt."
+
+      - alert: OrderBookSpreadTooWide
+        expr: trading_orderbook_spread_bps > 8
+        for: 20s
+        labels:
+          severity: warning
+        annotations:
+          summary: "Order book spread is elevated"
+          description: "{{ $labels.venue }} {{ $labels.symbol }} spread is {{ $value }} bps."
+
+      - alert: WebSocketReconnectSpike
+        expr: increase(trading_websocket_reconnects_total[2m]) > 3
+        for: 0s
+        labels:
+          severity: warning
+        annotations:
+          summary: "WebSocket reconnect spike"
+          description: "Reconnect spike on {{ $labels.venue }} {{ $labels.stream }} {{ $labels.symbol }}."
+
+      - alert: RiskRejectionSpike
+        expr: increase(trading_risk_rejections_total[5m]) > 10
+        for: 0s
+        labels:
+          severity: warning
+        annotations:
+          summary: "Risk rejection spike"
+          description: "Risk rejection spike on {{ $labels.venue }} {{ $labels.symbol }} reason={{ $labels.reason }}."
+
+      - alert: KillSwitchActive
+        expr: trading_kill_switch_active == 1
+        for: 0s
+        labels:
+          severity: critical
+        annotations:
+          summary: "Kill switch is active"
+          description: "Kill switch level={{ $labels.level }} strategy={{ $labels.strategy_id }} symbol={{ $labels.symbol }}."
+
+      - alert: EmergencyFlattenActive
+        expr: trading_kill_switch_active{level="emergency_flatten"} == 1
+        for: 0s
+        labels:
+          severity: critical
+        annotations:
+          summary: "Emergency flatten is active"
+          description: "Emergency flatten is active for strategy={{ $labels.strategy_id }} symbol={{ $labels.symbol }}."
+
+      - alert: EventLagHigh
+        expr: histogram_quantile(0.99, sum(rate(trading_event_lag_ms_bucket[2m])) by (le, event_type, venue, symbol)) > 2000
+        for: 30s
+        labels:
+          severity: warning
+        annotations:
+          summary: "P99 event lag is high"
+          description: "P99 lag for {{ $labels.event_type }} {{ $labels.venue }} {{ $labels.symbol }} exceeds 2 seconds."

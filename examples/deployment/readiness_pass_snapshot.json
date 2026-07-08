@@ -1,0 +1,56 @@
+{
+  "stage": "micro_live",
+  "commit_sha": "abc1234def",
+  "image_tag": "trading-bot:0.15.0",
+  "tests_passed": true,
+  "test_count": 127,
+  "paper_trades": 250,
+  "testnet_orders": 125,
+  "paper_profit_factor": 1.22,
+  "paper_max_drawdown_pct": 0.015,
+  "backtest_profit_factor": 1.31,
+  "backtest_max_drawdown_pct": 0.035,
+  "risk_engine_healthy": true,
+  "monitoring_healthy": true,
+  "reconciliation_healthy": true,
+  "order_book_sequence_healthy": true,
+  "kill_switch_tested": true,
+  "emergency_drills": [
+    {
+      "name": "cancel_all",
+      "completed": true,
+      "latency_ms": 800,
+      "evidence_ref": "runbook-2026-07-08-a"
+    },
+    {
+      "name": "emergency_flatten",
+      "completed": true,
+      "latency_ms": 1200,
+      "evidence_ref": "runbook-2026-07-08-b"
+    },
+    {
+      "name": "reconciliation_rebuild",
+      "completed": true,
+      "latency_ms": 1700,
+      "evidence_ref": "runbook-2026-07-08-c"
+    },
+    {
+      "name": "service_restart",
+      "completed": true,
+      "latency_ms": 2200,
+      "evidence_ref": "runbook-2026-07-08-d"
+    }
+  ],
+  "live_trading_enabled": true,
+  "withdrawal_permissions_disabled": true,
+  "secrets_loaded_from_manager": true,
+  "manual_approval": true,
+  "open_critical_alerts": 0,
+  "stale_component_count": 0,
+  "current_daily_loss_pct": 0,
+  "current_weekly_loss_pct": 0,
+  "current_drawdown_pct": 0.005,
+  "metadata": {
+    "operator": "deployment-lead"
+  }
+}

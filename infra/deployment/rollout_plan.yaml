@@ -1,0 +1,33 @@
+stages:
+  - stage: testnet_shadow
+    duration_hours: 24
+    max_allocation_pct: 0.0
+    max_effective_leverage: 1.0
+    objective: Generate signals and risk decisions without order submission.
+  - stage: testnet_paper
+    duration_hours: 48
+    max_allocation_pct: 0.0
+    max_effective_leverage: 1.0
+    required_paper_trades: 200
+    objective: Paper execution against live reconstructed books.
+  - stage: testnet_execution
+    duration_hours: 48
+    max_allocation_pct: 0.0
+    max_effective_leverage: 1.0
+    required_testnet_orders: 100
+    objective: Signed Binance testnet order lifecycle validation.
+  - stage: micro_live
+    duration_hours: 24
+    max_allocation_pct: 0.01
+    max_effective_leverage: 1.0
+    objective: Mainnet micro allocation with emergency drills already completed.
+  - stage: pilot_live
+    duration_hours: 72
+    max_allocation_pct: 0.03
+    max_effective_leverage: 1.25
+    objective: Small pilot allocation under active operator supervision.
+  - stage: controlled_live
+    duration_hours: 168
+    max_allocation_pct: 0.10
+    max_effective_leverage: 2.0
+    objective: Controlled production allocation after stable pilot evidence.

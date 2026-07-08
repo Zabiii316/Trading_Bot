@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "event_type": "raw.agg_trade",
+  "source": "binance_usdm_ws",
+  "venue": "binance_usdm",
+  "market_type": "perpetual_futures",
+  "symbol": "BTCUSDT",
+  "event_time_ms": 1783086819245,
+  "received_time_ms": 1783086819250,
+  "agg_trade_id": 7864687955,
+  "price": "62175.80",
+  "quantity": "0.001",
+  "first_trade_id": 7864687955,
+  "last_trade_id": 7864687955,
+  "trade_time_ms": 1783086819245,
+  "is_buyer_maker": true,
+  "aggressor_side": "sell",
+  "raw": {
+    "e": "aggTrade",
+    "E": 1783086819245,
+    "s": "BTCUSDT",
+    "a": 7864687955,
+    "p": "62175.80",
+    "q": "0.001",
+    "f": 7864687955,
+    "l": 7864687955,
+    "T": 1783086819245,
+    "m": true
+  }
+}

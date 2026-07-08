@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "event_type": "raw.depth_update",
+  "source": "binance_usdm_ws",
+  "venue": "binance_usdm",
+  "market_type": "perpetual_futures",
+  "symbol": "BTCUSDT",
+  "event_time_ms": 1783086744420,
+  "received_time_ms": 1783086744423,
+  "first_update_id": 10958810336800,
+  "final_update_id": 10958810336829,
+  "previous_final_update_id": 10958810336799,
+  "bids": [
+    {"price": "62122.20", "quantity": "14.388"},
+    {"price": "62122.10", "quantity": "0.004"}
+  ],
+  "asks": [
+    {"price": "62122.30", "quantity": "0.207"},
+    {"price": "62122.40", "quantity": "0.002"}
+  ],
+  "raw": {
+    "e": "depthUpdate",
+    "E": 1783086744420,
+    "T": 1783086744413,
+    "s": "BTCUSDT",
+    "U": 10958810336800,
+    "u": 10958810336829,
+    "pu": 10958810336799
+  }
+}

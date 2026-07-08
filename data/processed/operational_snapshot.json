@@ -1,0 +1,36 @@
+{
+  "commit_sha": "local-dev",
+  "emergency_drills": [
+    {
+      "completed": true,
+      "name": "cancel_all"
+    },
+    {
+      "completed": true,
+      "name": "emergency_flatten"
+    },
+    {
+      "completed": true,
+      "name": "reconciliation_rebuild"
+    },
+    {
+      "completed": true,
+      "name": "service_restart"
+    }
+  ],
+  "image_tag": "local-testnet",
+  "kill_switch_tested": true,
+  "live_trading_enabled": true,
+  "manual_approval": true,
+  "monitoring_healthy": true,
+  "open_critical_alerts": 0,
+  "order_book_sequence_healthy": true,
+  "paper_trades": 1,
+  "reconciliation_healthy": true,
+  "risk_engine_healthy": true,
+  "stage": "controlled_live",
+  "stale_component_count": 0,
+  "test_count": 100,
+  "testnet_orders": 0,
+  "tests_passed": true
+}

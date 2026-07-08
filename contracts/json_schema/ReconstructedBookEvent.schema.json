@@ -1,0 +1,215 @@
+{
+  "$defs": {
+    "MarketType": {
+      "enum": [
+        "spot",
+        "perpetual_futures",
+        "delivery_futures",
+        "forex",
+        "paper"
+      ],
+      "title": "MarketType",
+      "type": "string"
+    },
+    "PriceLevel": {
+      "additionalProperties": false,
+      "properties": {
+        "price": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+              "type": "string"
+            }
+          ],
+          "title": "Price"
+        },
+        "quantity": {
+          "anyOf": [
+            {
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+              "type": "string"
+            }
+          ],
+          "title": "Quantity"
+        }
+      },
+      "required": [
+        "price",
+        "quantity"
+      ],
+      "title": "PriceLevel",
+      "type": "object"
+    },
+    "Venue": {
+      "enum": [
+        "binance_spot",
+        "binance_usdm",
+        "binance_coinm",
+        "tradingview",
+        "paper",
+        "internal"
+      ],
+      "title": "Venue",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "ask_depth_notional_10": {
+      "anyOf": [
+        {
+          "minimum": 0.0,
+          "type": "number"
+        },
+        {
+          "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+          "type": "string"
+        }
+      ],
+      "title": "Ask Depth Notional 10"
+    },
+    "best_ask": {
+      "$ref": "#/$defs/PriceLevel"
+    },
+    "best_bid": {
+      "$ref": "#/$defs/PriceLevel"
+    },
+    "bid_depth_notional_10": {
+      "anyOf": [
+        {
+          "minimum": 0.0,
+          "type": "number"
+        },
+        {
+          "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+          "type": "string"
+        }
+      ],
+      "title": "Bid Depth Notional 10"
+    },
+    "book_checksum": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Book Checksum"
+    },
+    "event_id": {
+      "format": "uuid",
+      "title": "Event Id",
+      "type": "string"
+    },
+    "event_time_ms": {
+      "minimum": 0,
+      "title": "Event Time Ms",
+      "type": "integer"
+    },
+    "event_type": {
+      "const": "book.reconstructed",
+      "default": "book.reconstructed",
+      "title": "Event Type",
+      "type": "string"
+    },
+    "is_sequence_healthy": {
+      "title": "Is Sequence Healthy",
+      "type": "boolean"
+    },
+    "last_update_id": {
+      "minimum": 0,
+      "title": "Last Update Id",
+      "type": "integer"
+    },
+    "market_type": {
+      "$ref": "#/$defs/MarketType"
+    },
+    "received_time_ms": {
+      "minimum": 0,
+      "title": "Received Time Ms",
+      "type": "integer"
+    },
+    "schema_version": {
+      "default": "1.3.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "source": {
+      "description": "Service or connector that emitted event",
+      "minLength": 1,
+      "title": "Source",
+      "type": "string"
+    },
+    "spread": {
+      "anyOf": [
+        {
+          "minimum": 0.0,
+          "type": "number"
+        },
+        {
+          "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+          "type": "string"
+        }
+      ],
+      "title": "Spread"
+    },
+    "spread_bps": {
+      "anyOf": [
+        {
+          "minimum": 0.0,
+          "type": "number"
+        },
+        {
+          "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+          "type": "string"
+        }
+      ],
+      "title": "Spread Bps"
+    },
+    "symbol": {
+      "examples": [
+        "BTCUSDT"
+      ],
+      "minLength": 3,
+      "title": "Symbol",
+      "type": "string"
+    },
+    "trace_id": {
+      "format": "uuid",
+      "title": "Trace Id",
+      "type": "string"
+    },
+    "venue": {
+      "$ref": "#/$defs/Venue"
+    }
+  },
+  "required": [
+    "source",
+    "venue",
+    "market_type",
+    "symbol",
+    "event_time_ms",
+    "received_time_ms",
+    "last_update_id",
+    "best_bid",
+    "best_ask",
+    "spread",
+    "spread_bps",
+    "bid_depth_notional_10",
+    "ask_depth_notional_10",
+    "is_sequence_healthy"
+  ],
+  "title": "ReconstructedBookEvent",
+  "type": "object"
+}
