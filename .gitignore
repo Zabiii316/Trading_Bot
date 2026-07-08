@@ -14,3 +14,7 @@ data/processed/*.txt
 *.log
 
 .vscode/settings.json
+
+# Large generated market-data artifacts
+data/processed/*.jsonl
+data/raw/
