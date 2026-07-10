@@ -18,3 +18,8 @@ data/processed/*.txt
 # Large generated market-data artifacts
 data/processed/*.jsonl
 data/raw/
+
+# Runtime kill-switch and local deployment state
+runtime/
+deploy/phase16/*.env
+!deploy/phase16/*.env.example
