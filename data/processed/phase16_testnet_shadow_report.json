@@ -1,0 +1,16 @@
+{
+  "phase": "phase_16_4_testnet_shadow_execution",
+  "generated_at_unix": 1783708948,
+  "environment": {
+    "BINANCE_TESTNET": "true",
+    "BINANCE_USE_TESTNET": "true",
+    "BINANCE_ENABLE_LIVE_TRADING": "false",
+    "LIVE_TRADING_ALLOWED": "false",
+    "has_binance_api_key": true,
+    "has_binance_api_secret": true
+  },
+  "execution_mode": "forced_dry_run_shadow",
+  "order_submission_allowed": false,
+  "raw_output_tail": "Binance base_url=https://testnet.binancefuture.com testnet=True live_enabled=False\ndry_run=true; no order submitted\n",
+  "passed": true
+}
