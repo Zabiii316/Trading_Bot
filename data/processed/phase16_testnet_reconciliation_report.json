@@ -1,0 +1,72 @@
+{
+  "phase": "phase_16_6_testnet_order_reconciliation",
+  "generated_at_unix": 1783723035,
+  "execution_report_source": "data/processed/phase16_testnet_execution_report.json",
+  "binance_base_url": "https://testnet.binancefuture.com",
+  "symbol": "BTCUSDT",
+  "venue_order_id": "20756948673",
+  "order_query": {
+    "order_id_confirmed": true,
+    "symbol_confirmed": true,
+    "status": "EXPIRED",
+    "status_accepted": true,
+    "raw": {
+      "orderId": 20756948673,
+      "symbol": "BTCUSDT",
+      "status": "EXPIRED",
+      "clientOrderId": "tb14-f01950343eef4abab3a8-0001",
+      "price": "61901.20",
+      "avgPrice": "0.00",
+      "origQty": "0.0010",
+      "executedQty": "0.0000",
+      "cumQuote": "0.000000",
+      "timeInForce": "IOC",
+      "type": "LIMIT",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "BUY",
+      "positionSide": "BOTH",
+      "stopPrice": "0.00",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "LIMIT",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": 0,
+      "time": 1783721852457,
+      "updateTime": 1783721852457
+    }
+  },
+  "position_check": {
+    "positions_found": 1,
+    "non_zero_positions": 0,
+    "raw": [
+      {
+        "symbol": "BTCUSDT",
+        "positionAmt": "0.0000",
+        "entryPrice": "0.0",
+        "breakEvenPrice": "0.0",
+        "markPrice": "64101.12751812",
+        "unRealizedProfit": "0.00000000",
+        "liquidationPrice": "0",
+        "leverage": "20",
+        "maxNotionalValue": "20000000",
+        "marginType": "cross",
+        "isolatedMargin": "0.00000000",
+        "isAutoAddMargin": "false",
+        "positionSide": "BOTH",
+        "notional": "0",
+        "isolatedWallet": "0",
+        "updateTime": 0,
+        "isolated": false,
+        "adlQuantile": 0
+      }
+    ]
+  },
+  "account_check": {
+    "can_query_account": true,
+    "available_balance_present": true,
+    "total_wallet_balance_present": true
+  },
+  "passed": true
+}
