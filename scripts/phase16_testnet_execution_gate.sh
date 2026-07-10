@@ -69,7 +69,7 @@ echo "✅ API key variables are present."
 echo ""
 echo "5) Checking required input files..."
 test -f data/processed/live_signal_dryrun.json
-test -f data/processed/live_risk_dryrun.json
+test -f data/processed/live_risk_testnet_min_qty.json
 echo "✅ Signal and risk input files found."
 
 echo ""
@@ -84,7 +84,7 @@ fi
 echo ""
 echo "7) Running pre-execution dry-run check..."
 
-python scripts/run_binance_live_execution.py --signal data/processed/live_signal_dryrun.json --risk data/processed/live_risk_dryrun.json --dry-run > runtime/phase16_testnet_pre_dryrun.txt
+python scripts/run_binance_live_execution.py --signal data/processed/live_signal_dryrun.json --risk data/processed/live_risk_testnet_min_qty.json --dry-run > runtime/phase16_testnet_pre_dryrun.txt
 
 cat runtime/phase16_testnet_pre_dryrun.txt
 
@@ -113,7 +113,7 @@ echo ""
 echo "8) Submitting one Binance testnet order..."
 
 set +e
-python scripts/run_binance_live_execution.py --signal data/processed/live_signal_dryrun.json --risk data/processed/live_risk_dryrun.json > runtime/phase16_testnet_execution_raw.txt 2>&1
+python scripts/run_binance_live_execution.py --signal data/processed/live_signal_dryrun.json --risk data/processed/live_risk_testnet_min_qty.json > runtime/phase16_testnet_execution_raw.txt 2>&1
 RESULT_CODE=$?
 set -e
 
