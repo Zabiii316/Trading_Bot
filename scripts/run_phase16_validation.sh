@@ -140,5 +140,14 @@ fi
 
 echo ""
 echo "=================================================="
+
+echo ""
+echo "9) Generating Phase 16 validation evidence report..."
+
+python scripts/generate_phase16_validation_report.py
+
+echo "✅ Phase 16 validation evidence report generated:"
+echo "data/processed/phase16_validation_report.json"
+
 echo "✅ Phase 16 validation completed."
 echo "=================================================="
