@@ -138,7 +138,28 @@ raw = raw_path.read_text() if raw_path.exists() else ""
 dry = dryrun_path.read_text() if dryrun_path.exists() else ""
 
 raw_lower = raw.lower()
-submitted = '"submitted": true' in raw_lower or '"submitted":true' in raw_lower
+
+json_start = raw.find("{")
+json_end = raw.rfind("}")
+
+parsed = {}
+if json_start != -1 and json_end != -1 and json_end > json_start:
+    parsed = json.loads(raw[json_start:json_end + 1])
+
+event_type = str(parsed.get("event_type", "")).lower()
+status = str(parsed.get("status", "")).lower()
+venue_order_id = parsed.get("venue_order_id")
+
+submitted = (
+    '"submitted": true' in raw_lower
+    or '"submitted":true' in raw_lower
+    or (
+        event_type == "execution.order"
+        and status in {"acknowledged", "accepted", "submitted", "filled", "partially_filled"}
+        and bool(venue_order_id)
+    )
+)
+
 blocked = "live trading disabled" in raw_lower
 api_error = "api error" in raw_lower or "binance api error" in raw_lower
 
