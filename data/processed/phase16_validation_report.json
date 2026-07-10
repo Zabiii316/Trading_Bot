@@ -1,6 +1,6 @@
 {
   "phase": "phase_16_controlled_live_deployment",
-  "generated_at_unix": 1783707612,
+  "generated_at_unix": 1783720322,
   "environment": {
     "BINANCE_TESTNET": "true",
     "BINANCE_USE_TESTNET": "true",
@@ -13,7 +13,7 @@
     "git_status": {
       "command": "git status --short",
       "returncode": 0,
-      "duration_seconds": 0.043,
+      "duration_seconds": 0.037,
       "stdout_tail": "",
       "stderr_tail": "",
       "passed": true
@@ -21,15 +21,15 @@
     "critical_tests": {
       "command": "python -m pytest services/monitoring/python/tests services/live_execution/python/tests services/paper_execution/python/tests services/risk/python/tests services/signals/python/tests -q",
       "returncode": 0,
-      "duration_seconds": 1.207,
-      "stdout_tail": ".......................................................                  [100%]\n=============================== warnings summary ===============================\n.venv/lib/python3.11/site-packages/fastapi/testclient.py:1\n  /Users/apple/Downloads/Trading Bot/trading-bot-phase15-controlled-live-deployment/.venv/lib/python3.11/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n55 passed, 1 warning in 0.69s\n",
+      "duration_seconds": 0.962,
+      "stdout_tail": ".......................................................                  [100%]\n=============================== warnings summary ===============================\n.venv/lib/python3.11/site-packages/fastapi/testclient.py:1\n  /Users/apple/Downloads/Trading Bot/trading-bot-phase15-controlled-live-deployment/.venv/lib/python3.11/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n55 passed, 1 warning in 0.54s\n",
       "stderr_tail": "",
       "passed": true
     },
     "binance_dry_run": {
       "command": "python scripts/run_binance_live_execution.py --signal data/processed/live_signal_dryrun.json --risk data/processed/live_risk_dryrun.json --dry-run",
       "returncode": 0,
-      "duration_seconds": 0.446,
+      "duration_seconds": 0.362,
       "stdout_tail": "Binance base_url=https://testnet.binancefuture.com testnet=True live_enabled=False\ndry_run=true; no order submitted\n",
       "stderr_tail": "",
       "passed": true
@@ -37,7 +37,7 @@
     "production_readiness": {
       "command": "python scripts/run_production_readiness_check.py --snapshot data/processed/operational_snapshot.json --capital data/processed/capital_controls.json --output data/processed/production_readiness_report.json",
       "returncode": 0,
-      "duration_seconds": 0.265,
+      "duration_seconds": 0.276,
       "stdout_tail": "\": \"info\",\n      \"status\": \"pass\"\n    },\n    {\n      \"evidence\": {\n        \"current\": 0.0,\n        \"limit\": 0.015\n      },\n      \"message\": \"Daily loss is within limit.\",\n      \"name\": \"daily_loss_limit\",\n      \"severity\": \"info\",\n      \"status\": \"pass\"\n    },\n    {\n      \"evidence\": {\n        \"current\": 0.0,\n        \"limit\": 0.04\n      },\n      \"message\": \"Weekly loss is within limit.\",\n      \"name\": \"weekly_loss_limit\",\n      \"severity\": \"info\",\n      \"status\": \"pass\"\n    },\n    {\n      \"evidence\": {\n        \"current\": 0.0,\n        \"limit\": 0.08\n      },\n      \"message\": \"Portfolio drawdown is within limit.\",\n      \"name\": \"portfolio_drawdown_limit\",\n      \"severity\": \"info\",\n      \"status\": \"pass\"\n    },\n    {\n      \"evidence\": {\n        \"paper_trades\": 1,\n        \"required\": 0\n      },\n      \"message\": \"Required paper-trade evidence is available.\",\n      \"name\": \"paper_trade_count\",\n      \"severity\": \"info\",\n      \"status\": \"pass\"\n    },\n    {\n      \"evidence\": {\n        \"required\": 0,\n        \"testnet_orders\": 0\n      },\n      \"message\": \"Required testnet-order evidence is available.\",\n      \"name\": \"testnet_order_count\",\n      \"severity\": \"info\",\n      \"status\": \"pass\"\n    },\n    {\n      \"evidence\": {},\n      \"message\": \"Exchange API withdrawal permissions are disabled.\",\n      \"name\": \"withdrawal_permissions_disabled\",\n      \"severity\": \"info\",\n      \"status\": \"pass\"\n    },\n    {\n      \"evidence\": {},\n      \"message\": \"Secrets are loaded from a managed secret source.\",\n      \"name\": \"secrets_manager\",\n      \"severity\": \"info\",\n      \"status\": \"pass\"\n    },\n    {\n      \"evidence\": {\n        \"live_trading_enabled\": true\n      },\n      \"message\": \"Live trading flag is explicitly enabled for live stage.\",\n      \"name\": \"live_trading_flag\",\n      \"severity\": \"info\",\n      \"status\": \"pass\"\n    },\n    {\n      \"evidence\": {\n        \"completed\": [\n          \"cancel_all\",\n          \"emergency_flatten\",\n          \"reconciliation_rebuild\",\n          \"service_restart\"\n        ]\n      },\n      \"message\": \"Required emergency drills completed.\",\n      \"name\": \"emergency_drills\",\n      \"severity\": \"info\",\n      \"status\": \"pass\"\n    },\n    {\n      \"evidence\": {\n        \"manual_approval\": true\n      },\n      \"message\": \"Manual approval recorded.\",\n      \"name\": \"manual_approval\",\n      \"severity\": \"info\",\n      \"status\": \"pass\"\n    },\n    {\n      \"evidence\": {\n        \"approved_usd\": 1000.0,\n        \"stage_cap_usd\": 1000.0\n      },\n      \"message\": \"Requested allocation is within stage cap.\",\n      \"name\": \"capital_allocation_cap\",\n      \"severity\": \"info\",\n      \"status\": \"pass\"\n    },\n    {\n      \"evidence\": {\n        \"configured_leverage\": 2.0\n      },\n      \"message\": \"Leverage is within rollout-stage cap.\",\n      \"name\": \"stage_leverage_cap\",\n      \"severity\": \"info\",\n      \"status\": \"pass\"\n    }\n  ],\n  \"max_allocation_usd\": 1000.0,\n  \"required_manual_approval\": true,\n  \"stage\": \"controlled_live\",\n  \"summary\": \"All production readiness gates passed.\"\n}\n",
       "stderr_tail": "",
       "passed": true
