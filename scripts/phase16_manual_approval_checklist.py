@@ -92,6 +92,7 @@ def main() -> None:
         "manual_approvals": approvals,
         "approved_for_controlled_testnet_review": (
             go_no_go_passed
+            and git_is_clean
             and safe_mode_active
             and all(approvals.values())
         ),
