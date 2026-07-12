@@ -1,0 +1,82 @@
+groups:
+  - name: trading-bot-safety-alerts
+    rules:
+      - alert: TradingMonitoringAPIDown
+        expr: up{job="trading-monitoring-api"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          component: monitoring
+        annotations:
+          summary: "Trading monitoring API is down"
+          description: "Prometheus cannot scrape the trading monitoring API."
+
+      - alert: TradingComponentNotReady
+        expr: trading_component_ready == 0
+        for: 2m
+        labels:
+          severity: warning
+          component: trading-system
+        annotations:
+          summary: "Trading component is not ready"
+          description: "A trading component is reporting not-ready state."
+
+      - alert: KillSwitchActive
+        expr: trading_kill_switch_active > 0
+        for: 0m
+        labels:
+          severity: critical
+          component: safety
+        annotations:
+          summary: "Kill switch is active"
+          description: "The trading kill switch has been activated."
+
+      - alert: RiskRejectionDetected
+        expr: increase(trading_risk_rejections_total[5m]) > 0
+        for: 0m
+        labels:
+          severity: warning
+          component: risk
+        annotations:
+          summary: "Risk rejection detected"
+          description: "The risk engine rejected one or more trading decisions."
+
+      - alert: OrderSubmitted
+        expr: increase(trading_orders_total[5m]) > 0
+        for: 0m
+        labels:
+          severity: info
+          component: execution
+        annotations:
+          summary: "Order submitted"
+          description: "The execution layer submitted an order."
+
+      - alert: FillDetected
+        expr: increase(trading_fills_total[5m]) > 0
+        for: 0m
+        labels:
+          severity: info
+          component: execution
+        annotations:
+          summary: "Fill detected"
+          description: "The execution layer recorded a fill."
+
+      - alert: WebSocketDecodeErrors
+        expr: increase(trading_websocket_decode_errors_total[5m]) > 0
+        for: 1m
+        labels:
+          severity: warning
+          component: market-data
+        annotations:
+          summary: "WebSocket decode errors detected"
+          description: "Market-data WebSocket decoder is reporting errors."
+
+      - alert: WebSocketReconnectsHigh
+        expr: increase(trading_websocket_reconnects_total[10m]) > 3
+        for: 1m
+        labels:
+          severity: warning
+          component: market-data
+        annotations:
+          summary: "High WebSocket reconnect count"
+          description: "Market-data WebSocket reconnects exceeded the safe threshold."
