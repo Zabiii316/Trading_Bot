@@ -64,52 +64,40 @@ def create_app(
 
         heartbeat_ms = int(__import__("time").time() * 1000)
 
-        baseline_metrics = {
-            'trading_component_up{component="monitoring_api"}': "1",
-            'trading_component_ready{component="monitoring_api"}': "1",
-            f'trading_component_last_heartbeat_ms{{component="monitoring_api"}}': str(heartbeat_ms),
+        baseline_lines = [
+            'trading_component_up{component="monitoring_api"} 1',
+            'trading_component_ready{component="monitoring_api"} 1',
+            f'trading_component_last_heartbeat_ms{{component="monitoring_api"}} {heartbeat_ms}',
 
-            'trading_orderbook_sequence_healthy{symbol="BTCUSDT"}': "1",
-            'trading_orderbook_spread_bps{symbol="BTCUSDT"}': "0",
-            'trading_orderbook_rebuilds_total{symbol="BTCUSDT"}': "0",
+            'trading_orderbook_sequence_healthy{symbol="BTCUSDT"} 1',
+            'trading_orderbook_spread_bps{symbol="BTCUSDT"} 0',
+            'trading_orderbook_rebuilds_total{symbol="BTCUSDT"} 0',
 
-            'trading_websocket_messages_total{component="market_data"}': "0",
-            'trading_websocket_reconnects_total{component="market_data"}': "0",
-            'trading_websocket_decode_errors_total{component="market_data"}': "0",
+            'trading_websocket_messages_total{venue="binance",stream="baseline",symbol="BTCUSDT"} 0',
+            'trading_websocket_reconnects_total{venue="binance",stream="baseline",symbol="BTCUSDT"} 0',
+            'trading_websocket_decode_errors_total{venue="binance",stream="baseline",symbol="BTCUSDT"} 0',
 
-            'trading_events_total{event_type="baseline"}': "0",
-            'trading_event_lag_ms{event_type="baseline",quantile="0.99"}': "0",
+            'trading_events_total{event_type="baseline",venue="binance",symbol="BTCUSDT"} 0',
+            'trading_event_lag_ms{event_type="baseline"} 0',
 
-            'trading_orderflow_delta{symbol="BTCUSDT"}': "0",
-            'trading_orderflow_cvd{symbol="BTCUSDT"}': "0",
-            'trading_orderflow_queue_imbalance_l1{symbol="BTCUSDT"}': "0",
-            'trading_orderflow_absorption_ratio{symbol="BTCUSDT"}': "0",
+            'trading_risk_decisions_total{status="baseline"} 0',
+            'trading_risk_rejections_total{reason="none"} 0',
+            'trading_risk_approved_quantity{symbol="BTCUSDT"} 0',
 
-            'trading_liquidity_levels_active{symbol="BTCUSDT",level_type="baseline"}': "0",
-            'trading_liquidity_level_quality{symbol="BTCUSDT",level_type="baseline"}': "0",
-            'trading_liquidity_sweeps_total{symbol="BTCUSDT",state="baseline",outcome="none"}': "0",
+            'trading_orders_total{status="baseline"} 0',
+            'trading_fills_total{symbol="BTCUSDT"} 0',
+            'trading_filled_quantity{symbol="BTCUSDT"} 0',
+            'trading_fill_fees_usd{symbol="BTCUSDT"} 0',
 
-            'trading_avwap_confirmation_score{symbol="BTCUSDT",confirmation="neutral"}': "0",
-            'trading_avwap_distance_bps{symbol="BTCUSDT"}': "0",
+            'trading_kill_switch_active{level="system",strategy="phase16",symbol="BTCUSDT"} 0',
+            'trading_kill_switch_events_total{level="system",active="false"} 0',
+        ]
 
-            'trading_risk_decisions_total{status="baseline"}': "0",
-            'trading_risk_rejections_total{reason="none"}': "0",
-            'trading_risk_approved_quantity{symbol="BTCUSDT"}': "0",
-            'trading_account_equity_usd{account="testnet"}': "0",
-
-            'trading_orders_total{status="baseline"}': "0",
-            'trading_fills_total{symbol="BTCUSDT"}': "0",
-            'trading_filled_quantity{symbol="BTCUSDT"}': "0",
-            'trading_fill_fees_usd{symbol="BTCUSDT"}': "0",
-
-            'trading_kill_switch_active': "0",
-            'trading_kill_switch_events_total{reason="none"}': "0",
-        }
-
-        for metric_name, value in baseline_metrics.items():
-            full_metric = metric_name.encode("utf-8")
-            if full_metric not in content:
-                content = content + f"\n{metric_name} {value}\n".encode("utf-8")
+        for line in baseline_lines:
+            metric_name = line.split("{", 1)[0].split(" ", 1)[0]
+            sample_prefix = line.split(" ", 1)[0].encode("utf-8")
+            if sample_prefix not in content:
+                content = content + f"\n{line}\n".encode("utf-8")
 
         if not content.endswith(b"\n"):
             content = content + b"\n"
