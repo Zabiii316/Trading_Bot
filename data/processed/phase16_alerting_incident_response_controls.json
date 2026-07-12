@@ -1,0 +1,95 @@
+{
+  "phase": "phase_16_12_alerting_incident_response_controls",
+  "generated_at_unix": 1783866904,
+  "scope": "alerting_and_incident_response_controls_only",
+  "not_approved_for": [
+    "real_live_trading",
+    "micro_live_execution",
+    "production_binance_order_submission"
+  ],
+  "safety_flags": {
+    "BINANCE_TESTNET": "true",
+    "BINANCE_USE_TESTNET": "true",
+    "BINANCE_ENABLE_LIVE_TRADING": "false",
+    "LIVE_TRADING_ALLOWED": "false"
+  },
+  "safe_mode_active": true,
+  "git_working_tree_clean": true,
+  "alert_rules_file_exists": true,
+  "controls_spec_present": true,
+  "required_alerts": {
+    "TradingMonitoringAPIDown": true,
+    "TradingComponentNotReady": true,
+    "KillSwitchActive": true,
+    "RiskRejectionDetected": true,
+    "OrderSubmitted": true,
+    "FillDetected": true,
+    "WebSocketDecodeErrors": true,
+    "WebSocketReconnectsHigh": true
+  },
+  "all_required_alerts_defined": true,
+  "prometheus_metric_checks": {
+    "monitoring_api_up": true,
+    "component_up": true,
+    "component_ready": true,
+    "kill_switch_active": true,
+    "risk_rejections": true,
+    "orders_total": true,
+    "fills_total": true,
+    "websocket_errors": true
+  },
+  "prometheus_core_metrics_available": true,
+  "incident_response_controls": {
+    "severity_levels": {
+      "critical": [
+        "monitoring_api_down",
+        "kill_switch_active",
+        "unexpected_live_order",
+        "daily_loss_limit_hit"
+      ],
+      "warning": [
+        "component_not_ready",
+        "risk_rejection_detected",
+        "websocket_decode_errors",
+        "websocket_reconnects_high"
+      ],
+      "info": [
+        "order_submitted",
+        "fill_detected",
+        "testnet_reconciliation_completed"
+      ]
+    },
+    "required_response_steps": {
+      "critical": [
+        "activate_or_confirm_kill_switch",
+        "disable_live_trading_flags",
+        "cancel_all_open_orders",
+        "check_position_risk",
+        "record_incident_report",
+        "do_not_resume_without_manual_approval"
+      ],
+      "warning": [
+        "review_grafana_dashboard",
+        "inspect_prometheus_query",
+        "check_service_logs",
+        "confirm_no_unexpected_orders",
+        "record_observation"
+      ]
+    },
+    "emergency_commands": {
+      "safe_mode": "source runtime/safe_trading_flags.env",
+      "emergency_stop": "./scripts/phase16_emergency_stop.sh",
+      "check_git": "git status",
+      "check_prometheus_target": "curl -s http://localhost:9090/api/v1/targets | python -m json.tool"
+    }
+  },
+  "approved_for_micro_live_execution": false,
+  "decision": "ALERTING_AND_INCIDENT_RESPONSE_CONTROLS_READY_FOR_REVIEW_NOT_EXECUTION",
+  "next_phase": "Phase 16.13 \u2014 24h Testnet Soak Plan",
+  "safety_notes": [
+    "This phase defines alerting and incident response controls only.",
+    "Live trading remains disabled.",
+    "Micro-live execution requires a separate approval gate.",
+    "Alerts must be reviewed in Grafana/Prometheus before any future real execution stage."
+  ]
+}
