@@ -1,6 +1,6 @@
 {
   "phase": "phase_16_15_post_soak_review_micro_live_approval_gap",
-  "generated_at_unix": 1783986556,
+  "generated_at_unix": 1783986920,
   "scope": "post_soak_review_and_micro_live_gap_analysis_only",
   "not_approved_for": [
     "real_live_trading",
@@ -15,12 +15,12 @@
   },
   "inputs_present": {
     "soak_execution": true,
-    "soak_plan": false,
+    "soak_plan": true,
     "alerting_controls": true,
     "micro_live_controls": true,
     "manual_approval": true
   },
-  "all_inputs_present": false,
+  "all_inputs_present": true,
   "completed_checks": {
     "soak_report_present": true,
     "soak_duration_passed": true,
