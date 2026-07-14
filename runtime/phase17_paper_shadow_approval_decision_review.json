@@ -1,0 +1,15 @@
+{
+  "phase": "phase_17_28_paper_shadow_approval_decision_review_runtime",
+  "updated_at_unix": 1784047421,
+  "decision_requested": "hold",
+  "manual_approval_provided": false,
+  "approved_for_paper_shadow_start": false,
+  "paper_shadow_started": false,
+  "exchange_order_submission": false,
+  "real_capital_allowed": false,
+  "live_trading_enabled": false,
+  "approved_for_micro_live_execution": false,
+  "approved_for_real_live_trading": false,
+  "blockers": [],
+  "decision": "PAPER_SHADOW_APPROVAL_DECISION_REVIEW_COMPLETE_HOLD_NOT_APPROVED_NOT_STARTED"
+}

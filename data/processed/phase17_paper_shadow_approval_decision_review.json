@@ -1,0 +1,50 @@
+{
+  "phase": "phase_17_28_paper_shadow_approval_decision_review",
+  "generated_at_unix": 1784047421,
+  "scope": "paper_shadow_approval_decision_review_only",
+  "safety_flags": {
+    "BINANCE_TESTNET": "true",
+    "BINANCE_USE_TESTNET": "true",
+    "BINANCE_ENABLE_LIVE_TRADING": "false",
+    "LIVE_TRADING_ALLOWED": "false"
+  },
+  "safe_mode_active": true,
+  "git_working_tree_clean": false,
+  "decision_requested": "hold",
+  "manual_decision_status": "HOLD_NOT_APPROVED_NOT_STARTED",
+  "manual_approval_provided": false,
+  "approved_for_paper_shadow_start": false,
+  "paper_shadow_started": false,
+  "paper_shadow_completed": false,
+  "exchange_order_submission": false,
+  "real_capital_allowed": false,
+  "live_trading_enabled": false,
+  "approved_for_micro_live_execution": false,
+  "approved_for_real_live_trading": false,
+  "review_checks": {
+    "safe_mode_active": true,
+    "decision_input_present": true,
+    "runtime_decision_present": true,
+    "start_attempt_review_present": true,
+    "harness_state_present": true,
+    "paper_shadow_not_started": true,
+    "exchange_order_submission_disabled": true,
+    "real_capital_disabled": true,
+    "live_trading_disabled": true,
+    "micro_live_not_approved": true,
+    "real_live_not_approved": true
+  },
+  "blockers": [],
+  "detail_file": "data/processed/paper_shadow_approval_decision_review/paper_shadow_approval_decision_review_detail.json",
+  "runtime_review_file": "runtime/phase17_paper_shadow_approval_decision_review.json",
+  "decision": "PAPER_SHADOW_APPROVAL_DECISION_REVIEW_COMPLETE_HOLD_NOT_APPROVED_NOT_STARTED",
+  "next_phase": "Phase 17.29 \u2014 Paper Shadow Hold State Consolidation",
+  "safety_notes": [
+    "This phase reviews the paper shadow approval decision only.",
+    "This phase does not start paper shadow execution.",
+    "This phase does not approve micro-live execution.",
+    "This phase does not approve real live trading.",
+    "This phase does not submit Binance orders.",
+    "Real capital and exchange order submission remain disabled."
+  ]
+}
