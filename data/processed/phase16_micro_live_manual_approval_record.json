@@ -1,6 +1,6 @@
 {
   "phase": "phase_16_17_micro_live_manual_approval_record",
-  "generated_at_unix": 1783988221,
+  "generated_at_unix": 1783989080,
   "scope": "manual_approval_record_template_only",
   "not_approved_for": [
     "real_live_trading",
@@ -15,14 +15,14 @@
   },
   "safe_mode_active": true,
   "inputs_present": {
-    "final_go_no_go_gate": false,
+    "final_go_no_go_gate": true,
     "post_soak_review": true,
     "soak_execution": true,
     "alerting_controls": true
   },
-  "all_inputs_present": false,
-  "git_working_tree_clean": false,
-  "prior_gate_decision": null,
+  "all_inputs_present": true,
+  "git_working_tree_clean": true,
+  "prior_gate_decision": "FINAL_MICRO_LIVE_GO_NO_GO_GATE_SPEC_READY_FOR_REVIEW_NOT_EXECUTION",
   "soak_passed": true,
   "manual_approval_record": {
     "approval_scope": "micro_live_review_only_not_execution",
