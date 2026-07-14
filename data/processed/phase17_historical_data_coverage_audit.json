@@ -1,0 +1,97 @@
+{
+  "phase": "phase_17_2_historical_data_coverage_audit",
+  "generated_at_unix": 1783996583,
+  "scope": "historical_data_coverage_audit_only",
+  "git_commit": "a8d1928a13ca4586b68a1a5a0f137512492f1240",
+  "safety_flags": {
+    "BINANCE_TESTNET": "true",
+    "BINANCE_USE_TESTNET": "true",
+    "BINANCE_ENABLE_LIVE_TRADING": "false",
+    "LIVE_TRADING_ALLOWED": "false"
+  },
+  "safe_mode_active": true,
+  "inputs_present": {
+    "phase17_baseline": true,
+    "phase16_release": true
+  },
+  "all_inputs_present": true,
+  "git_working_tree_clean": true,
+  "target_symbols": [
+    "BTCUSDT",
+    "ETHUSDT",
+    "BNBUSDT"
+  ],
+  "scanned_directories": [
+    "data/raw",
+    "data/processed"
+  ],
+  "discovered_file_count": 56,
+  "symbol_coverage": {
+    "BTCUSDT": {
+      "file_count": 4,
+      "total_size_bytes": 139835828,
+      "total_lines_known": 10367,
+      "files": [
+        {
+          "path": "data/processed/btcusdt_bars_for_liquidity.jsonl",
+          "size_bytes": 80699,
+          "modified_unix": 1783533968,
+          "line_count": 366
+        },
+        {
+          "path": "data/processed/btcusdt_depth_only.jsonl",
+          "size_bytes": 133670128,
+          "modified_unix": 1783519614,
+          "line_count": null
+        },
+        {
+          "path": "data/processed/liquidity_input_btcusdt.jsonl",
+          "size_bytes": 6084295,
+          "modified_unix": 1783533426,
+          "line_count": 10000
+        },
+        {
+          "path": "data/processed/reconstructed_btcusdt_books.jsonl",
+          "size_bytes": 706,
+          "modified_unix": 1783521164,
+          "line_count": 1
+        }
+      ]
+    },
+    "ETHUSDT": {
+      "file_count": 0,
+      "total_size_bytes": 0,
+      "total_lines_known": 0,
+      "files": []
+    },
+    "BNBUSDT": {
+      "file_count": 0,
+      "total_size_bytes": 0,
+      "total_lines_known": 0,
+      "files": []
+    }
+  },
+  "required_dataset_checks": {
+    "btc_data_present": true,
+    "eth_data_present": false,
+    "bnb_data_present": false,
+    "multi_symbol_data_present": false,
+    "sufficient_for_phase17_backtest_expansion": false
+  },
+  "dataset_gaps": [
+    "eth_data_present",
+    "bnb_data_present",
+    "multi_symbol_data_present",
+    "sufficient_for_phase17_backtest_expansion"
+  ],
+  "approved_for_micro_live_execution": false,
+  "approved_for_real_live_trading": false,
+  "decision": "HISTORICAL_DATA_COVERAGE_AUDIT_COMPLETE_DATASET_EXPANSION_REQUIRED",
+  "next_phase": "Phase 17.3 \u2014 Historical Backtest Dataset Builder",
+  "safety_notes": [
+    "This phase audits local historical data coverage only.",
+    "This phase does not approve live trading.",
+    "This phase does not submit Binance orders.",
+    "More multi-symbol and multi-period historical data is required before strategy approval."
+  ]
+}
