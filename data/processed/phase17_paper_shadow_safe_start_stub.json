@@ -1,0 +1,54 @@
+{
+  "phase": "phase_17_22_paper_shadow_safe_start_stub",
+  "generated_at_unix": 1784045035,
+  "scope": "paper_shadow_safe_start_stub_only",
+  "action_requested": "start",
+  "safety_flags": {
+    "BINANCE_TESTNET": "true",
+    "BINANCE_USE_TESTNET": "true",
+    "BINANCE_ENABLE_LIVE_TRADING": "false",
+    "LIVE_TRADING_ALLOWED": "false"
+  },
+  "safe_mode_active": true,
+  "git_working_tree_clean": false,
+  "start_checks": {
+    "safe_mode_active": true,
+    "readiness_input_present": true,
+    "runtime_readiness_present": true,
+    "harness_state_present": true,
+    "manual_approval_present": true,
+    "readiness_passed": false,
+    "manual_approval_provided": false,
+    "approved_for_paper_shadow_start": false,
+    "paper_shadow_not_started": true,
+    "exchange_order_submission_disabled": true,
+    "real_capital_disabled": true,
+    "live_trading_disabled": true
+  },
+  "blockers": [
+    "readiness_passed",
+    "manual_approval_provided",
+    "approved_for_paper_shadow_start"
+  ],
+  "start_allowed": false,
+  "paper_shadow_started": false,
+  "paper_shadow_completed": false,
+  "exchange_order_submission": false,
+  "real_capital_allowed": false,
+  "live_trading_enabled": false,
+  "approved_for_paper_shadow_start": false,
+  "approved_for_micro_live_execution": false,
+  "approved_for_real_live_trading": false,
+  "runtime_start_stub": "runtime/phase17_paper_shadow_safe_start_stub.json",
+  "start_attempt_file": "data/processed/paper_shadow_safe_start/paper_shadow_safe_start_attempt.json",
+  "decision": "PAPER_SHADOW_SAFE_START_REJECTED_READINESS_OR_APPROVAL_FAILED_NOT_STARTED",
+  "next_phase": "Phase 17.23 \u2014 Paper Shadow Blocked Start Review",
+  "safety_notes": [
+    "This phase is a safe start stub only.",
+    "This phase does not start paper shadow execution.",
+    "This phase does not approve micro-live execution.",
+    "This phase does not approve real live trading.",
+    "This phase does not submit Binance orders.",
+    "Start remains blocked until manual paper-shadow-only approval is provided."
+  ]
+}
