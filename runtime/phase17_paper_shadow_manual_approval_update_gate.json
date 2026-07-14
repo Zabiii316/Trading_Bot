@@ -1,0 +1,26 @@
+{
+  "phase": "phase_17_24_paper_shadow_manual_approval_update_gate_runtime",
+  "updated_at_unix": 1784046080,
+  "action_requested": "create",
+  "manual_approval_provided": false,
+  "approved_for_paper_shadow_start": false,
+  "approval_scope": "paper_shadow_only",
+  "approver_name": null,
+  "approver_role": null,
+  "required_confirmation_text": "I approve PAPER SHADOW ONLY with real capital disabled and exchange order submission disabled.",
+  "confirmation_text_matches": false,
+  "real_capital_allowed": false,
+  "exchange_order_submission_allowed": false,
+  "live_trading_allowed": false,
+  "micro_live_execution_allowed": false,
+  "paper_shadow_started": false,
+  "approved_for_micro_live_execution": false,
+  "approved_for_real_live_trading": false,
+  "approval_status": "GATE_CREATED_NOT_APPROVED",
+  "blockers": [
+    "approver_name_present",
+    "approver_role_present",
+    "confirmation_text_matches"
+  ],
+  "decision": "PAPER_SHADOW_MANUAL_APPROVAL_UPDATE_GATE_CREATED_NOT_APPROVED"
+}
