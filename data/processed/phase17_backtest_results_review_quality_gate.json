@@ -1,0 +1,71 @@
+{
+  "phase": "phase_17_5_backtest_results_review_quality_gate",
+  "generated_at_unix": 1783998511,
+  "scope": "backtest_results_review_and_strategy_quality_gate_only",
+  "safety_flags": {
+    "BINANCE_TESTNET": "true",
+    "BINANCE_USE_TESTNET": "true",
+    "BINANCE_ENABLE_LIVE_TRADING": "false",
+    "LIVE_TRADING_ALLOWED": "false"
+  },
+  "safe_mode_active": true,
+  "git_working_tree_clean": true,
+  "input_present": true,
+  "thresholds": {
+    "min_profit_factor": 1.2,
+    "min_win_rate_pct": 45.0,
+    "max_drawdown_pct": 20.0,
+    "min_trades": 30,
+    "min_net_return_bps": 0.0
+  },
+  "quality_results": {
+    "BTCUSDT": {
+      "status": "backtest_complete",
+      "trade_count": 1246,
+      "net_return_bps": -8575.6678,
+      "win_rate_pct": 0,
+      "profit_factor": 0.0,
+      "max_drawdown_pct": 85.7567,
+      "checks": {
+        "minimum_trades_passed": true,
+        "net_return_positive": false,
+        "profit_factor_passed": false,
+        "win_rate_passed": false,
+        "drawdown_passed": false
+      },
+      "quality_gate_passed": false
+    },
+    "ETHUSDT": {
+      "status": "backtest_complete",
+      "trade_count": 19,
+      "net_return_bps": -220.1853,
+      "win_rate_pct": 0,
+      "profit_factor": 0.0,
+      "max_drawdown_pct": 2.2019,
+      "checks": {
+        "minimum_trades_passed": false,
+        "net_return_positive": false,
+        "profit_factor_passed": false,
+        "win_rate_passed": false,
+        "drawdown_passed": true
+      },
+      "quality_gate_passed": false
+    }
+  },
+  "approved_symbols": [],
+  "failed_symbols": [
+    "BTCUSDT",
+    "ETHUSDT"
+  ],
+  "strategy_quality_gate_passed": false,
+  "approved_for_micro_live_execution": false,
+  "approved_for_real_live_trading": false,
+  "decision": "BACKTEST_QUALITY_GATE_FAILED_STRATEGY_REWORK_REQUIRED_NOT_APPROVED_FOR_EXECUTION",
+  "next_phase": "Phase 17.6 \u2014 Strategy Rework Plan and Parameter Sweep Design",
+  "safety_notes": [
+    "Baseline strategy failed the quality gate.",
+    "This phase does not approve live trading.",
+    "This phase does not approve micro-live execution.",
+    "Strategy logic must be improved before any future approval gate."
+  ]
+}
