@@ -1,16 +1,13 @@
-import json, os, subprocess, time, shutil
+import json, os, subprocess, time
 from pathlib import Path
 
 OUT = Path("data/processed/phase17_historical_backtest_dataset_builder.json")
 DATASET_DIR = Path("data/processed/backtest_datasets")
 
-INPUTS = {
-    "coverage_audit": "data/processed/phase17_historical_data_coverage_audit.json",
-    "phase17_baseline": "data/processed/phase17_strategy_hardening_baseline.json",
-}
-
 TARGET_SYMBOLS = ["BTCUSDT", "ETHUSDT", "BNBUSDT"]
 SCAN_DIRS = ["data/raw", "data/processed"]
+MAX_RECORDS_PER_SYMBOL = 20000
+MAX_FILE_SIZE_BYTES = 80_000_000
 
 def run(cmd):
     return subprocess.run(cmd, capture_output=True, text=True)
@@ -18,94 +15,89 @@ def run(cmd):
 def git_clean():
     return run(["git", "status", "--short"]).stdout.strip() == ""
 
-def load_json(path):
-    p = Path(path)
-    if not p.exists():
-        return {}
-    try:
-        return json.loads(p.read_text())
-    except Exception:
-        return {}
-
-def safe_read_json_lines(path):
-    records = []
-    try:
-        for line in path.read_text(errors="ignore").splitlines():
-            line = line.strip()
-            if not line:
-                continue
-            try:
-                records.append(json.loads(line))
-            except Exception:
-                continue
-    except Exception:
-        pass
-    return records
-
-def record_symbol(record):
-    if isinstance(record, dict):
-        for key in ["symbol", "s", "pair"]:
-            if key in record and record[key]:
-                return str(record[key]).upper()
+def get_symbol(row):
+    if not isinstance(row, dict):
+        return ""
+    for key in ["symbol", "s", "pair"]:
+        value = row.get(key)
+        if value:
+            return str(value).upper()
     return ""
 
-def record_time(record):
-    if not isinstance(record, dict):
-        return None
+def get_time(row):
+    if not isinstance(row, dict):
+        return 0
     for key in ["event_time_ms", "received_time_ms", "time_ms", "timestamp_ms", "start_time_ms", "t", "T"]:
-        value = record.get(key)
+        value = row.get(key)
         if isinstance(value, int):
             return value
         if isinstance(value, str) and value.isdigit():
             return int(value)
-    return None
+    return 0
 
-def collect_symbol_records(symbol):
+def should_scan(path):
+    if not path.is_file():
+        return False
+    if path.suffix.lower() != ".jsonl":
+        return False
+    if "phase16_" in path.name or "phase17_" in path.name:
+        return False
+    if "backtest_datasets" in str(path):
+        return False
+    try:
+        if path.stat().st_size > MAX_FILE_SIZE_BYTES:
+            return False
+    except Exception:
+        return False
+    return True
+
+def collect(symbol):
     rows = []
-    source_files = []
+    sources = []
 
     for folder in SCAN_DIRS:
         root = Path(folder)
         if not root.exists():
             continue
 
-        for path in sorted(root.rglob("*")):
-            if not path.is_file():
+        for path in sorted(root.rglob("*.jsonl")):
+            if len(rows) >= MAX_RECORDS_PER_SYMBOL:
+                break
+
+            if not should_scan(path):
                 continue
 
-            if path.suffix.lower() not in [".jsonl", ".json"]:
+            used = False
+
+            try:
+                with path.open("r", errors="ignore") as f:
+                    for line in f:
+                        if len(rows) >= MAX_RECORDS_PER_SYMBOL:
+                            break
+
+                        line = line.strip()
+                        if not line or "{" not in line:
+                            continue
+
+                        try:
+                            row = json.loads(line)
+                        except Exception:
+                            continue
+
+                        row_symbol = get_symbol(row)
+                        path_match = symbol.lower() in str(path).lower()
+
+                        if row_symbol == symbol or path_match:
+                            rows.append(row)
+                            used = True
+            except Exception:
                 continue
 
-            if "phase17_" in path.name:
-                continue
+            if used:
+                sources.append(str(path))
 
-            path_text_match = symbol.lower() in str(path).lower()
-            records = []
-
-            if path.suffix.lower() == ".jsonl":
-                records = safe_read_json_lines(path)
-            else:
-                try:
-                    obj = json.loads(path.read_text(errors="ignore"))
-                    if isinstance(obj, list):
-                        records = [x for x in obj if isinstance(x, dict)]
-                    elif isinstance(obj, dict):
-                        records = [obj]
-                except Exception:
-                    records = []
-
-            selected = []
-            for rec in records:
-                sym = record_symbol(rec)
-                if sym == symbol or path_text_match:
-                    selected.append(rec)
-
-            if selected:
-                source_files.append(str(path))
-                rows.extend(selected)
-
-    rows.sort(key=lambda r: record_time(r) if record_time(r) is not None else 0)
-    return rows, source_files
+    rows.sort(key=get_time)
+    return rows, sources
 
 flags = {
     "BINANCE_TESTNET": os.getenv("BINANCE_TESTNET", ""),
@@ -115,27 +107,27 @@ flags = {
 }
 
 safe_mode = flags["BINANCE_ENABLE_LIVE_TRADING"] == "false" and flags["LIVE_TRADING_ALLOWED"] == "false"
-inputs_present = {k: Path(v).exists() for k, v in INPUTS.items()}
 
 DATASET_DIR.mkdir(parents=True, exist_ok=True)
 
 datasets = {}
+
 for symbol in TARGET_SYMBOLS:
-    rows, sources = collect_symbol_records(symbol)
-    out_path = DATASET_DIR / f"{symbol.lower()}_phase17_backtest_dataset.jsonl"
+    rows, sources = collect(symbol)
+    dataset_path = DATASET_DIR / f"{symbol.lower()}_phase17_backtest_dataset.jsonl"
 
     if rows:
-        with out_path.open("w") as f:
+        with dataset_path.open("w") as f:
             for row in rows:
                 f.write(json.dumps(row, separators=(",", ":")) + "\n")
 
-    times = [record_time(r) for r in rows if record_time(r) is not None]
+    times = [get_time(r) for r in rows if get_time(r)]
 
     datasets[symbol] = {
         "record_count": len(rows),
         "source_file_count": len(sources),
         "source_files": sources[:20],
-        "dataset_path": str(out_path) if rows else "",
+        "dataset_path": str(dataset_path) if rows else "",
         "first_time_ms": min(times) if times else None,
         "last_time_ms": max(times) if times else None,
         "ready_for_backtest": len(rows) > 0,
@@ -150,10 +142,8 @@ report = {
     "scope": "historical_backtest_dataset_builder_only",
     "safety_flags": flags,
     "safe_mode_active": safe_mode,
-    "inputs_present": inputs_present,
-    "all_inputs_present": all(inputs_present.values()),
     "git_working_tree_clean": git_clean(),
-    "target_symbols": TARGET_SYMBOLS,
+    "max_records_per_symbol": MAX_RECORDS_PER_SYMBOL,
     "datasets": datasets,
     "ready_symbols": ready_symbols,
     "missing_symbols": missing_symbols,
@@ -161,12 +151,6 @@ report = {
     "approved_for_real_live_trading": False,
     "decision": "HISTORICAL_BACKTEST_DATASET_BUILT_PARTIAL_DATASET_EXPANSION_STILL_REQUIRED",
     "next_phase": "Phase 17.4 — Baseline Historical Backtest Runner",
-    "safety_notes": [
-        "This phase builds local backtest datasets only.",
-        "This phase does not approve live trading.",
-        "This phase does not submit Binance orders.",
-        "Missing symbols must be collected before full multi-symbol validation.",
-    ],
 }
 
 OUT.write_text(json.dumps(report, indent=2))

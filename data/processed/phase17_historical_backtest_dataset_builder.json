@@ -1,0 +1,59 @@
+{
+  "phase": "phase_17_3_historical_backtest_dataset_builder",
+  "generated_at_unix": 1783997520,
+  "scope": "historical_backtest_dataset_builder_only",
+  "safety_flags": {
+    "BINANCE_TESTNET": "true",
+    "BINANCE_USE_TESTNET": "true",
+    "BINANCE_ENABLE_LIVE_TRADING": "false",
+    "LIVE_TRADING_ALLOWED": "false"
+  },
+  "safe_mode_active": true,
+  "git_working_tree_clean": false,
+  "max_records_per_symbol": 20000,
+  "datasets": {
+    "BTCUSDT": {
+      "record_count": 20000,
+      "source_file_count": 2,
+      "source_files": [
+        "data/processed/anchored_vwaps.jsonl",
+        "data/processed/avwap_input.jsonl"
+      ],
+      "dataset_path": "data/processed/backtest_datasets/btcusdt_phase17_backtest_dataset.jsonl",
+      "first_time_ms": 1783517064801,
+      "last_time_ms": 1783521164362,
+      "ready_for_backtest": true
+    },
+    "ETHUSDT": {
+      "record_count": 2945,
+      "source_file_count": 1,
+      "source_files": [
+        "data/processed/storage_test_sample.jsonl"
+      ],
+      "dataset_path": "data/processed/backtest_datasets/ethusdt_phase17_backtest_dataset.jsonl",
+      "first_time_ms": 1783517064678,
+      "last_time_ms": 1783517101522,
+      "ready_for_backtest": true
+    },
+    "BNBUSDT": {
+      "record_count": 0,
+      "source_file_count": 0,
+      "source_files": [],
+      "dataset_path": "",
+      "first_time_ms": null,
+      "last_time_ms": null,
+      "ready_for_backtest": false
+    }
+  },
+  "ready_symbols": [
+    "BTCUSDT",
+    "ETHUSDT"
+  ],
+  "missing_symbols": [
+    "BNBUSDT"
+  ],
+  "approved_for_micro_live_execution": false,
+  "approved_for_real_live_trading": false,
+  "decision": "HISTORICAL_BACKTEST_DATASET_BUILT_PARTIAL_DATASET_EXPANSION_STILL_REQUIRED",
+  "next_phase": "Phase 17.4 \u2014 Baseline Historical Backtest Runner"
+}
