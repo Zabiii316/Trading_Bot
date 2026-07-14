@@ -1,0 +1,85 @@
+{
+  "phase": "phase_17_30_safety_closeout_next_action_options",
+  "generated_at_unix": 1784048046,
+  "scope": "phase_17_safety_closeout_and_next_action_options_only",
+  "safety_flags": {
+    "BINANCE_TESTNET": "true",
+    "BINANCE_USE_TESTNET": "true",
+    "BINANCE_ENABLE_LIVE_TRADING": "false",
+    "LIVE_TRADING_ALLOWED": "false"
+  },
+  "safe_mode_active": true,
+  "git_working_tree_clean": false,
+  "closeout_checks": {
+    "safe_mode_active": true,
+    "hold_state_input_present": true,
+    "runtime_hold_state_present": true,
+    "hold_state_confirmed": true,
+    "paper_shadow_not_started": true,
+    "paper_shadow_start_not_approved": true,
+    "micro_live_not_approved": true,
+    "real_live_not_approved": true,
+    "exchange_order_submission_disabled": true,
+    "real_capital_disabled": true,
+    "live_trading_disabled": true
+  },
+  "blockers": [],
+  "phase17_closed_safely": true,
+  "hold_state_confirmed": true,
+  "paper_shadow_started": false,
+  "paper_shadow_completed": false,
+  "approved_for_paper_shadow_start": false,
+  "approved_for_micro_live_execution": false,
+  "approved_for_real_live_trading": false,
+  "exchange_order_submission": false,
+  "real_capital_allowed": false,
+  "live_trading_enabled": false,
+  "final_candidate_count": 0,
+  "oos_forward_candidate_count": 0,
+  "stress_forward_candidate_count": 0,
+  "phase17_evidence_file_count": 29,
+  "summary_file": "data/processed/phase17_closeout/phase17_safety_closeout_summary.json",
+  "runtime_closeout_file": "runtime/phase17_safety_closeout_state.json",
+  "next_action_options": [
+    {
+      "option": "remain_on_hold",
+      "description": "Keep the system in hold state. No paper shadow, no micro-live, no real live trading.",
+      "requires_manual_approval": false,
+      "execution_allowed": false
+    },
+    {
+      "option": "paper_shadow_only_approval_path",
+      "description": "Use a separate paper-shadow-only manual approval flow, with real capital and exchange order submission still disabled.",
+      "requires_manual_approval": true,
+      "execution_allowed": false
+    },
+    {
+      "option": "strategy_rework_path",
+      "description": "Return to strategy rework, parameter sweep, OOS validation, and stress testing before any future paper shadow decision.",
+      "requires_manual_approval": false,
+      "execution_allowed": false
+    },
+    {
+      "option": "expand_historical_data_path",
+      "description": "Add more historical symbols and longer datasets before repeating Phase 17 strategy validation.",
+      "requires_manual_approval": false,
+      "execution_allowed": false
+    },
+    {
+      "option": "monitoring_dashboard_review",
+      "description": "Review dashboards and monitoring health while keeping trading disabled.",
+      "requires_manual_approval": false,
+      "execution_allowed": false
+    }
+  ],
+  "decision": "PHASE_17_SAFETY_CLOSEOUT_COMPLETE_HOLD_STATE_NOT_APPROVED_NOT_STARTED",
+  "next_phase": "Phase 18.1 \u2014 Next Action Selection",
+  "safety_notes": [
+    "This phase closes Phase 17 in a safe hold state.",
+    "This phase does not approve paper shadow start.",
+    "This phase does not approve micro-live execution.",
+    "This phase does not approve real live trading.",
+    "This phase does not submit Binance orders.",
+    "Real capital and exchange order submission remain disabled."
+  ]
+}
