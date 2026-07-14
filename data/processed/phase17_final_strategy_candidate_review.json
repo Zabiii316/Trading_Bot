@@ -1,0 +1,39 @@
+{
+  "phase": "phase_17_13_final_strategy_candidate_review",
+  "generated_at_unix": 1784037116,
+  "scope": "final_strategy_candidate_review_only",
+  "safety_flags": {
+    "BINANCE_TESTNET": "true",
+    "BINANCE_USE_TESTNET": "true",
+    "BINANCE_ENABLE_LIVE_TRADING": "false",
+    "LIVE_TRADING_ALLOWED": "false"
+  },
+  "safe_mode_active": true,
+  "git_working_tree_clean": true,
+  "inputs_present": {
+    "walk_forward_input": true,
+    "oos_review_input": true,
+    "sweep_review_input": true
+  },
+  "walk_forward_passed_count": 0,
+  "walk_forward_failed_count": 0,
+  "final_candidate_count": 0,
+  "final_candidates": [],
+  "rejected_candidates": [],
+  "execution_blockers": [
+    "no_walk_forward_passed_candidates",
+    "strategy_rework_required",
+    "live_trading_flags_disabled"
+  ],
+  "approved_for_micro_live_execution": false,
+  "approved_for_real_live_trading": false,
+  "decision": "FINAL_STRATEGY_CANDIDATE_REVIEW_COMPLETE_NO_CANDIDATES_STRATEGY_REWORK_REQUIRED_NOT_APPROVED_FOR_EXECUTION",
+  "next_phase": "Phase 17.14 \u2014 Strategy Redesign or Candidate Risk Sizing if Manually Approved",
+  "safety_notes": [
+    "This phase performs final strategy candidate review only.",
+    "This phase does not approve live trading.",
+    "This phase does not approve micro-live execution.",
+    "This phase does not submit Binance orders.",
+    "Final candidates require risk sizing, stress testing, paper shadow, and manual approval before any future execution review."
+  ]
+}
