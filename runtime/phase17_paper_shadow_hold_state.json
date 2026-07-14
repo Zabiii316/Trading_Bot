@@ -1,0 +1,32 @@
+{
+  "phase": "phase_17_29_paper_shadow_hold_state_lock",
+  "created_at_unix": 1784047660,
+  "hold_state_confirmed": true,
+  "decision_requested": "hold",
+  "manual_approval_provided": false,
+  "approved_for_paper_shadow_start": false,
+  "paper_shadow_started": false,
+  "paper_shadow_completed": false,
+  "exchange_order_submission": false,
+  "real_capital_allowed": false,
+  "live_trading_enabled": false,
+  "approved_for_micro_live_execution": false,
+  "approved_for_real_live_trading": false,
+  "hold_checks": {
+    "safe_mode_active": true,
+    "decision_review_present": true,
+    "runtime_decision_review_present": true,
+    "decision_point_present": true,
+    "harness_state_present": true,
+    "safe_start_stub_present": true,
+    "decision_requested_hold": true,
+    "manual_approval_not_provided": true,
+    "paper_shadow_start_not_approved": true,
+    "paper_shadow_not_started": true,
+    "exchange_order_submission_disabled": true,
+    "real_capital_disabled": true,
+    "live_trading_disabled": true
+  },
+  "blockers": [],
+  "decision": "PAPER_SHADOW_HOLD_STATE_CONSOLIDATED_NOT_APPROVED_NOT_STARTED"
+}
