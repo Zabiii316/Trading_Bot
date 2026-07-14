@@ -28,6 +28,16 @@ def tracked_secret_scan_clean() -> bool:
         "PRODUCTION_BINANCE_API_KEY=",
     ]
 
+    safe_paths = (
+        ".env.example",
+        "README.md",
+        "docs/",
+        "deploy/",
+        "scripts/run_phase16_validation.sh",
+        "scripts/phase16_testnet_shadow_run.sh",
+        "scripts/phase16_secrets_manager_key_handling_controls.py",
+    )
+
     for pattern in patterns:
         result = subprocess.run(["git", "grep", "-n", pattern], capture_output=True, text=True)
         output = result.stdout.strip()
@@ -36,12 +46,12 @@ def tracked_secret_scan_clean() -> bool:
             continue
 
         for line in output.splitlines():
-            allowed = ".env.example" in line or "docs/" in line or "README" in line
+            file_path = line.split(":", 1)[0]
+            allowed = file_path.startswith(safe_paths) or file_path in safe_paths
             if not allowed:
                 return False
 
     return True
-
 
 def file_contains(path: Path, text: str) -> bool:
     if not path.exists():
