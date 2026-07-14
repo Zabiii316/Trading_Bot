@@ -1,0 +1,44 @@
+{
+  "phase": "phase_16_18_production_api_key_exchange_permission_audit",
+  "generated_at_unix": 1783989967,
+  "scope": "production_api_key_and_exchange_permission_audit_only",
+  "not_approved_for": [
+    "real_live_trading",
+    "micro_live_execution",
+    "production_binance_order_submission"
+  ],
+  "safety_flags": {
+    "BINANCE_TESTNET": "true",
+    "BINANCE_USE_TESTNET": "true",
+    "BINANCE_ENABLE_LIVE_TRADING": "false",
+    "LIVE_TRADING_ALLOWED": "false"
+  },
+  "safe_mode_active": true,
+  "inputs_present": {
+    "manual_approval_record": true,
+    "final_go_no_go_gate": true,
+    "post_soak_review": true
+  },
+  "all_inputs_present": true,
+  "git_working_tree_clean": true,
+  "permission_audit": {
+    "production_api_key_created": false,
+    "production_api_key_ip_whitelisted": false,
+    "withdrawal_permissions_disabled_verified": false,
+    "futures_trading_permission_reviewed": false,
+    "secret_manager_ready": false,
+    "api_key_rotation_plan_exists": false,
+    "raw_key_values_stored_in_report": false,
+    "tracked_secret_scan_clean": false
+  },
+  "approved_for_micro_live_execution": false,
+  "decision": "PRODUCTION_API_KEY_PERMISSION_AUDIT_CREATED_NOT_APPROVED_FOR_EXECUTION",
+  "next_phase": "Phase 16.19 \u2014 Secrets Manager and Key Handling Controls",
+  "safety_notes": [
+    "Do not paste real Binance API keys into terminal, docs, Git, or reports.",
+    "Production keys must be stored only in a private secrets manager or local private environment.",
+    "Withdrawal permissions must remain disabled.",
+    "IP whitelist must be verified before any future micro-live approval.",
+    "This phase does not enable live trading."
+  ]
+}
