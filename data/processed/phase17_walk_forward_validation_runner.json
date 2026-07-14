@@ -1,0 +1,38 @@
+{
+  "phase": "phase_17_12_walk_forward_validation_runner",
+  "generated_at_unix": 1784036720,
+  "scope": "walk_forward_validation_only",
+  "safety_flags": {
+    "BINANCE_TESTNET": "true",
+    "BINANCE_USE_TESTNET": "true",
+    "BINANCE_ENABLE_LIVE_TRADING": "false",
+    "LIVE_TRADING_ALLOWED": "false"
+  },
+  "safe_mode_active": true,
+  "git_working_tree_clean": true,
+  "oos_review_input_present": true,
+  "forward_candidate_count": 0,
+  "tested_candidate_count": 0,
+  "walk_forward_passed_count": 0,
+  "walk_forward_failed_count": 0,
+  "thresholds": {
+    "window_count": 5,
+    "min_trades_per_window": 3,
+    "min_passing_window_ratio": 0.6,
+    "min_average_net_return_bps": 0.0,
+    "max_worst_drawdown_pct": 30.0
+  },
+  "walk_forward_passed_candidates": [],
+  "walk_forward_failed_candidates": [],
+  "approved_for_micro_live_execution": false,
+  "approved_for_real_live_trading": false,
+  "decision": "WALK_FORWARD_VALIDATION_SKIPPED_NO_FORWARD_CANDIDATES_STRATEGY_REWORK_REQUIRED_NOT_APPROVED_FOR_EXECUTION",
+  "next_phase": "Phase 17.13 \u2014 Final Strategy Candidate Review or Strategy Redesign",
+  "safety_notes": [
+    "This phase performs walk-forward validation only.",
+    "This phase does not approve live trading.",
+    "This phase does not approve micro-live execution.",
+    "This phase does not submit Binance orders.",
+    "Any passing candidate still requires final review."
+  ]
+}
