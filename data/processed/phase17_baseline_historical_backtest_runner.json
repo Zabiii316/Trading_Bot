@@ -1,0 +1,344 @@
+{
+  "phase": "phase_17_4_baseline_historical_backtest_runner",
+  "generated_at_unix": 1783998002,
+  "scope": "baseline_historical_backtest_runner_only",
+  "safety_flags": {
+    "BINANCE_TESTNET": "true",
+    "BINANCE_USE_TESTNET": "true",
+    "BINANCE_ENABLE_LIVE_TRADING": "false",
+    "LIVE_TRADING_ALLOWED": "false"
+  },
+  "safe_mode_active": true,
+  "git_working_tree_clean": false,
+  "dataset_count": 2,
+  "symbols_backtested": [
+    "BTCUSDT",
+    "ETHUSDT"
+  ],
+  "symbols_insufficient": [],
+  "results": {
+    "BTCUSDT": {
+      "dataset_path": "data/processed/backtest_datasets/btcusdt_phase17_backtest_dataset.jsonl",
+      "result_path": "data/processed/backtest_results/btcusdt_phase17_baseline_backtest_result.json",
+      "status": "backtest_complete",
+      "price_points": 19888,
+      "trade_count": 1246,
+      "winning_trades": 0,
+      "losing_trades": 1246,
+      "net_return_bps": -8575.6678,
+      "buy_hold_return_bps": -10.7693,
+      "win_rate_pct": 0.0,
+      "profit_factor": 0.0,
+      "max_drawdown_pct": 85.7567,
+      "fee_bps": 4,
+      "slippage_bps": 2,
+      "fast_window": 5,
+      "slow_window": 20,
+      "sample_trades": [
+        {
+          "entry_time_ms": 1783517066145,
+          "exit_time_ms": 1783517066174,
+          "entry_price": 61864.64242749,
+          "exit_price": 61839.91116132,
+          "net_return_bps": -11.9976
+        },
+        {
+          "entry_time_ms": 1783517066174,
+          "exit_time_ms": 1783517066174,
+          "entry_price": 61864.6539844,
+          "exit_price": 61839.92954,
+          "net_return_bps": -11.9965
+        },
+        {
+          "entry_time_ms": 1783517066174,
+          "exit_time_ms": 1783517066181,
+          "entry_price": 61864.77048,
+          "exit_price": 61840.03552631,
+          "net_return_bps": -11.9982
+        },
+        {
+          "entry_time_ms": 1783517066182,
+          "exit_time_ms": 1783517066315,
+          "entry_price": 61865.77068,
+          "exit_price": 61840.19190437,
+          "net_return_bps": -12.1346
+        },
+        {
+          "entry_time_ms": 1783517066315,
+          "exit_time_ms": 1783517067365,
+          "entry_price": 61866.17076,
+          "exit_price": 61840.20904693,
+          "net_return_bps": -12.1964
+        },
+        {
+          "entry_time_ms": 1783517067365,
+          "exit_time_ms": 1783517067470,
+          "entry_price": 61866.07074,
+          "exit_price": 61840.21831087,
+          "net_return_bps": -12.1788
+        },
+        {
+          "entry_time_ms": 1783517067470,
+          "exit_time_ms": 1783517067791,
+          "entry_price": 61866.17076,
+          "exit_price": 61840.25770101,
+          "net_return_bps": -12.1886
+        },
+        {
+          "entry_time_ms": 1783517067792,
+          "exit_time_ms": 1783517067795,
+          "entry_price": 61866.17076,
+          "exit_price": 61840.27430574,
+          "net_return_bps": -12.1859
+        },
+        {
+          "entry_time_ms": 1783517067796,
+          "exit_time_ms": 1783517067972,
+          "entry_price": 61866.07074,
+          "exit_price": 61840.27668705,
+          "net_return_bps": -12.1693
+        },
+        {
+          "entry_time_ms": 1783517067972,
+          "exit_time_ms": 1783517068066,
+          "entry_price": 61866.17076,
+          "exit_price": 61840.37949694,
+          "net_return_bps": -12.1689
+        },
+        {
+          "entry_time_ms": 1783517068066,
+          "exit_time_ms": 1783517068315,
+          "entry_price": 61866.17076,
+          "exit_price": 61840.3940767,
+          "net_return_bps": -12.1665
+        },
+        {
+          "entry_time_ms": 1783517068315,
+          "exit_time_ms": 1783517068315,
+          "entry_price": 61865.19737128,
+          "exit_price": 61841.42924,
+          "net_return_bps": -11.8419
+        },
+        {
+          "entry_time_ms": 1783517068315,
+          "exit_time_ms": 1783517068445,
+          "entry_price": 61866.17076,
+          "exit_price": 61840.45793126,
+          "net_return_bps": -12.1562
+        },
+        {
+          "entry_time_ms": 1783517068445,
+          "exit_time_ms": 1783517068445,
+          "entry_price": 61865.22294336,
+          "exit_price": 61840.5083369,
+          "net_return_bps": -11.9949
+        },
+        {
+          "entry_time_ms": 1783517068445,
+          "exit_time_ms": 1783517068879,
+          "entry_price": 61866.17076,
+          "exit_price": 61840.51570846,
+          "net_return_bps": -12.1469
+        },
+        {
+          "entry_time_ms": 1783517068880,
+          "exit_time_ms": 1783517069315,
+          "entry_price": 61866.07074,
+          "exit_price": 61840.56965679,
+          "net_return_bps": -12.122
+        },
+        {
+          "entry_time_ms": 1783517069315,
+          "exit_time_ms": 1783517069324,
+          "entry_price": 61866.17076,
+          "exit_price": 61840.71410616,
+          "net_return_bps": -12.1148
+        },
+        {
+          "entry_time_ms": 1783517069325,
+          "exit_time_ms": 1783517069437,
+          "entry_price": 61866.17076,
+          "exit_price": 61840.83315801,
+          "net_return_bps": -12.0956
+        },
+        {
+          "entry_time_ms": 1783517069438,
+          "exit_time_ms": 1783517070123,
+          "entry_price": 61866.07074,
+          "exit_price": 61840.8668945,
+          "net_return_bps": -12.0739
+        },
+        {
+          "entry_time_ms": 1783517070123,
+          "exit_time_ms": 1783517070127,
+          "entry_price": 61865.70831552,
+          "exit_price": 61841.03616427,
+          "net_return_bps": -11.988
+        }
+      ]
+    },
+    "ETHUSDT": {
+      "dataset_path": "data/processed/backtest_datasets/ethusdt_phase17_backtest_dataset.jsonl",
+      "result_path": "data/processed/backtest_results/ethusdt_phase17_baseline_backtest_result.json",
+      "status": "backtest_complete",
+      "price_points": 2584,
+      "trade_count": 19,
+      "winning_trades": 0,
+      "losing_trades": 19,
+      "net_return_bps": -220.1853,
+      "buy_hold_return_bps": -7.4877,
+      "win_rate_pct": 0.0,
+      "profit_factor": 0.0,
+      "max_drawdown_pct": 2.2019,
+      "fee_bps": 4,
+      "slippage_bps": 2,
+      "fast_window": 5,
+      "slow_window": 20,
+      "sample_trades": [
+        {
+          "entry_time_ms": 1783517066164,
+          "exit_time_ms": 1783517066239,
+          "entry_price": 1736.517234,
+          "exit_price": 1735.922746,
+          "net_return_bps": -11.4235
+        },
+        {
+          "entry_time_ms": 1783517069478,
+          "exit_time_ms": 1783517070768,
+          "entry_price": 1736.467224,
+          "exit_price": 1735.762778,
+          "net_return_bps": -12.0568
+        },
+        {
+          "entry_time_ms": 1783517071220,
+          "exit_time_ms": 1783517074009,
+          "entry_price": 1736.467224,
+          "exit_price": 1735.932744,
+          "net_return_bps": -11.078
+        },
+        {
+          "entry_time_ms": 1783517074866,
+          "exit_time_ms": 1783517076101,
+          "entry_price": 1736.637258,
+          "exit_price": 1735.942742,
+          "net_return_bps": -11.9992
+        },
+        {
+          "entry_time_ms": 1783517077118,
+          "exit_time_ms": 1783517077938,
+          "entry_price": 1736.64726,
+          "exit_price": 1735.95274,
+          "net_return_bps": -11.9992
+        },
+        {
+          "entry_time_ms": 1783517077938,
+          "exit_time_ms": 1783517081113,
+          "entry_price": 1736.64726,
+          "exit_price": 1735.962738,
+          "net_return_bps": -11.9416
+        },
+        {
+          "entry_time_ms": 1783517081113,
+          "exit_time_ms": 1783517082841,
+          "entry_price": 1736.657262,
+          "exit_price": 1735.972736,
+          "net_return_bps": -11.9416
+        },
+        {
+          "entry_time_ms": 1783517084132,
+          "exit_time_ms": 1783517084218,
+          "entry_price": 1736.677266,
+          "exit_price": 1736.012728,
+          "net_return_bps": -11.8265
+        },
+        {
+          "entry_time_ms": 1783517084223,
+          "exit_time_ms": 1783517084498,
+          "entry_price": 1736.727276,
+          "exit_price": 1736.092712,
+          "net_return_bps": -11.6538
+        },
+        {
+          "entry_time_ms": 1783517086119,
+          "exit_time_ms": 1783517086281,
+          "entry_price": 1736.477226,
+          "exit_price": 1735.772776,
+          "net_return_bps": -12.0568
+        },
+        {
+          "entry_time_ms": 1783517086676,
+          "exit_time_ms": 1783517088907,
+          "entry_price": 1736.477226,
+          "exit_price": 1735.922746,
+          "net_return_bps": -11.1931
+        },
+        {
+          "entry_time_ms": 1783517092411,
+          "exit_time_ms": 1783517092990,
+          "entry_price": 1736.487228,
+          "exit_price": 1735.90275,
+          "net_return_bps": -11.3659
+        },
+        {
+          "entry_time_ms": 1783517093912,
+          "exit_time_ms": 1783517095484,
+          "entry_price": 1736.507232,
+          "exit_price": 1735.80277,
+          "net_return_bps": -12.0568
+        },
+        {
+          "entry_time_ms": 1783517095760,
+          "exit_time_ms": 1783517096626,
+          "entry_price": 1736.507232,
+          "exit_price": 1736.082714,
+          "net_return_bps": -10.4447
+        },
+        {
+          "entry_time_ms": 1783517098286,
+          "exit_time_ms": 1783517099696,
+          "entry_price": 1736.717274,
+          "exit_price": 1736.042722,
+          "net_return_bps": -11.8841
+        },
+        {
+          "entry_time_ms": 1783517100071,
+          "exit_time_ms": 1783517100071,
+          "entry_price": 1736.737278,
+          "exit_price": 1736.042722,
+          "net_return_bps": -11.9992
+        },
+        {
+          "entry_time_ms": 1783517101077,
+          "exit_time_ms": 1783517101225,
+          "entry_price": 1735.607052,
+          "exit_price": 1735.00293,
+          "net_return_bps": -11.4808
+        },
+        {
+          "entry_time_ms": 1783517101425,
+          "exit_time_ms": 1783517101441,
+          "entry_price": 1735.357002,
+          "exit_price": 1734.653,
+          "net_return_bps": -12.0568
+        },
+        {
+          "entry_time_ms": 1783517101503,
+          "exit_time_ms": 1783517101503,
+          "entry_price": 1735.236978,
+          "exit_price": 1734.533024,
+          "net_return_bps": -12.0568
+        }
+      ]
+    }
+  },
+  "approved_for_micro_live_execution": false,
+  "approved_for_real_live_trading": false,
+  "decision": "BASELINE_HISTORICAL_BACKTEST_COMPLETE_REVIEW_REQUIRED_NOT_APPROVED_FOR_EXECUTION",
+  "next_phase": "Phase 17.5 \u2014 Backtest Results Review and Strategy Quality Gate",
+  "safety_notes": [
+    "This phase runs local historical backtests only.",
+    "This phase does not approve live trading.",
+    "This phase does not submit Binance orders.",
+    "Backtest results require review before any strategy approval."
+  ]
+}

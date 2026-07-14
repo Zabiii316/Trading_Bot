@@ -1,0 +1,158 @@
+{
+  "status": "backtest_complete",
+  "price_points": 19888,
+  "trade_count": 1246,
+  "winning_trades": 0,
+  "losing_trades": 1246,
+  "net_return_bps": -8575.6678,
+  "buy_hold_return_bps": -10.7693,
+  "win_rate_pct": 0.0,
+  "profit_factor": 0.0,
+  "max_drawdown_pct": 85.7567,
+  "fee_bps": 4,
+  "slippage_bps": 2,
+  "fast_window": 5,
+  "slow_window": 20,
+  "sample_trades": [
+    {
+      "entry_time_ms": 1783517066145,
+      "exit_time_ms": 1783517066174,
+      "entry_price": 61864.64242749,
+      "exit_price": 61839.91116132,
+      "net_return_bps": -11.9976
+    },
+    {
+      "entry_time_ms": 1783517066174,
+      "exit_time_ms": 1783517066174,
+      "entry_price": 61864.6539844,
+      "exit_price": 61839.92954,
+      "net_return_bps": -11.9965
+    },
+    {
+      "entry_time_ms": 1783517066174,
+      "exit_time_ms": 1783517066181,
+      "entry_price": 61864.77048,
+      "exit_price": 61840.03552631,
+      "net_return_bps": -11.9982
+    },
+    {
+      "entry_time_ms": 1783517066182,
+      "exit_time_ms": 1783517066315,
+      "entry_price": 61865.77068,
+      "exit_price": 61840.19190437,
+      "net_return_bps": -12.1346
+    },
+    {
+      "entry_time_ms": 1783517066315,
+      "exit_time_ms": 1783517067365,
+      "entry_price": 61866.17076,
+      "exit_price": 61840.20904693,
+      "net_return_bps": -12.1964
+    },
+    {
+      "entry_time_ms": 1783517067365,
+      "exit_time_ms": 1783517067470,
+      "entry_price": 61866.07074,
+      "exit_price": 61840.21831087,
+      "net_return_bps": -12.1788
+    },
+    {
+      "entry_time_ms": 1783517067470,
+      "exit_time_ms": 1783517067791,
+      "entry_price": 61866.17076,
+      "exit_price": 61840.25770101,
+      "net_return_bps": -12.1886
+    },
+    {
+      "entry_time_ms": 1783517067792,
+      "exit_time_ms": 1783517067795,
+      "entry_price": 61866.17076,
+      "exit_price": 61840.27430574,
+      "net_return_bps": -12.1859
+    },
+    {
+      "entry_time_ms": 1783517067796,
+      "exit_time_ms": 1783517067972,
+      "entry_price": 61866.07074,
+      "exit_price": 61840.27668705,
+      "net_return_bps": -12.1693
+    },
+    {
+      "entry_time_ms": 1783517067972,
+      "exit_time_ms": 1783517068066,
+      "entry_price": 61866.17076,
+      "exit_price": 61840.37949694,
+      "net_return_bps": -12.1689
+    },
+    {
+      "entry_time_ms": 1783517068066,
+      "exit_time_ms": 1783517068315,
+      "entry_price": 61866.17076,
+      "exit_price": 61840.3940767,
+      "net_return_bps": -12.1665
+    },
+    {
+      "entry_time_ms": 1783517068315,
+      "exit_time_ms": 1783517068315,
+      "entry_price": 61865.19737128,
+      "exit_price": 61841.42924,
+      "net_return_bps": -11.8419
+    },
+    {
+      "entry_time_ms": 1783517068315,
+      "exit_time_ms": 1783517068445,
+      "entry_price": 61866.17076,
+      "exit_price": 61840.45793126,
+      "net_return_bps": -12.1562
+    },
+    {
+      "entry_time_ms": 1783517068445,
+      "exit_time_ms": 1783517068445,
+      "entry_price": 61865.22294336,
+      "exit_price": 61840.5083369,
+      "net_return_bps": -11.9949
+    },
+    {
+      "entry_time_ms": 1783517068445,
+      "exit_time_ms": 1783517068879,
+      "entry_price": 61866.17076,
+      "exit_price": 61840.51570846,
+      "net_return_bps": -12.1469
+    },
+    {
+      "entry_time_ms": 1783517068880,
+      "exit_time_ms": 1783517069315,
+      "entry_price": 61866.07074,
+      "exit_price": 61840.56965679,
+      "net_return_bps": -12.122
+    },
+    {
+      "entry_time_ms": 1783517069315,
+      "exit_time_ms": 1783517069324,
+      "entry_price": 61866.17076,
+      "exit_price": 61840.71410616,
+      "net_return_bps": -12.1148
+    },
+    {
+      "entry_time_ms": 1783517069325,
+      "exit_time_ms": 1783517069437,
+      "entry_price": 61866.17076,
+      "exit_price": 61840.83315801,
+      "net_return_bps": -12.0956
+    },
+    {
+      "entry_time_ms": 1783517069438,
+      "exit_time_ms": 1783517070123,
+      "entry_price": 61866.07074,
+      "exit_price": 61840.8668945,
+      "net_return_bps": -12.0739
+    },
+    {
+      "entry_time_ms": 1783517070123,
+      "exit_time_ms": 1783517070127,
+      "entry_price": 61865.70831552,
+      "exit_price": 61841.03616427,
+      "net_return_bps": -11.988
+    }
+  ]
+}

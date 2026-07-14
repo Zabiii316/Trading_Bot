@@ -1,0 +1,151 @@
+{
+  "status": "backtest_complete",
+  "price_points": 2584,
+  "trade_count": 19,
+  "winning_trades": 0,
+  "losing_trades": 19,
+  "net_return_bps": -220.1853,
+  "buy_hold_return_bps": -7.4877,
+  "win_rate_pct": 0.0,
+  "profit_factor": 0.0,
+  "max_drawdown_pct": 2.2019,
+  "fee_bps": 4,
+  "slippage_bps": 2,
+  "fast_window": 5,
+  "slow_window": 20,
+  "sample_trades": [
+    {
+      "entry_time_ms": 1783517066164,
+      "exit_time_ms": 1783517066239,
+      "entry_price": 1736.517234,
+      "exit_price": 1735.922746,
+      "net_return_bps": -11.4235
+    },
+    {
+      "entry_time_ms": 1783517069478,
+      "exit_time_ms": 1783517070768,
+      "entry_price": 1736.467224,
+      "exit_price": 1735.762778,
+      "net_return_bps": -12.0568
+    },
+    {
+      "entry_time_ms": 1783517071220,
+      "exit_time_ms": 1783517074009,
+      "entry_price": 1736.467224,
+      "exit_price": 1735.932744,
+      "net_return_bps": -11.078
+    },
+    {
+      "entry_time_ms": 1783517074866,
+      "exit_time_ms": 1783517076101,
+      "entry_price": 1736.637258,
+      "exit_price": 1735.942742,
+      "net_return_bps": -11.9992
+    },
+    {
+      "entry_time_ms": 1783517077118,
+      "exit_time_ms": 1783517077938,
+      "entry_price": 1736.64726,
+      "exit_price": 1735.95274,
+      "net_return_bps": -11.9992
+    },
+    {
+      "entry_time_ms": 1783517077938,
+      "exit_time_ms": 1783517081113,
+      "entry_price": 1736.64726,
+      "exit_price": 1735.962738,
+      "net_return_bps": -11.9416
+    },
+    {
+      "entry_time_ms": 1783517081113,
+      "exit_time_ms": 1783517082841,
+      "entry_price": 1736.657262,
+      "exit_price": 1735.972736,
+      "net_return_bps": -11.9416
+    },
+    {
+      "entry_time_ms": 1783517084132,
+      "exit_time_ms": 1783517084218,
+      "entry_price": 1736.677266,
+      "exit_price": 1736.012728,
+      "net_return_bps": -11.8265
+    },
+    {
+      "entry_time_ms": 1783517084223,
+      "exit_time_ms": 1783517084498,
+      "entry_price": 1736.727276,
+      "exit_price": 1736.092712,
+      "net_return_bps": -11.6538
+    },
+    {
+      "entry_time_ms": 1783517086119,
+      "exit_time_ms": 1783517086281,
+      "entry_price": 1736.477226,
+      "exit_price": 1735.772776,
+      "net_return_bps": -12.0568
+    },
+    {
+      "entry_time_ms": 1783517086676,
+      "exit_time_ms": 1783517088907,
+      "entry_price": 1736.477226,
+      "exit_price": 1735.922746,
+      "net_return_bps": -11.1931
+    },
+    {
+      "entry_time_ms": 1783517092411,
+      "exit_time_ms": 1783517092990,
+      "entry_price": 1736.487228,
+      "exit_price": 1735.90275,
+      "net_return_bps": -11.3659
+    },
+    {
+      "entry_time_ms": 1783517093912,
+      "exit_time_ms": 1783517095484,
+      "entry_price": 1736.507232,
+      "exit_price": 1735.80277,
+      "net_return_bps": -12.0568
+    },
+    {
+      "entry_time_ms": 1783517095760,
+      "exit_time_ms": 1783517096626,
+      "entry_price": 1736.507232,
+      "exit_price": 1736.082714,
+      "net_return_bps": -10.4447
+    },
+    {
+      "entry_time_ms": 1783517098286,
+      "exit_time_ms": 1783517099696,
+      "entry_price": 1736.717274,
+      "exit_price": 1736.042722,
+      "net_return_bps": -11.8841
+    },
+    {
+      "entry_time_ms": 1783517100071,
+      "exit_time_ms": 1783517100071,
+      "entry_price": 1736.737278,
+      "exit_price": 1736.042722,
+      "net_return_bps": -11.9992
+    },
+    {
+      "entry_time_ms": 1783517101077,
+      "exit_time_ms": 1783517101225,
+      "entry_price": 1735.607052,
+      "exit_price": 1735.00293,
+      "net_return_bps": -11.4808
+    },
+    {
+      "entry_time_ms": 1783517101425,
+      "exit_time_ms": 1783517101441,
+      "entry_price": 1735.357002,
+      "exit_price": 1734.653,
+      "net_return_bps": -12.0568
+    },
+    {
+      "entry_time_ms": 1783517101503,
+      "exit_time_ms": 1783517101503,
+      "entry_price": 1735.236978,
+      "exit_price": 1734.533024,
+      "net_return_bps": -12.0568
+    }
+  ]
+}
