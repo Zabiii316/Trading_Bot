@@ -1,0 +1,56 @@
+{
+  "phase": "phase_17_9_out_of_sample_validation_dataset_split",
+  "generated_at_unix": 1784007375,
+  "scope": "out_of_sample_validation_dataset_split_only",
+  "safety_flags": {
+    "BINANCE_TESTNET": "true",
+    "BINANCE_USE_TESTNET": "true",
+    "BINANCE_ENABLE_LIVE_TRADING": "false",
+    "LIVE_TRADING_ALLOWED": "false"
+  },
+  "safe_mode_active": true,
+  "git_working_tree_clean": false,
+  "candidate_input_present": true,
+  "selected_candidate_count": 0,
+  "dataset_count": 2,
+  "split_ratios": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "splits": {
+    "BTCUSDT": {
+      "symbol": "BTCUSDT",
+      "source_dataset": "data/processed/backtest_datasets/btcusdt_phase17_backtest_dataset.jsonl",
+      "total_records": 20000,
+      "train_records": 14000,
+      "validation_records": 3000,
+      "test_records": 3000,
+      "train_path": "data/processed/oos_datasets/btcusdt_train_oos_phase17.jsonl",
+      "validation_path": "data/processed/oos_datasets/btcusdt_validation_oos_phase17.jsonl",
+      "test_path": "data/processed/oos_datasets/btcusdt_test_oos_phase17.jsonl",
+      "split_ready": true
+    },
+    "ETHUSDT": {
+      "symbol": "ETHUSDT",
+      "source_dataset": "data/processed/backtest_datasets/ethusdt_phase17_backtest_dataset.jsonl",
+      "total_records": 2945,
+      "train_records": 2061,
+      "validation_records": 441,
+      "test_records": 443,
+      "train_path": "data/processed/oos_datasets/ethusdt_train_oos_phase17.jsonl",
+      "validation_path": "data/processed/oos_datasets/ethusdt_validation_oos_phase17.jsonl",
+      "test_path": "data/processed/oos_datasets/ethusdt_test_oos_phase17.jsonl",
+      "split_ready": true
+    }
+  },
+  "split_ready_symbols": [
+    "BTCUSDT",
+    "ETHUSDT"
+  ],
+  "split_not_ready_symbols": [],
+  "approved_for_micro_live_execution": false,
+  "approved_for_real_live_trading": false,
+  "decision": "OOS_DATASET_SPLIT_COMPLETE_NO_CANDIDATES_OR_INSUFFICIENT_DATA_NOT_APPROVED_FOR_EXECUTION",
+  "next_phase": "Phase 17.10 \u2014 Out-of-Sample Candidate Validation Runner or Strategy Redesign"
+}
