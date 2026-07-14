@@ -1,0 +1,29 @@
+{
+  "phase": "phase_17_20_paper_shadow_manual_approval_template",
+  "created_at_unix": 1784044168,
+  "instructions": [
+    "This template is for PAPER SHADOW ONLY.",
+    "Do not use this template for micro-live execution.",
+    "Do not use this template for real live trading.",
+    "Real capital must remain disabled.",
+    "Exchange order submission must remain disabled."
+  ],
+  "required_confirmation_text": "I approve PAPER SHADOW ONLY with real capital disabled and exchange order submission disabled.",
+  "approval_record": {
+    "manual_approval_required": true,
+    "manual_approval_provided": false,
+    "approver_name": null,
+    "approver_role": null,
+    "approval_timestamp_utc": null,
+    "approval_scope": "paper_shadow_only",
+    "confirmation_text_required": "I approve PAPER SHADOW ONLY with real capital disabled and exchange order submission disabled.",
+    "confirmation_text_provided": null,
+    "confirmation_text_matches": false,
+    "real_capital_allowed": false,
+    "exchange_order_submission_allowed": false,
+    "live_trading_allowed": false,
+    "micro_live_execution_allowed": false,
+    "paper_shadow_start_allowed": false,
+    "approval_status": "MANUAL_APPROVAL_RECORD_CREATED_NOT_APPROVED"
+  }
+}
