@@ -1,0 +1,56 @@
+{
+  "phase": "phase_16_20_capital_limits_loss_limit_controls",
+  "generated_at_unix": 1783992353,
+  "scope": "capital_limits_and_loss_limit_controls_only",
+  "not_approved_for": [
+    "real_live_trading",
+    "micro_live_execution",
+    "production_binance_order_submission"
+  ],
+  "safety_flags": {
+    "BINANCE_TESTNET": "true",
+    "BINANCE_USE_TESTNET": "true",
+    "BINANCE_ENABLE_LIVE_TRADING": "false",
+    "LIVE_TRADING_ALLOWED": "false"
+  },
+  "safe_mode_active": true,
+  "inputs_present": {
+    "secrets_manager_controls": true,
+    "production_api_key_audit": true,
+    "manual_approval_record": true,
+    "final_go_no_go_gate": true,
+    "post_soak_review": true
+  },
+  "all_inputs_present": true,
+  "git_working_tree_clean": true,
+  "capital_limits": {
+    "approved_capital_usd": "",
+    "max_single_order_notional_usd": "",
+    "daily_loss_limit_usd": "",
+    "weekly_loss_limit_usd": "",
+    "maximum_drawdown_limit_usd": "",
+    "max_consecutive_losses": "",
+    "capital_limits_formally_approved": false,
+    "loss_limits_formally_approved": false,
+    "operator_understands_loss_limits": false
+  },
+  "numeric_limit_checks": {
+    "approved_capital_valid": false,
+    "max_single_order_notional_valid": false,
+    "daily_loss_limit_valid": false,
+    "weekly_loss_limit_valid": false,
+    "maximum_drawdown_limit_valid": false,
+    "max_consecutive_losses_valid": false
+  },
+  "all_numeric_limits_defined": false,
+  "approved_for_micro_live_execution": false,
+  "decision": "CAPITAL_LIMITS_LOSS_LIMIT_CONTROLS_CREATED_NOT_APPROVED_FOR_EXECUTION",
+  "next_phase": "Phase 16.21 \u2014 Emergency Stop and Kill Switch Retest",
+  "safety_notes": [
+    "This phase defines capital and loss-limit controls only.",
+    "No live trading is enabled.",
+    "Micro-live execution still requires separate manual approval.",
+    "Loss limits must be formally approved before any future micro-live gate.",
+    "Live trading flags must remain disabled."
+  ]
+}
