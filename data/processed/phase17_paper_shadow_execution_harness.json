@@ -1,0 +1,36 @@
+{
+  "phase": "phase_17_18_paper_shadow_execution_harness",
+  "generated_at_unix": 1784043656,
+  "scope": "paper_shadow_execution_harness_only",
+  "action_requested": "create",
+  "safety_flags": {
+    "BINANCE_TESTNET": "true",
+    "BINANCE_USE_TESTNET": "true",
+    "BINANCE_ENABLE_LIVE_TRADING": "false",
+    "LIVE_TRADING_ALLOWED": "false"
+  },
+  "safe_mode_active": true,
+  "git_working_tree_clean": true,
+  "plan_input_present": true,
+  "paper_shadow_plan_count": 0,
+  "harness_session_count": 0,
+  "state_file": "runtime/phase17_paper_shadow_state.json",
+  "harness_sessions": [],
+  "paper_shadow_started": false,
+  "paper_shadow_completed": false,
+  "exchange_order_submission": false,
+  "live_trading_enabled": false,
+  "real_capital_allowed": false,
+  "approved_for_micro_live_execution": false,
+  "approved_for_real_live_trading": false,
+  "decision": "PAPER_SHADOW_EXECUTION_HARNESS_SKIPPED_NO_PAPER_SHADOW_PLANS_STRATEGY_REWORK_REQUIRED",
+  "next_phase": "Phase 17.19 \u2014 Paper Shadow Start Gate or Strategy Redesign",
+  "safety_notes": [
+    "This phase creates the paper shadow execution harness only.",
+    "This phase does not start paper shadow trading.",
+    "This phase does not approve live trading.",
+    "This phase does not approve micro-live execution.",
+    "This phase does not submit Binance orders.",
+    "A separate manual start gate is required before any paper shadow session can run."
+  ]
+}
