@@ -1,0 +1,19 @@
+{
+  "phase": "phase_17_25_paper_shadow_start_readiness_recheck_runtime",
+  "updated_at_unix": 1784046724,
+  "readiness_recheck_passed": false,
+  "manual_approval_provided": false,
+  "approved_for_paper_shadow_start": false,
+  "paper_shadow_started": false,
+  "exchange_order_submission": false,
+  "real_capital_allowed": false,
+  "live_trading_enabled": false,
+  "approved_for_micro_live_execution": false,
+  "approved_for_real_live_trading": false,
+  "blockers": [
+    "harness_sessions_available",
+    "manual_approval_provided",
+    "approved_for_paper_shadow_start"
+  ],
+  "decision": "PAPER_SHADOW_START_READINESS_RECHECK_SKIPPED_NO_HARNESS_SESSIONS_STRATEGY_REWORK_REQUIRED"
+}
