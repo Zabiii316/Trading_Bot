@@ -1,0 +1,48 @@
+{
+  "phase": "phase_18_8_hold_state_weekly_review_summary_record",
+  "created_at_unix": 1784136803,
+  "selected_option": "remain_on_hold",
+  "weekly_summary_passed": true,
+  "summary_checks": {
+    "safe_mode_active": true,
+    "snapshot_present": true,
+    "runtime_snapshot_present": true,
+    "dashboard_plan_present": true,
+    "daily_checklist_present": true,
+    "monitoring_report_present": true,
+    "next_action_present": true,
+    "selected_option_is_remain_on_hold": true,
+    "dashboard_snapshot_ready": true,
+    "dashboard_review_plan_ready": true,
+    "daily_checklist_ready": true,
+    "hold_state_report_passed": true,
+    "paper_shadow_not_started": true,
+    "paper_shadow_start_not_approved": true,
+    "exchange_order_submission_disabled": true,
+    "micro_live_not_approved": true,
+    "real_live_not_approved": true
+  },
+  "blockers": [],
+  "weekly_review_summary": {
+    "system_state": "HOLD",
+    "paper_shadow_started": false,
+    "paper_shadow_start_approved": false,
+    "exchange_order_submission": false,
+    "micro_live_approved": false,
+    "real_live_trading_approved": false,
+    "real_capital_allowed": false,
+    "dashboard_review_mode": "observation_only",
+    "next_action": "continue_hold_state_monitoring"
+  },
+  "recommended_actions": [
+    "keep_safe_trading_flags_enabled",
+    "keep_live_trading_flags_disabled",
+    "continue_daily_hold_state_checklist",
+    "repeat_weekly_dashboard_review",
+    "do_not_start_paper_shadow_without_separate_manual_approval",
+    "do_not_enable_exchange_order_submission",
+    "do_not_use_real_capital"
+  ],
+  "decision": "PHASE_18_HOLD_STATE_WEEKLY_REVIEW_SUMMARY_COMPLETE_HOLD_CONFIRMED_NOT_APPROVED_FOR_EXECUTION",
+  "next_phase": "Phase 18.9 \u2014 Hold State Evidence Index"
+}
