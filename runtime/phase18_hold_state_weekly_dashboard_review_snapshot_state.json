@@ -1,0 +1,94 @@
+{
+  "phase": "phase_18_7_hold_state_weekly_dashboard_review_snapshot_record",
+  "created_at_unix": 1784136484,
+  "selected_option": "remain_on_hold",
+  "dashboard_snapshot_ready": true,
+  "monitoring_endpoint_available": false,
+  "snapshot_checks": {
+    "safe_mode_active": true,
+    "plan_input_present": true,
+    "runtime_plan_present": true,
+    "daily_checklist_present": true,
+    "health_check_present": true,
+    "monitoring_report_present": true,
+    "next_action_present": true,
+    "selected_option_is_remain_on_hold": true,
+    "dashboard_review_plan_ready": true,
+    "daily_checklist_ready": true,
+    "core_hold_health_passed": true,
+    "hold_state_report_passed": true,
+    "paper_shadow_not_started": true,
+    "paper_shadow_start_not_approved": true,
+    "exchange_order_submission_disabled": true,
+    "micro_live_not_approved": true,
+    "real_live_not_approved": true
+  },
+  "blockers": [],
+  "endpoint_results": [
+    {
+      "url": "http://127.0.0.1:8081/health/live",
+      "ok": false,
+      "error": "URLError: <urlopen error [Errno 61] Connection refused>"
+    },
+    {
+      "url": "http://127.0.0.1:8081/health/ready",
+      "ok": false,
+      "error": "URLError: <urlopen error [Errno 61] Connection refused>"
+    },
+    {
+      "url": "http://127.0.0.1:8081/health",
+      "ok": false,
+      "error": "URLError: <urlopen error [Errno 61] Connection refused>"
+    },
+    {
+      "url": "http://127.0.0.1:8081/metrics",
+      "ok": false,
+      "error": "URLError: <urlopen error [Errno 61] Connection refused>"
+    }
+  ],
+  "dashboard_snapshot_items": [
+    {
+      "dashboard": "Execution & Risk Dashboard",
+      "expected_hold_state": [
+        "No live orders",
+        "No live fills",
+        "No approved micro-live execution",
+        "No real capital exposure",
+        "Kill switch safe or inactive"
+      ],
+      "review_status": "manual_visual_review_required",
+      "execution_allowed": false
+    },
+    {
+      "dashboard": "Market Data Health Dashboard",
+      "expected_hold_state": [
+        "Component health visible if monitoring service is running",
+        "Ready status visible if monitoring service is running",
+        "No execution dependency",
+        "Endpoint availability optional during hold state"
+      ],
+      "review_status": "manual_visual_review_required",
+      "execution_allowed": false
+    },
+    {
+      "dashboard": "Strategy Health Dashboard",
+      "expected_hold_state": [
+        "Strategy metrics observation only",
+        "No paper shadow execution",
+        "No live signal execution",
+        "No exchange order submission"
+      ],
+      "review_status": "manual_visual_review_required",
+      "execution_allowed": false
+    }
+  ],
+  "paper_shadow_started": false,
+  "approved_for_paper_shadow_start": false,
+  "exchange_order_submission": false,
+  "real_capital_allowed": false,
+  "live_trading_enabled": false,
+  "approved_for_micro_live_execution": false,
+  "approved_for_real_live_trading": false,
+  "decision": "PHASE_18_HOLD_STATE_WEEKLY_DASHBOARD_SNAPSHOT_COMPLETE_ENDPOINTS_OPTIONAL_NOT_AVAILABLE",
+  "next_phase": "Phase 18.8 \u2014 Hold State Weekly Review Summary"
+}
