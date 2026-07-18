@@ -1,0 +1,64 @@
+{
+  "phase": "phase_19_1_strategy_rework_historical_data_expansion_decision_record",
+  "created_at_unix": 1784348051,
+  "git_head": "b58eee5beb2b254d61b99654692b14c30a136954",
+  "system_state": "HOLD",
+  "selected_option": "remain_on_hold",
+  "phase19_decision_ready": true,
+  "decision_checks": {
+    "safe_mode_active": true,
+    "phase18_closeout_present": true,
+    "phase18_closed_safely": true,
+    "selected_option_is_remain_on_hold": true,
+    "strategy_rework_required": true,
+    "historical_data_expansion_required": true,
+    "paper_shadow_not_started": true,
+    "paper_shadow_start_not_approved": true,
+    "exchange_order_submission_disabled": true,
+    "micro_live_not_approved": true,
+    "real_live_not_approved": true
+  },
+  "blockers": [],
+  "strategy_rework_required": true,
+  "historical_data_expansion_required": true,
+  "selected_phase19_path": "historical_data_expansion_first_then_strategy_rework",
+  "dataset_notes": {
+    "phase17_quality_gate_present": true,
+    "phase17_data_audit_present": true,
+    "phase17_dataset_builder_present": true,
+    "phase17_final_candidates_present": true,
+    "failed_symbols": [
+      "BTCUSDT",
+      "ETHUSDT"
+    ],
+    "data_audit_decision": "HISTORICAL_DATA_COVERAGE_AUDIT_COMPLETE_DATASET_EXPANSION_REQUIRED",
+    "dataset_builder_decision": "HISTORICAL_BACKTEST_DATASET_BUILT_PARTIAL_DATASET_EXPANSION_STILL_REQUIRED",
+    "candidate_review_decision": "FINAL_STRATEGY_CANDIDATE_REVIEW_COMPLETE_NO_CANDIDATES_STRATEGY_REWORK_REQUIRED_NOT_APPROVED_FOR_EXECUTION"
+  },
+  "allowed_actions": [
+    "historical_data_expansion_plan_only",
+    "offline_dataset_building_only",
+    "offline_strategy_rework_only",
+    "offline_backtest_design_only",
+    "documentation_only"
+  ],
+  "blocked_actions": [
+    "paper_shadow_start",
+    "micro_live_execution",
+    "real_live_trading",
+    "exchange_order_submission",
+    "real_capital_usage",
+    "production_api_key_usage"
+  ],
+  "status_summary": {
+    "paper_shadow_started": false,
+    "approved_for_paper_shadow_start": false,
+    "exchange_order_submission": false,
+    "real_capital_allowed": false,
+    "live_trading_enabled": false,
+    "approved_for_micro_live_execution": false,
+    "approved_for_real_live_trading": false
+  },
+  "decision": "PHASE_19_STRATEGY_REWORK_AND_DATA_EXPANSION_DECISION_CREATED_NOT_APPROVED_FOR_EXECUTION",
+  "next_phase": "Phase 19.2 \u2014 Historical Data Expansion Plan"
+}
