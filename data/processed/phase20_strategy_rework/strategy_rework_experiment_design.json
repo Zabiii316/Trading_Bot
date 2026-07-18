@@ -1,0 +1,145 @@
+{
+  "phase": "phase_20_4_strategy_rework_experiment_design_record",
+  "created_at_unix": 1784363077,
+  "git_head": "77326bd52af85a968d027da54bb7c8fcf287ec24",
+  "system_state": "HOLD_RESEARCH_ONLY",
+  "selected_option": "remain_on_hold",
+  "selected_phase19_path": "historical_data_expansion_first_then_strategy_rework",
+  "selected_next_action": "remain_on_hold",
+  "strategy_rework_experiment_design_ready": true,
+  "design_checks": {
+    "safe_mode_active": true,
+    "hypothesis_plan_present": true,
+    "hypothesis_runtime_present": true,
+    "failure_review_present": true,
+    "readiness_present": true,
+    "hypothesis_plan_ready": true,
+    "selected_option_is_remain_on_hold": true,
+    "selected_next_action_is_remain_on_hold": true,
+    "btc_dataset_present": true,
+    "eth_dataset_present": true,
+    "btc_dataset_has_rows": true,
+    "eth_dataset_has_rows": true,
+    "experiment_groups_created": true,
+    "required_metrics_created": true,
+    "quality_gate_created": true,
+    "approved_for_execution_false": true,
+    "approved_for_paper_shadow_false": true,
+    "approved_for_live_false": true,
+    "paper_shadow_not_started": true,
+    "paper_shadow_start_not_approved": true,
+    "exchange_order_submission_disabled": true,
+    "micro_live_not_approved": true,
+    "real_live_not_approved": true
+  },
+  "blockers": [],
+  "btc_dataset_rows": 20000,
+  "eth_dataset_rows": 2945,
+  "experiment_design": {
+    "design_id": "phase20_strategy_rework_experiment_design_v1",
+    "mode": "offline_research_only",
+    "datasets": [
+      {
+        "symbol": "BTCUSDT",
+        "path": "data/processed/backtest_datasets/btcusdt_phase17_backtest_dataset.jsonl",
+        "rows": 20000,
+        "allowed": true
+      },
+      {
+        "symbol": "ETHUSDT",
+        "path": "data/processed/backtest_datasets/ethusdt_phase17_backtest_dataset.jsonl",
+        "rows": 2945,
+        "allowed": true
+      }
+    ],
+    "experiment_groups": [
+      {
+        "group_id": "regime_filter",
+        "purpose": "Test whether trend/range/volatility filters reduce bad entries.",
+        "variants": [
+          "none_baseline_reference",
+          "price_above_slow_ma",
+          "positive_momentum_only",
+          "volatility_band_filter",
+          "trend_strength_filter"
+        ]
+      },
+      {
+        "group_id": "multi_timeframe_confirmation",
+        "purpose": "Test whether higher-timeframe alignment improves signal quality.",
+        "variants": [
+          "single_timeframe_reference",
+          "fast_plus_slow_confirmation",
+          "momentum_alignment",
+          "trend_confirmation_required"
+        ]
+      },
+      {
+        "group_id": "volatility_aware_exits",
+        "purpose": "Test stronger loss control and exit logic.",
+        "variants": [
+          "fixed_exit_reference",
+          "atr_stop",
+          "atr_take_profit",
+          "trailing_stop",
+          "time_stop",
+          "signal_invalidation_stop"
+        ]
+      },
+      {
+        "group_id": "fee_slippage_edge_filter",
+        "purpose": "Reject trades where expected edge does not beat costs.",
+        "variants": [
+          "fee_slippage_6bps",
+          "fee_slippage_8bps",
+          "fee_slippage_10bps",
+          "minimum_expected_edge_12bps",
+          "minimum_expected_edge_18bps"
+        ]
+      },
+      {
+        "group_id": "robustness_filter",
+        "purpose": "Reject unstable or overfit candidates.",
+        "variants": [
+          "btc_only_reject",
+          "eth_only_reject",
+          "both_symbols_required",
+          "parameter_neighborhood_required",
+          "drawdown_cap_required"
+        ]
+      }
+    ],
+    "required_metrics": [
+      "net_return_bps",
+      "gross_return_bps",
+      "fee_bps",
+      "slippage_bps",
+      "trade_count",
+      "win_rate",
+      "profit_factor",
+      "max_drawdown_pct",
+      "average_win_bps",
+      "average_loss_bps",
+      "expectancy_bps",
+      "symbol_level_results"
+    ],
+    "minimum_quality_gate": {
+      "net_return_bps_must_be_positive": true,
+      "max_drawdown_pct_must_improve_vs_phase17": true,
+      "must_pass_btc_and_eth": true,
+      "must_include_fees_and_slippage": true,
+      "must_not_depend_on_one_symbol": true,
+      "must_not_approve_execution": true
+    }
+  },
+  "approved_for_execution": false,
+  "approved_for_paper_shadow": false,
+  "approved_for_live": false,
+  "paper_shadow_started": false,
+  "approved_for_paper_shadow_start": false,
+  "exchange_order_submission": false,
+  "approved_for_micro_live_execution": false,
+  "approved_for_real_live_trading": false,
+  "decision": "PHASE_20_STRATEGY_REWORK_EXPERIMENT_DESIGN_CREATED_RESEARCH_ONLY_NOT_APPROVED_FOR_EXECUTION",
+  "next_phase": "Phase 20.5 \u2014 Offline Reworked Strategy Backtest Spec"
+}
