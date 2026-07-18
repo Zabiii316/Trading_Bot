@@ -1,0 +1,23 @@
+{
+  "phase": "phase_19_5_dataset_inventory",
+  "created_at_unix": 1784349237,
+  "dataset_file_count": 2,
+  "dataset_inventory": [
+    {
+      "file": "data/processed/backtest_datasets/btcusdt_phase17_backtest_dataset.jsonl",
+      "size_bytes": 14086171,
+      "row_count_sample_or_total": 20000,
+      "detected_symbol": "BTCUSDT",
+      "detected_timeframe": "UNKNOWN",
+      "exists": true
+    },
+    {
+      "file": "data/processed/backtest_datasets/ethusdt_phase17_backtest_dataset.jsonl",
+      "size_bytes": 4005191,
+      "row_count_sample_or_total": 2945,
+      "detected_symbol": "ETHUSDT",
+      "detected_timeframe": "UNKNOWN",
+      "exists": true
+    }
+  ]
+}
