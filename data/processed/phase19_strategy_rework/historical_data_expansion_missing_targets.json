@@ -1,0 +1,274 @@
+{
+  "phase": "phase_19_3_missing_targets",
+  "created_at_unix": 1784348461,
+  "required_missing_targets": [
+    {
+      "symbol": "BTCUSDT",
+      "timeframe": "1m",
+      "history_window_days": 180,
+      "priority": "required",
+      "mode": "offline_dataset_expansion",
+      "download_now": false,
+      "execution_allowed": false,
+      "expected_raw_output": "data/raw/historical/btcusdt_1m_180d.jsonl",
+      "expected_processed_output": "data/processed/backtest_datasets/btcusdt_1m_phase19_expanded_dataset.jsonl"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "timeframe": "5m",
+      "history_window_days": 180,
+      "priority": "required",
+      "mode": "offline_dataset_expansion",
+      "download_now": false,
+      "execution_allowed": false,
+      "expected_raw_output": "data/raw/historical/btcusdt_5m_180d.jsonl",
+      "expected_processed_output": "data/processed/backtest_datasets/btcusdt_5m_phase19_expanded_dataset.jsonl"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "timeframe": "15m",
+      "history_window_days": 180,
+      "priority": "required",
+      "mode": "offline_dataset_expansion",
+      "download_now": false,
+      "execution_allowed": false,
+      "expected_raw_output": "data/raw/historical/btcusdt_15m_180d.jsonl",
+      "expected_processed_output": "data/processed/backtest_datasets/btcusdt_15m_phase19_expanded_dataset.jsonl"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "timeframe": "1h",
+      "history_window_days": 180,
+      "priority": "required",
+      "mode": "offline_dataset_expansion",
+      "download_now": false,
+      "execution_allowed": false,
+      "expected_raw_output": "data/raw/historical/btcusdt_1h_180d.jsonl",
+      "expected_processed_output": "data/processed/backtest_datasets/btcusdt_1h_phase19_expanded_dataset.jsonl"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "timeframe": "1m",
+      "history_window_days": 180,
+      "priority": "required",
+      "mode": "offline_dataset_expansion",
+      "download_now": false,
+      "execution_allowed": false,
+      "expected_raw_output": "data/raw/historical/ethusdt_1m_180d.jsonl",
+      "expected_processed_output": "data/processed/backtest_datasets/ethusdt_1m_phase19_expanded_dataset.jsonl"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "timeframe": "5m",
+      "history_window_days": 180,
+      "priority": "required",
+      "mode": "offline_dataset_expansion",
+      "download_now": false,
+      "execution_allowed": false,
+      "expected_raw_output": "data/raw/historical/ethusdt_5m_180d.jsonl",
+      "expected_processed_output": "data/processed/backtest_datasets/ethusdt_5m_phase19_expanded_dataset.jsonl"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "timeframe": "15m",
+      "history_window_days": 180,
+      "priority": "required",
+      "mode": "offline_dataset_expansion",
+      "download_now": false,
+      "execution_allowed": false,
+      "expected_raw_output": "data/raw/historical/ethusdt_15m_180d.jsonl",
+      "expected_processed_output": "data/processed/backtest_datasets/ethusdt_15m_phase19_expanded_dataset.jsonl"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "timeframe": "1h",
+      "history_window_days": 180,
+      "priority": "required",
+      "mode": "offline_dataset_expansion",
+      "download_now": false,
+      "execution_allowed": false,
+      "expected_raw_output": "data/raw/historical/ethusdt_1h_180d.jsonl",
+      "expected_processed_output": "data/processed/backtest_datasets/ethusdt_1h_phase19_expanded_dataset.jsonl"
+    },
+    {
+      "symbol": "BNBUSDT",
+      "timeframe": "1m",
+      "history_window_days": 180,
+      "priority": "required",
+      "mode": "offline_dataset_expansion",
+      "download_now": false,
+      "execution_allowed": false,
+      "expected_raw_output": "data/raw/historical/bnbusdt_1m_180d.jsonl",
+      "expected_processed_output": "data/processed/backtest_datasets/bnbusdt_1m_phase19_expanded_dataset.jsonl"
+    },
+    {
+      "symbol": "BNBUSDT",
+      "timeframe": "5m",
+      "history_window_days": 180,
+      "priority": "required",
+      "mode": "offline_dataset_expansion",
+      "download_now": false,
+      "execution_allowed": false,
+      "expected_raw_output": "data/raw/historical/bnbusdt_5m_180d.jsonl",
+      "expected_processed_output": "data/processed/backtest_datasets/bnbusdt_5m_phase19_expanded_dataset.jsonl"
+    },
+    {
+      "symbol": "BNBUSDT",
+      "timeframe": "15m",
+      "history_window_days": 180,
+      "priority": "required",
+      "mode": "offline_dataset_expansion",
+      "download_now": false,
+      "execution_allowed": false,
+      "expected_raw_output": "data/raw/historical/bnbusdt_15m_180d.jsonl",
+      "expected_processed_output": "data/processed/backtest_datasets/bnbusdt_15m_phase19_expanded_dataset.jsonl"
+    },
+    {
+      "symbol": "BNBUSDT",
+      "timeframe": "1h",
+      "history_window_days": 180,
+      "priority": "required",
+      "mode": "offline_dataset_expansion",
+      "download_now": false,
+      "execution_allowed": false,
+      "expected_raw_output": "data/raw/historical/bnbusdt_1h_180d.jsonl",
+      "expected_processed_output": "data/processed/backtest_datasets/bnbusdt_1h_phase19_expanded_dataset.jsonl"
+    }
+  ],
+  "optional_missing_targets": [
+    {
+      "symbol": "SOLUSDT",
+      "timeframe": "1m",
+      "history_window_days": 180,
+      "priority": "optional",
+      "mode": "offline_dataset_expansion",
+      "download_now": false,
+      "execution_allowed": false,
+      "expected_raw_output": "data/raw/historical/solusdt_1m_180d.jsonl",
+      "expected_processed_output": "data/processed/backtest_datasets/solusdt_1m_phase19_expanded_dataset.jsonl"
+    },
+    {
+      "symbol": "SOLUSDT",
+      "timeframe": "5m",
+      "history_window_days": 180,
+      "priority": "optional",
+      "mode": "offline_dataset_expansion",
+      "download_now": false,
+      "execution_allowed": false,
+      "expected_raw_output": "data/raw/historical/solusdt_5m_180d.jsonl",
+      "expected_processed_output": "data/processed/backtest_datasets/solusdt_5m_phase19_expanded_dataset.jsonl"
+    },
+    {
+      "symbol": "SOLUSDT",
+      "timeframe": "15m",
+      "history_window_days": 180,
+      "priority": "optional",
+      "mode": "offline_dataset_expansion",
+      "download_now": false,
+      "execution_allowed": false,
+      "expected_raw_output": "data/raw/historical/solusdt_15m_180d.jsonl",
+      "expected_processed_output": "data/processed/backtest_datasets/solusdt_15m_phase19_expanded_dataset.jsonl"
+    },
+    {
+      "symbol": "SOLUSDT",
+      "timeframe": "1h",
+      "history_window_days": 180,
+      "priority": "optional",
+      "mode": "offline_dataset_expansion",
+      "download_now": false,
+      "execution_allowed": false,
+      "expected_raw_output": "data/raw/historical/solusdt_1h_180d.jsonl",
+      "expected_processed_output": "data/processed/backtest_datasets/solusdt_1h_phase19_expanded_dataset.jsonl"
+    },
+    {
+      "symbol": "XRPUSDT",
+      "timeframe": "1m",
+      "history_window_days": 180,
+      "priority": "optional",
+      "mode": "offline_dataset_expansion",
+      "download_now": false,
+      "execution_allowed": false,
+      "expected_raw_output": "data/raw/historical/xrpusdt_1m_180d.jsonl",
+      "expected_processed_output": "data/processed/backtest_datasets/xrpusdt_1m_phase19_expanded_dataset.jsonl"
+    },
+    {
+      "symbol": "XRPUSDT",
+      "timeframe": "5m",
+      "history_window_days": 180,
+      "priority": "optional",
+      "mode": "offline_dataset_expansion",
+      "download_now": false,
+      "execution_allowed": false,
+      "expected_raw_output": "data/raw/historical/xrpusdt_5m_180d.jsonl",
+      "expected_processed_output": "data/processed/backtest_datasets/xrpusdt_5m_phase19_expanded_dataset.jsonl"
+    },
+    {
+      "symbol": "XRPUSDT",
+      "timeframe": "15m",
+      "history_window_days": 180,
+      "priority": "optional",
+      "mode": "offline_dataset_expansion",
+      "download_now": false,
+      "execution_allowed": false,
+      "expected_raw_output": "data/raw/historical/xrpusdt_15m_180d.jsonl",
+      "expected_processed_output": "data/processed/backtest_datasets/xrpusdt_15m_phase19_expanded_dataset.jsonl"
+    },
+    {
+      "symbol": "XRPUSDT",
+      "timeframe": "1h",
+      "history_window_days": 180,
+      "priority": "optional",
+      "mode": "offline_dataset_expansion",
+      "download_now": false,
+      "execution_allowed": false,
+      "expected_raw_output": "data/raw/historical/xrpusdt_1h_180d.jsonl",
+      "expected_processed_output": "data/processed/backtest_datasets/xrpusdt_1h_phase19_expanded_dataset.jsonl"
+    },
+    {
+      "symbol": "ADAUSDT",
+      "timeframe": "1m",
+      "history_window_days": 180,
+      "priority": "optional",
+      "mode": "offline_dataset_expansion",
+      "download_now": false,
+      "execution_allowed": false,
+      "expected_raw_output": "data/raw/historical/adausdt_1m_180d.jsonl",
+      "expected_processed_output": "data/processed/backtest_datasets/adausdt_1m_phase19_expanded_dataset.jsonl"
+    },
+    {
+      "symbol": "ADAUSDT",
+      "timeframe": "5m",
+      "history_window_days": 180,
+      "priority": "optional",
+      "mode": "offline_dataset_expansion",
+      "download_now": false,
+      "execution_allowed": false,
+      "expected_raw_output": "data/raw/historical/adausdt_5m_180d.jsonl",
+      "expected_processed_output": "data/processed/backtest_datasets/adausdt_5m_phase19_expanded_dataset.jsonl"
+    },
+    {
+      "symbol": "ADAUSDT",
+      "timeframe": "15m",
+      "history_window_days": 180,
+      "priority": "optional",
+      "mode": "offline_dataset_expansion",
+      "download_now": false,
+      "execution_allowed": false,
+      "expected_raw_output": "data/raw/historical/adausdt_15m_180d.jsonl",
+      "expected_processed_output": "data/processed/backtest_datasets/adausdt_15m_phase19_expanded_dataset.jsonl"
+    },
+    {
+      "symbol": "ADAUSDT",
+      "timeframe": "1h",
+      "history_window_days": 180,
+      "priority": "optional",
+      "mode": "offline_dataset_expansion",
+      "download_now": false,
+      "execution_allowed": false,
+      "expected_raw_output": "data/raw/historical/adausdt_1h_180d.jsonl",
+      "expected_processed_output": "data/processed/backtest_datasets/adausdt_1h_phase19_expanded_dataset.jsonl"
+    }
+  ],
+  "download_now": false,
+  "execution_allowed": false
+}
