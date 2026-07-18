@@ -1,8 +1,8 @@
 {
   "phase": "phase_20_18_strategy_rework_hold_state_consolidation",
-  "generated_at_unix": 1784408654,
+  "generated_at_unix": 1784414139,
   "scope": "hold_state_consolidation_only_no_dry_run_no_backtest_no_execution",
-  "git_head": "db91bd40c85cb2a94916e43fc086e3053a4efdd6",
+  "git_head": "819dec768630cae8ca0bfc135d8079bac0e219e5",
   "safety_flags": {
     "BINANCE_TESTNET": "true",
     "BINANCE_USE_TESTNET": "true",
