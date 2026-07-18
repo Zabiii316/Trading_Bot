@@ -1,0 +1,311 @@
+{
+  "phase": "phase_19_6_historical_data_gap_fill_plan_record",
+  "created_at_unix": 1784349482,
+  "git_head": "312d1048ae11386b21615fa91ab5d983cc484c41",
+  "system_state": "HOLD",
+  "selected_option": "remain_on_hold",
+  "selected_phase19_path": "historical_data_expansion_first_then_strategy_rework",
+  "gap_fill_plan_ready": true,
+  "gap_fill_needed": true,
+  "target_coverage_complete": false,
+  "gap_fill_checks": {
+    "safe_mode_active": true,
+    "coverage_report_present": true,
+    "coverage_file_present": true,
+    "missing_required_file_present": true,
+    "manifest_file_present": true,
+    "quality_rules_present": true,
+    "phase18_closeout_present": true,
+    "selected_option_is_remain_on_hold": true,
+    "selected_path_is_data_expansion_first": true,
+    "coverage_validation_ready": true,
+    "quality_rules_ready": true,
+    "phase18_closed_safely": true,
+    "paper_shadow_not_started": true,
+    "paper_shadow_start_not_approved": true,
+    "exchange_order_submission_disabled": true,
+    "micro_live_not_approved": true,
+    "real_live_not_approved": true
+  },
+  "blockers": [],
+  "missing_required_target_count": 12,
+  "gap_fill_plan_items": [
+    {
+      "symbol": "BTCUSDT",
+      "timeframe": "1m",
+      "priority": "required",
+      "gap_status": "missing",
+      "expected_processed_output": "data/processed/backtest_datasets/btcusdt_1m_phase19_expanded_dataset.jsonl",
+      "collection_mode": "offline_historical_dataset_build_only",
+      "download_now": false,
+      "execution_allowed": false,
+      "paper_shadow_allowed": false,
+      "live_trading_allowed": false,
+      "required_validation_before_use": [
+        "schema_required_columns",
+        "timestamps_no_duplicates",
+        "timestamps_monotonic",
+        "prices_positive",
+        "ohlc_consistency",
+        "volume_non_negative",
+        "minimum_history_window"
+      ]
+    },
+    {
+      "symbol": "BTCUSDT",
+      "timeframe": "5m",
+      "priority": "required",
+      "gap_status": "missing",
+      "expected_processed_output": "data/processed/backtest_datasets/btcusdt_5m_phase19_expanded_dataset.jsonl",
+      "collection_mode": "offline_historical_dataset_build_only",
+      "download_now": false,
+      "execution_allowed": false,
+      "paper_shadow_allowed": false,
+      "live_trading_allowed": false,
+      "required_validation_before_use": [
+        "schema_required_columns",
+        "timestamps_no_duplicates",
+        "timestamps_monotonic",
+        "prices_positive",
+        "ohlc_consistency",
+        "volume_non_negative",
+        "minimum_history_window"
+      ]
+    },
+    {
+      "symbol": "BTCUSDT",
+      "timeframe": "15m",
+      "priority": "required",
+      "gap_status": "missing",
+      "expected_processed_output": "data/processed/backtest_datasets/btcusdt_15m_phase19_expanded_dataset.jsonl",
+      "collection_mode": "offline_historical_dataset_build_only",
+      "download_now": false,
+      "execution_allowed": false,
+      "paper_shadow_allowed": false,
+      "live_trading_allowed": false,
+      "required_validation_before_use": [
+        "schema_required_columns",
+        "timestamps_no_duplicates",
+        "timestamps_monotonic",
+        "prices_positive",
+        "ohlc_consistency",
+        "volume_non_negative",
+        "minimum_history_window"
+      ]
+    },
+    {
+      "symbol": "BTCUSDT",
+      "timeframe": "1h",
+      "priority": "required",
+      "gap_status": "missing",
+      "expected_processed_output": "data/processed/backtest_datasets/btcusdt_1h_phase19_expanded_dataset.jsonl",
+      "collection_mode": "offline_historical_dataset_build_only",
+      "download_now": false,
+      "execution_allowed": false,
+      "paper_shadow_allowed": false,
+      "live_trading_allowed": false,
+      "required_validation_before_use": [
+        "schema_required_columns",
+        "timestamps_no_duplicates",
+        "timestamps_monotonic",
+        "prices_positive",
+        "ohlc_consistency",
+        "volume_non_negative",
+        "minimum_history_window"
+      ]
+    },
+    {
+      "symbol": "ETHUSDT",
+      "timeframe": "1m",
+      "priority": "required",
+      "gap_status": "missing",
+      "expected_processed_output": "data/processed/backtest_datasets/ethusdt_1m_phase19_expanded_dataset.jsonl",
+      "collection_mode": "offline_historical_dataset_build_only",
+      "download_now": false,
+      "execution_allowed": false,
+      "paper_shadow_allowed": false,
+      "live_trading_allowed": false,
+      "required_validation_before_use": [
+        "schema_required_columns",
+        "timestamps_no_duplicates",
+        "timestamps_monotonic",
+        "prices_positive",
+        "ohlc_consistency",
+        "volume_non_negative",
+        "minimum_history_window"
+      ]
+    },
+    {
+      "symbol": "ETHUSDT",
+      "timeframe": "5m",
+      "priority": "required",
+      "gap_status": "missing",
+      "expected_processed_output": "data/processed/backtest_datasets/ethusdt_5m_phase19_expanded_dataset.jsonl",
+      "collection_mode": "offline_historical_dataset_build_only",
+      "download_now": false,
+      "execution_allowed": false,
+      "paper_shadow_allowed": false,
+      "live_trading_allowed": false,
+      "required_validation_before_use": [
+        "schema_required_columns",
+        "timestamps_no_duplicates",
+        "timestamps_monotonic",
+        "prices_positive",
+        "ohlc_consistency",
+        "volume_non_negative",
+        "minimum_history_window"
+      ]
+    },
+    {
+      "symbol": "ETHUSDT",
+      "timeframe": "15m",
+      "priority": "required",
+      "gap_status": "missing",
+      "expected_processed_output": "data/processed/backtest_datasets/ethusdt_15m_phase19_expanded_dataset.jsonl",
+      "collection_mode": "offline_historical_dataset_build_only",
+      "download_now": false,
+      "execution_allowed": false,
+      "paper_shadow_allowed": false,
+      "live_trading_allowed": false,
+      "required_validation_before_use": [
+        "schema_required_columns",
+        "timestamps_no_duplicates",
+        "timestamps_monotonic",
+        "prices_positive",
+        "ohlc_consistency",
+        "volume_non_negative",
+        "minimum_history_window"
+      ]
+    },
+    {
+      "symbol": "ETHUSDT",
+      "timeframe": "1h",
+      "priority": "required",
+      "gap_status": "missing",
+      "expected_processed_output": "data/processed/backtest_datasets/ethusdt_1h_phase19_expanded_dataset.jsonl",
+      "collection_mode": "offline_historical_dataset_build_only",
+      "download_now": false,
+      "execution_allowed": false,
+      "paper_shadow_allowed": false,
+      "live_trading_allowed": false,
+      "required_validation_before_use": [
+        "schema_required_columns",
+        "timestamps_no_duplicates",
+        "timestamps_monotonic",
+        "prices_positive",
+        "ohlc_consistency",
+        "volume_non_negative",
+        "minimum_history_window"
+      ]
+    },
+    {
+      "symbol": "BNBUSDT",
+      "timeframe": "1m",
+      "priority": "required",
+      "gap_status": "missing",
+      "expected_processed_output": "data/processed/backtest_datasets/bnbusdt_1m_phase19_expanded_dataset.jsonl",
+      "collection_mode": "offline_historical_dataset_build_only",
+      "download_now": false,
+      "execution_allowed": false,
+      "paper_shadow_allowed": false,
+      "live_trading_allowed": false,
+      "required_validation_before_use": [
+        "schema_required_columns",
+        "timestamps_no_duplicates",
+        "timestamps_monotonic",
+        "prices_positive",
+        "ohlc_consistency",
+        "volume_non_negative",
+        "minimum_history_window"
+      ]
+    },
+    {
+      "symbol": "BNBUSDT",
+      "timeframe": "5m",
+      "priority": "required",
+      "gap_status": "missing",
+      "expected_processed_output": "data/processed/backtest_datasets/bnbusdt_5m_phase19_expanded_dataset.jsonl",
+      "collection_mode": "offline_historical_dataset_build_only",
+      "download_now": false,
+      "execution_allowed": false,
+      "paper_shadow_allowed": false,
+      "live_trading_allowed": false,
+      "required_validation_before_use": [
+        "schema_required_columns",
+        "timestamps_no_duplicates",
+        "timestamps_monotonic",
+        "prices_positive",
+        "ohlc_consistency",
+        "volume_non_negative",
+        "minimum_history_window"
+      ]
+    },
+    {
+      "symbol": "BNBUSDT",
+      "timeframe": "15m",
+      "priority": "required",
+      "gap_status": "missing",
+      "expected_processed_output": "data/processed/backtest_datasets/bnbusdt_15m_phase19_expanded_dataset.jsonl",
+      "collection_mode": "offline_historical_dataset_build_only",
+      "download_now": false,
+      "execution_allowed": false,
+      "paper_shadow_allowed": false,
+      "live_trading_allowed": false,
+      "required_validation_before_use": [
+        "schema_required_columns",
+        "timestamps_no_duplicates",
+        "timestamps_monotonic",
+        "prices_positive",
+        "ohlc_consistency",
+        "volume_non_negative",
+        "minimum_history_window"
+      ]
+    },
+    {
+      "symbol": "BNBUSDT",
+      "timeframe": "1h",
+      "priority": "required",
+      "gap_status": "missing",
+      "expected_processed_output": "data/processed/backtest_datasets/bnbusdt_1h_phase19_expanded_dataset.jsonl",
+      "collection_mode": "offline_historical_dataset_build_only",
+      "download_now": false,
+      "execution_allowed": false,
+      "paper_shadow_allowed": false,
+      "live_trading_allowed": false,
+      "required_validation_before_use": [
+        "schema_required_columns",
+        "timestamps_no_duplicates",
+        "timestamps_monotonic",
+        "prices_positive",
+        "ohlc_consistency",
+        "volume_non_negative",
+        "minimum_history_window"
+      ]
+    }
+  ],
+  "allowed_actions": [
+    "offline_collection_script_build_only",
+    "offline_dataset_import_only",
+    "offline_dataset_quality_validation_only",
+    "offline_manifest_update_only"
+  ],
+  "blocked_actions": [
+    "paper_shadow_start",
+    "micro_live_execution",
+    "real_live_trading",
+    "exchange_order_submission",
+    "real_capital_usage",
+    "production_api_key_usage"
+  ],
+  "status_summary": {
+    "paper_shadow_started": false,
+    "approved_for_paper_shadow_start": false,
+    "exchange_order_submission": false,
+    "real_capital_allowed": false,
+    "live_trading_enabled": false,
+    "approved_for_micro_live_execution": false,
+    "approved_for_real_live_trading": false
+  },
+  "decision": "PHASE_19_HISTORICAL_DATA_GAP_FILL_PLAN_CREATED_GAPS_IDENTIFIED_NOT_APPROVED_FOR_EXECUTION",
+  "next_phase": "Phase 19.7 \u2014 Offline Historical Data Collection Script Builder"
+}
