@@ -1,0 +1,155 @@
+{
+  "phase": "phase_20_3_strategy_rework_hypothesis_plan_record",
+  "created_at_unix": 1784362643,
+  "git_head": "50785bf12405e357fee5af9c4f465fab542a7533",
+  "system_state": "HOLD_RESEARCH_ONLY",
+  "selected_option": "remain_on_hold",
+  "selected_phase19_path": "historical_data_expansion_first_then_strategy_rework",
+  "selected_next_action": "remain_on_hold",
+  "strategy_rework_hypothesis_plan_ready": true,
+  "plan_checks": {
+    "safe_mode_active": true,
+    "failure_review_present": true,
+    "failure_runtime_present": true,
+    "readiness_present": true,
+    "phase19_closeout_present": true,
+    "strategy_failure_review_ready": true,
+    "selected_option_is_remain_on_hold": true,
+    "selected_next_action_is_remain_on_hold": true,
+    "failure_findings_present": true,
+    "failure_hypotheses_present": true,
+    "hypothesis_plan_created": true,
+    "approved_for_execution_false": true,
+    "approved_for_paper_shadow_false": true,
+    "approved_for_live_false": true,
+    "paper_shadow_not_started": true,
+    "paper_shadow_start_not_approved": true,
+    "exchange_order_submission_disabled": true,
+    "micro_live_not_approved": true,
+    "real_live_not_approved": true
+  },
+  "blockers": [],
+  "failure_findings": [
+    {
+      "finding_id": "baseline_negative_expectancy",
+      "description": "Phase 17 baseline backtests showed negative strategy performance, so the current signal logic is not acceptable for execution.",
+      "severity": "critical"
+    },
+    {
+      "finding_id": "candidate_selection_not_approved",
+      "description": "Parameter sweep and candidate review did not produce an execution-approved strategy candidate.",
+      "severity": "critical"
+    },
+    {
+      "finding_id": "historical_data_coverage_limited",
+      "description": "Historical expansion remains on hold, so current rework must treat available BTC/ETH datasets as limited research inputs only.",
+      "severity": "high"
+    },
+    {
+      "finding_id": "execution_gates_closed",
+      "description": "Paper shadow, micro-live, real live trading, and exchange order submission remain disabled.",
+      "severity": "safety_control"
+    }
+  ],
+  "source_failure_hypotheses": [
+    {
+      "hypothesis_id": "weak_regime_filtering",
+      "description": "The strategy may be entering during poor market regimes without sufficient trend/range/volatility filtering."
+    },
+    {
+      "hypothesis_id": "exit_logic_too_simple",
+      "description": "Losses may not be controlled well enough by the existing exit logic, requiring stronger stop, trailing, time, and invalidation rules."
+    },
+    {
+      "hypothesis_id": "fees_slippage_overpower_edge",
+      "description": "The gross signal edge may be too small after fees and slippage."
+    },
+    {
+      "hypothesis_id": "overfit_or_unstable_parameters",
+      "description": "Parameter sweep results may be unstable or not robust enough across symbols."
+    },
+    {
+      "hypothesis_id": "limited_data_coverage",
+      "description": "BTC/ETH-only or limited timeframe coverage may be insufficient for reliable strategy approval."
+    }
+  ],
+  "hypothesis_plan": [
+    {
+      "hypothesis_id": "regime_filter_rework",
+      "problem": "Baseline strategy may enter during poor market regimes.",
+      "planned_fix": "Add trend/range/volatility regime classification before signal approval.",
+      "test_method": "Offline backtest only using existing BTC/ETH datasets.",
+      "success_criteria": [
+        "Lower drawdown than Phase 17 baseline",
+        "Positive net return after fees and slippage",
+        "No single-symbol-only dependency"
+      ],
+      "execution_allowed": false
+    },
+    {
+      "hypothesis_id": "multi_timeframe_confirmation",
+      "problem": "Signal direction may be too weak on a single timeframe.",
+      "planned_fix": "Require higher-timeframe alignment before approving entries.",
+      "test_method": "Offline simulation only.",
+      "success_criteria": [
+        "Reduced false entries",
+        "Improved win rate",
+        "Improved expected net return"
+      ],
+      "execution_allowed": false
+    },
+    {
+      "hypothesis_id": "volatility_aware_exit_logic",
+      "problem": "Exit logic may not control losses well enough.",
+      "planned_fix": "Test ATR stop, trailing stop, time stop, and invalidation stop combinations.",
+      "test_method": "Offline backtest only.",
+      "success_criteria": [
+        "Max drawdown reduced",
+        "Loss tail reduced",
+        "Average loss controlled"
+      ],
+      "execution_allowed": false
+    },
+    {
+      "hypothesis_id": "fee_slippage_edge_filter",
+      "problem": "Gross edge may disappear after fees and slippage.",
+      "planned_fix": "Reject signals unless expected edge exceeds fee and slippage buffer.",
+      "test_method": "Offline scoring and backtest only.",
+      "success_criteria": [
+        "Net return remains positive after conservative slippage",
+        "Low-quality signals rejected",
+        "Trade count remains sufficient for review"
+      ],
+      "execution_allowed": false
+    },
+    {
+      "hypothesis_id": "robustness_filter",
+      "problem": "Parameter candidates may be unstable or overfit.",
+      "planned_fix": "Require candidate stability across symbols, parameter neighborhoods, and time windows.",
+      "test_method": "Offline robustness review only.",
+      "success_criteria": [
+        "Candidate does not depend on one narrow parameter set",
+        "Candidate survives BTC and ETH review",
+        "Candidate passes strict quality gate before any future execution review"
+      ],
+      "execution_allowed": false
+    }
+  ],
+  "planned_outputs": [
+    "strategy_rework_experiment_design",
+    "offline_reworked_strategy_backtest_spec",
+    "strategy_quality_gate_v2",
+    "candidate_rejection_rules",
+    "research_only_result_review"
+  ],
+  "approved_for_execution": false,
+  "approved_for_paper_shadow": false,
+  "approved_for_live": false,
+  "paper_shadow_started": false,
+  "approved_for_paper_shadow_start": false,
+  "exchange_order_submission": false,
+  "approved_for_micro_live_execution": false,
+  "approved_for_real_live_trading": false,
+  "decision": "PHASE_20_STRATEGY_REWORK_HYPOTHESIS_PLAN_CREATED_RESEARCH_ONLY_NOT_APPROVED_FOR_EXECUTION",
+  "next_phase": "Phase 20.4 \u2014 Strategy Rework Experiment Design"
+}
