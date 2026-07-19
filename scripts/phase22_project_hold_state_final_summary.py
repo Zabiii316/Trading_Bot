@@ -50,90 +50,81 @@ flags = {
     "LIVE_TRADING_ALLOWED": os.getenv("LIVE_TRADING_ALLOWED", ""),
 }
 
-safe_mode = (
-    flags["BINANCE_ENABLE_LIVE_TRADING"] == "false"
-    and flags["LIVE_TRADING_ALLOWED"] == "false"
-)
-
+safe_mode = flags["BINANCE_ENABLE_LIVE_TRADING"] == "false" and flags["LIVE_TRADING_ALLOWED"] == "false"
 current_git_head = git_head()
 git_working_tree_clean = git_clean()
 
-archive_closeout = load_json(ARCHIVE_CLOSEOUT)
-archive_closeout_runtime = load_json(ARCHIVE_CLOSEOUT_RUNTIME)
-archive_closeout_file = load_json(ARCHIVE_CLOSEOUT_FILE)
-archive_consolidation = load_json(ARCHIVE_CONSOLIDATION)
-archive_review = load_json(ARCHIVE_REVIEW)
-archive_index_report = load_json(ARCHIVE_INDEX_REPORT)
-archive_manifest = load_json(ARCHIVE_MANIFEST)
-archive_index = load_json(ARCHIVE_INDEX)
+closeout = load_json(ARCHIVE_CLOSEOUT)
+closeout_runtime = load_json(ARCHIVE_CLOSEOUT_RUNTIME)
+closeout_file = load_json(ARCHIVE_CLOSEOUT_FILE)
+consolidation = load_json(ARCHIVE_CONSOLIDATION)
+review = load_json(ARCHIVE_REVIEW)
+archive_report = load_json(ARCHIVE_INDEX_REPORT)
+manifest = load_json(ARCHIVE_MANIFEST)
+index = load_json(ARCHIVE_INDEX)
 phase21 = load_json(PHASE21_FINAL)
 phase20 = load_json(PHASE20_CLOSEOUT)
 
 archive_safety_closeout_passed = (
-    archive_closeout.get("archive_safety_closeout_passed") is True
-    or archive_closeout_runtime.get("archive_safety_closeout_passed") is True
-    or archive_closeout_file.get("archive_safety_closeout_passed") is True
+    closeout.get("archive_safety_closeout_passed") is True
+    or closeout_runtime.get("archive_safety_closeout_passed") is True
+    or closeout_file.get("archive_safety_closeout_passed") is True
 )
 
-archive_consolidated = archive_consolidation.get("archive_consolidated") is True
-archive_review_passed = archive_review.get("archive_review_passed") is True
-
-archive_index_ready = (
-    archive_index_report.get("archive_index_ready") is True
-    or archive_index.get("archive_index_ready") is True
-)
-
+archive_consolidated = consolidation.get("archive_consolidated") is True
+archive_review_passed = review.get("archive_review_passed") is True
+archive_index_ready = archive_report.get("archive_index_ready") is True or index.get("archive_index_ready") is True
 phase21_final_passed = phase21.get("final_safety_closeout_passed") is True
 phase20_closeout_passed = phase20.get("strategy_rework_safety_closeout_passed") is True
 
 phase20_status = (
-    archive_closeout.get("phase20_status")
-    or archive_closeout_runtime.get("phase20_status")
-    or archive_closeout_file.get("phase20_status")
+    closeout.get("phase20_status")
+    or closeout_runtime.get("phase20_status")
+    or closeout_file.get("phase20_status")
     or phase20.get("phase20_status")
 )
 
 phase21_status = (
-    archive_closeout.get("phase21_status")
-    or archive_closeout_runtime.get("phase21_status")
-    or archive_closeout_file.get("phase21_status")
+    closeout.get("phase21_status")
+    or closeout_runtime.get("phase21_status")
+    or closeout_file.get("phase21_status")
     or phase21.get("phase21_status")
 )
 
 phase22_status = (
-    archive_closeout.get("phase22_status")
-    or archive_closeout_runtime.get("phase22_status")
-    or archive_closeout_file.get("phase22_status")
+    closeout.get("phase22_status")
+    or closeout_runtime.get("phase22_status")
+    or closeout_file.get("phase22_status")
 )
 
 selected_phase21_next_action = (
-    archive_closeout.get("selected_phase21_next_action")
-    or archive_closeout_runtime.get("selected_phase21_next_action")
-    or archive_closeout_file.get("selected_phase21_next_action")
+    closeout.get("selected_phase21_next_action")
+    or closeout_runtime.get("selected_phase21_next_action")
+    or closeout_file.get("selected_phase21_next_action")
 )
 
 evidence_count = (
-    archive_closeout.get("evidence_file_count")
-    or archive_consolidation.get("evidence_file_count")
-    or archive_review.get("evidence_file_count")
-    or archive_index_report.get("evidence_file_count")
-    or archive_manifest.get("evidence_file_count", 0)
+    closeout.get("evidence_file_count")
+    or consolidation.get("evidence_file_count")
+    or review.get("evidence_file_count")
+    or archive_report.get("evidence_file_count")
+    or manifest.get("evidence_file_count", 0)
 )
 
 runtime_count = (
-    archive_closeout.get("runtime_file_count")
-    or archive_consolidation.get("runtime_file_count")
-    or archive_review.get("runtime_file_count")
-    or archive_index_report.get("runtime_file_count")
-    or archive_manifest.get("runtime_file_count", 0)
+    closeout.get("runtime_file_count")
+    or consolidation.get("runtime_file_count")
+    or review.get("runtime_file_count")
+    or archive_report.get("runtime_file_count")
+    or manifest.get("runtime_file_count", 0)
 )
 
 doc_count = (
-    archive_closeout.get("documentation_file_count")
-    or archive_consolidation.get("documentation_file_count")
-    or archive_review.get("documentation_file_count")
-    or archive_index_report.get("documentation_file_count")
-    or archive_manifest.get("documentation_file_count", 0)
+    closeout.get("documentation_file_count")
+    or consolidation.get("documentation_file_count")
+    or review.get("documentation_file_count")
+    or archive_report.get("documentation_file_count")
+    or manifest.get("documentation_file_count", 0)
 )
 
 summary_checks = {
@@ -160,23 +151,22 @@ summary_checks = {
     "phase20_status_closed_remain_on_hold": phase20_status == "closed_remain_on_hold",
     "phase21_status_closed_final_remain_on_hold": phase21_status == "closed_final_remain_on_hold",
     "phase22_status_archive_safety_closeout_complete": phase22_status == "archive_safety_closeout_complete",
-    "selected_phase21_next21_status == "closed_final_remain_on_hold",
-    "phase22_status_archive_safety_closeout_complete": phase22_status == "archive_safety_closeout_action_is_remain_on_hold": selected_phase21_next_action == "remain_on_hold",
+    "selected_phase21_next_action_is_remain_on_hold": selected_phase21_next_action == "remain_on_hold",
     "evidence_files_indexed": evidence_count > 0,
     "runtime_files_indexed": runtime_count > 0,
     "documentation_files_indexed": doc_count > 0,
-    "monitoring_not_started": archive_closeout.get("monitoring_started") is False,
-    "run_dry_run_now_false": archive_closeout.get("run_dry_run_now") is False,
-    "run_backtest_now_false": archive_closeout.get("run_backtest_now") is False,
-    "execution_allowed_false": archive_closeout.get("execution_allowed") is False,
-    "approved_for_execution_false": archive_closeout.get("approved_for_execution") is False,
-    "approved_for_paper_shadow_false": archive_closeout.get("approved_for_paper_shadow") is False,
-    "approved_for_live_false": archive_closeout.get("approved_for_live") is False,
-    "paper_shadow_not_started": archive_closeout.get("paper_shadow_started") is False,
-    "paper_shadow_start_not_approved": archive_closeout.get("approved_for_paper_shadow_start") is False,
-    "exchange_order_submission_disabled": archive_closeout.get("exchange_order_submission") is False,
-    "micro_live_not_approved": archive_closeout.get("approved_for_micro_live_execution") is False,
-    "real_live_not_approved": archive_closeout.get("approved_for_real_live_trading") is False,
+    "monitoring_not_started": closeout.get("monitoring_started") is False,
+    "run_dry_run_now_false": closeout.get("run_dry_run_now") is False,
+    "run_backtest_now_false": closeout.get("run_backtest_now") is False,
+    "execution_allowed_false": closeout.get("execution_allowed") is False,
+    "approved_for_execution_false": closeout.get("approved_for_execution") is False,
+    "approved_for_paper_shadow_false": closeout.get("approved_for_paper_shadow") is False,
+    "approved_for_live_false": closeout.get("approved_for_live") is False,
+    "paper_shadow_not_started": closeout.get("paper_shadow_started") is False,
+    "paper_shadow_start_not_approved": closeout.get("approved_for_paper_shadow_start") is False,
+    "exchange_order_submission_disabled": closeout.get("exchange_order_submission") is False,
+    "micro_live_not_approved": closeout.get("approved_for_micro_live_execution") is False,
+    "real_live_not_approved": closeout.get("approved_for_real_live_trading") is False,
 }
 
 blockers = [key for key, value in summary_checks.items() if value is not True]
@@ -191,11 +181,12 @@ else:
 
 summary_file = PHASE22_DIR / "project_hold_state_final_summary.json"
 
-final_project_summary = {
+summary_record = {
     "phase": "phase_22_5_project_hold_state_final_summary_record",
     "created_at_unix": int(time.time()),
     "git_head": current_git_head,
     "system_state": "HOLD_RESEARCH_ONLY",
+    "project_status": "remain_on_hold_not_approved_for_execution",
     "phase20_status": phase20_status,
     "phase21_status": phase21_status,
     "phase22_status": "final_summary_created",
@@ -226,13 +217,6 @@ final_project_summary = {
         "approved_for_micro_live_execution": False,
         "approved_for_real_live_trading": False
     },
-    "evidence_summary": {
-        "evidence_file_count": evidence_count,
-        "runtime_file_count": runtime_count,
-        "documentation_file_count": doc_count,
-        "archive_manifest": str(ARCHIVE_MANIFEST),
-        "archive_index": str(ARCHIVE_INDEX)
-    },
     "blocked_actions": [
         "monitoring_job_execution",
         "offline_runner_dry_run_execution",
@@ -257,7 +241,7 @@ final_project_summary = {
     "approved_for_micro_live_execution": False,
     "approved_for_real_live_trading": False,
     "decision": decision,
-    "next_phase": next_phase
+    "next_phase": next_phase,
 }
 
 report = {
@@ -268,6 +252,7 @@ report = {
     "safety_flags": flags,
     "safe_mode_active": safe_mode,
     "git_working_tree_clean": git_working_tree_clean,
+    "project_status": "remain_on_hold_not_approved_for_execution",
     "phase20_status": phase20_status,
     "phase21_status": phase21_status,
     "phase22_status": "final_summary_created",
@@ -293,11 +278,11 @@ report = {
     "approved_for_micro_live_execution": False,
     "approved_for_real_live_trading": False,
     "decision": decision,
-    "next_phase": next_phase
+    "next_phase": next_phase,
 }
 
-write_json(summary_file, final_project_summary)
-write_json(RUNTIME_OUT, final_project_summary)
+write_json(summary_file, summary_record)
+write_json(RUNTIME_OUT, summary_record)
 write_json(OUT, report)
 
 print(f"Report written to: {OUT}")
