@@ -91,7 +91,16 @@ project_status = review.get("project_status") or review_file.get("project_status
 phase20_status = review.get("phase20_status") or review_file.get("phase20_status")
 phase21_status = review.get("phase21_status") or review_file.get("phase21_status")
 phase22_previous_status = review.get("phase22_status") or review_file.get("phase22_status")
-selected_phase21_next_action = review.get("selected_phase21_next_action") or review_file.get("selected_phase21_next_action")
+selected_phase21_next_action = (
+    review.get("selected_phase21_next_action")
+    or review_runtime.get("selected_phase21_next_action")
+    or review_file.get("selected_phase21_next_action")
+    or completion_record.get("selected_phase21_next_action")
+    or repo_review.get("selected_phase21_next_action")
+    or repo_consolidation.get("selected_phase21_next_action")
+    or final_closeout_review.get("selected_phase21_next_action")
+    or "remain_on_hold"
+)
 
 evidence_count = review.get("evidence_file_count") or manifest.get("evidence_file_count", 0)
 runtime_count = review.get("runtime_file_count") or manifest.get("runtime_file_count", 0)
