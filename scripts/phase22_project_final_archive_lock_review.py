@@ -94,7 +94,16 @@ project_status = lock.get("project_status") or lock_file_json.get("project_statu
 phase20_status = lock.get("phase20_status") or lock_file_json.get("phase20_status")
 phase21_status = lock.get("phase21_status") or lock_file_json.get("phase21_status")
 phase22_previous_status = lock.get("phase22_status") or lock_file_json.get("phase22_status")
-selected_phase21_next_action = lock.get("selected_phase21_next_action") or lock_file_json.get("selected_phase21_next_action")
+selected_phase21_next_action = (
+    lock.get("selected_phase21_next_action")
+    or lock_file_json.get("selected_phase21_next_action")
+    or completion_review.get("selected_phase21_next_action")
+    or completion_record.get("selected_phase21_next_action")
+    or repo_review.get("selected_phase21_next_action")
+    or repo_consolidation.get("selected_phase21_next_action")
+    or final_closeout_review.get("selected_phase21_next_action")
+    or "remain_on_hold"
+)
 
 archive_lock_type = lock.get("archive_lock_type") or lock_file_json.get("archive_lock_type")
 os_file_locking_applied = lock.get("os_file_locking_applied")
