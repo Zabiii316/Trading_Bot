@@ -46,11 +46,11 @@ flags = {
 
 safe_mode = flags["BINANCE_ENABLE_LIVE_TRADING"] == "false" and flags["LIVE_TRADING_ALLOWED"] == "false"
 current_git_head = git_head()
-git_clean_before_outputs = git_clean()
+git_working_tree_clean = git_clean()
 
 review = load_json(REVIEW)
 review_runtime = load_json(REVIEW_RUNTIME)
-review_file_data = load_json(REVIEW_FILE)
+review_file = load_json(REVIEW_FILE)
 archive_report = load_json(ARCHIVE_REPORT)
 archive_runtime = load_json(ARCHIVE_RUNTIME)
 manifest = load_json(MANIFEST)
@@ -60,7 +60,7 @@ phase21 = load_json(PHASE21_FINAL)
 archive_review_passed = (
     review.get("archive_review_passed") is True
     or review_runtime.get("archive_review_passed") is True
-    or review_file_data.get("archive_review_passed") is True
+    or review_file.get("archive_review_passed") is True
 )
 
 archive_index_ready = (
@@ -72,7 +72,7 @@ archive_index_ready = (
 phase20_status = (
     review.get("phase20_status")
     or review_runtime.get("phase20_status")
-    or review_file_data.get("phase20_status")
+    or review_file.get("phase20_status")
     or archive_report.get("phase20_status")
     or index.get("phase20_status")
 )
@@ -80,7 +80,7 @@ phase20_status = (
 phase21_status = (
     review.get("phase21_status")
     or review_runtime.get("phase21_status")
-    or review_file_data.get("phase21_status")
+    or review_file.get("phase21_status")
     or archive_report.get("phase21_status")
     or index.get("phase21_status")
 )
@@ -88,25 +88,14 @@ phase21_status = (
 selected_phase21_next_action = (
     review.get("selected_phase21_next_action")
     or review_runtime.get("selected_phase21_next_action")
-    or review_file_data.get("selected_phase21_next_action")
+    or review_file.get("selected_phase21_next_action")
     or archive_report.get("selected_phase21_next_action")
     or index.get("selected_phase21_next_action")
 )
 
-evidence_count = review.get("evidence("phase21_status")
-)
-
-selected_phase21_next_action = (
-    review.get("selected_phase21_next_action")
-    or review_runtime.get("selected_phase21_next_action")
-    or review_file_data.get("selected_phase21_next_action")
-    or archive_report.get("selected_phase21_next_action")
-    or index.get("selected_phase21_next_action")
-)
-
-evidence_count = review.get("evidence_file_count", archive_report.get("evidence_file_count", 0))
-runtime_count = review.get("runtime_file_count", archive_report.get("runtime_file_count", 0))
-doc_count = review.get("documentation_file_count", archive_report.get("documentation_file_count", 0))
+evidence_count = review.get("evidence_file_count") or archive_report.get("evidence_file_count") or manifest.get("evidence_file_count", 0)
+runtime_count = review.get("runtime_file_count") or archive_report.get("runtime_file_count") or manifest.get("runtime_file_count", 0)
+doc_count = review.get("documentation_file_count") or archive_report.get("documentation_file_count") or manifest.get("documentation_file_count", 0)
 
 consolidation_checks = {
     "safe_mode_active": safe_mode,
@@ -153,7 +142,9 @@ else:
     decision = "PHASE_22_PROJECT_HOLD_STATE_ARCHIVE_CONSOLIDATION_FAILED_REVIEW_REQUIRED"
     next_phase = "Phase 22.4 — Project Archive Consolidation Fix"
 
-consolidation_record = {
+consolidation_file = PHASE22_DIR / "project_hold_state_archive_consolidation.json"
+
+record = {
     "phase": "phase_22_3_project_hold_state_archive_consolidation_record",
     "created_at_unix": int(time.time()),
     "git_head": current_git_head,
@@ -164,44 +155,9 @@ consolidation_record = {
     "archive_consolidated": archive_consolidated,
     "consolidation_checks": consolidation_checks,
     "blockers": blockers,
-    "consolidated_archive_state": {
-        "archive_state": "consolidated_index_only",
-        "system_state": "HOLD_RESEARCH_ONLY",
-        "phase20_status": phase20_status,
-        "phase21_status": phase21_status,
-        "selected_phase21_next_action": selected_phase21_next_action,
-        "evidence_file_count": evidence_count,
-        "runtime_file_count": runtime_count,
-        "documentation_file_count": doc_count,
-        "monitoring_started": False,
-        "run_dry_run_now": False,
-        "run_backtest_now": False,
-        "execution_allowed": False,
-        "approved_for_execution": False,
-        "approved_for_paper_shadow": False,
-        "approved_for_live": False,
-        "paper_shadow_started": False,
-        "approved_for_paper_shadow_start": False,
-        "exchange_order_submission": False,
-        "approved_for_micro_live_execution": False,
-        "approved_for_real_live_trading": False
-    },
-    "allowed_next_actions": [
-        "project_hold_state_archive_safety_closeout",
-        "documentation_only",
-        "manual_approval_review_only"
-    ],
-    "blocked_actions": [
-        "monitoring_job_execution",
-        "offline_runner_dry_run_execution",
-        "backtest_execution",
-        "paper_shadow_start",
-        "micro_live_execution",
-        "real_live_trading",
-        "exchange_order_submission",
-        "real_capital_usage",
-        "production_api_key_usage"
-    ],
+    "evidence_file_count": evidence_count,
+    "runtime_file_count": runtime_count,
+    "documentation_file_count": doc_count,
     "monitoring_started": False,
     "run_dry_run_now": False,
     "run_backtest_now": False,
@@ -215,13 +171,8 @@ consolidation_record = {
     "approved_for_micro_live_execution": False,
     "approved_for_real_live_trading": False,
     "decision": decision,
-    "next_phase": next_phase
+    "next_phase": next_phase,
 }
-
-consolidation_file = PHASE22_DIR / "project_hold_state_archive_consolidation.json"
-
-write_json(consolidation_file, consolidation_record)
-write_json(RUNTIME_OUT, consolidation_record)
 
 report = {
     "phase": "phase_22_3_project_hold_state_archive_consolidation",
@@ -230,7 +181,7 @@ report = {
     "git_head": current_git_head,
     "safety_flags": flags,
     "safe_mode_active": safe_mode,
-    "git_working_tree_clean": git_clean_before_outputs,
+    "git_working_tree_clean": git_working_tree_clean,
     "phase20_status": phase20_status,
     "phase21_status": phase21_status,
     "selected_phase21_next_action": selected_phase21_next_action,
@@ -255,9 +206,11 @@ report = {
     "approved_for_micro_live_execution": False,
     "approved_for_real_live_trading": False,
     "decision": decision,
-    "next_phase": next_phase
+    "next_phase": next_phase,
 }
 
+write_json(consolidation_file, record)
+write_json(RUNTIME_OUT, record)
 write_json(OUT, report)
 
 print(f"Report written to: {OUT}")
