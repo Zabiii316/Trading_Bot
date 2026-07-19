@@ -1,0 +1,1964 @@
+{
+  "phase": "phase_22_7_project_final_evidence_seal_record",
+  "created_at_unix": 1784492180,
+  "git_head": "47e2dabac3671f488f4b6abd32436528a66b8d79",
+  "system_state": "HOLD_RESEARCH_ONLY",
+  "project_status": "remain_on_hold_not_approved_for_execution",
+  "phase20_status": "closed_remain_on_hold",
+  "phase21_status": "closed_final_remain_on_hold",
+  "phase22_status": "final_evidence_seal_created",
+  "selected_phase21_next_action": "remain_on_hold",
+  "final_evidence_seal_ready": true,
+  "seal_checks": {
+    "safe_mode_active": true,
+    "final_closeout_present": true,
+    "final_closeout_runtime_present": true,
+    "final_closeout_file_present": true,
+    "final_summary_present": true,
+    "archive_closeout_present": true,
+    "archive_manifest_present": true,
+    "archive_index_present": true,
+    "phase21_final_present": true,
+    "phase20_closeout_present": true,
+    "final_hold_state_closeout_passed": true,
+    "project_status_remain_on_hold": true,
+    "phase20_status_closed_remain_on_hold": true,
+    "phase21_status_closed_final_remain_on_hold": true,
+    "phase22_status_project_final_closeout": true,
+    "selected_phase21_next_action_is_remain_on_hold": true,
+    "evidence_files_sealed": true,
+    "runtime_files_sealed": true,
+    "documentation_files_sealed": true,
+    "monitoring_not_started": true,
+    "run_dry_run_now_false": true,
+    "run_backtest_now_false": true,
+    "execution_allowed_false": true,
+    "approved_for_execution_false": true,
+    "approved_for_paper_shadow_false": true,
+    "approved_for_live_false": true,
+    "paper_shadow_not_started": true,
+    "paper_shadow_start_not_approved": true,
+    "exchange_order_submission_disabled": true,
+    "micro_live_not_approved": true,
+    "real_live_not_approved": true
+  },
+  "blockers": [],
+  "evidence_file_count": 135,
+  "runtime_file_count": 81,
+  "documentation_file_count": 99,
+  "sealed_evidence_files": [
+    {
+      "path": "data/processed/phase17_backtest_results_review_quality_gate.json",
+      "exists": true,
+      "size_bytes": 2175,
+      "sha256": "66419632478a90cf83ee40e0c3967649fbb1afa07fc3daf2f60610fa1e85f08a"
+    },
+    {
+      "path": "data/processed/phase17_baseline_historical_backtest_runner.json",
+      "exists": true,
+      "size_bytes": 10835,
+      "sha256": "0a8c3fb31f9116851c0b06ae66571a278a3ab67315cd6c283a94b797afe089ee"
+    },
+    {
+      "path": "data/processed/phase17_candidate_risk_sizing_stress_test_plan.json",
+      "exists": true,
+      "size_bytes": 1107,
+      "sha256": "a1cb7f2b5d1b88ebfbe6a4e4d4e286af51c02181c97c67bb67fb5dea7cb83250"
+    },
+    {
+      "path": "data/processed/phase17_candidate_stress_test_runner.json",
+      "exists": true,
+      "size_bytes": 1305,
+      "sha256": "a344bee5ed37bdc4623e7cae140667390f7272be3eb275ede9b2e2a44aea40c3"
+    },
+    {
+      "path": "data/processed/phase17_final_strategy_candidate_review.json",
+      "exists": true,
+      "size_bytes": 1481,
+      "sha256": "74d665ce9f2f3bba70191f74ea7ce785f01dd41e02c448c74050c1dcafb03482"
+    },
+    {
+      "path": "data/processed/phase17_historical_backtest_dataset_builder.json",
+      "exists": true,
+      "size_bytes": 1797,
+      "sha256": "9d90b97aa8b278e85f3ca1a4f1906c04ebc1bbd26a62457d4ea370e717517417"
+    },
+    {
+      "path": "data/processed/phase17_historical_data_coverage_audit.json",
+      "exists": true,
+      "size_bytes": 2790,
+      "sha256": "8974b7e62198a0db5f07b98c60b9cb08b7b7d70dae41197e26240961871a5c0c"
+    },
+    {
+      "path": "data/processed/phase17_oos_results_review_overfitting_check.json",
+      "exists": true,
+      "size_bytes": 1415,
+      "sha256": "b3cd88195856b17b163e691c90c14c7056a793b404d010eb2e715eb1c13d57b2"
+    },
+    {
+      "path": "data/processed/phase17_out_of_sample_candidate_validation_runner.json",
+      "exists": true,
+      "size_bytes": 1225,
+      "sha256": "1e2fc24eed8e0e04aeb6dc04062856de37288bf5c8266bdb71affb41615afc99"
+    },
+    {
+      "path": "data/processed/phase17_out_of_sample_validation_dataset_split.json",
+      "exists": true,
+      "size_bytes": 2081,
+      "sha256": "befc179fbf6577d1fc57ef04ac9ce94f8c82a96a644d734cd1609c1a581155e4"
+    },
+    {
+      "path": "data/processed/phase17_paper_shadow_approval_decision_point.json",
+      "exists": true,
+      "size_bytes": 2226,
+      "sha256": "d1cc2a0f52979494af4a9488c08f79bd9d8fea5b229692de191026f886017763"
+    },
+    {
+      "path": "data/processed/phase17_paper_shadow_approval_decision_review.json",
+      "exists": true,
+      "size_bytes": 2036,
+      "sha256": "6b4f9e69ae3e88c394de0951991700d9fc922268b5223c06c01df76ac60aca6b"
+    },
+    {
+      "path": "data/processed/phase17_paper_shadow_blocked_start_review.json",
+      "exists": true,
+      "size_bytes": 2371,
+      "sha256": "6b40fde3dcbbe8430df10c2054455f2e354043c2efe6a343a544ca3c5fd84752"
+    },
+    {
+      "path": "data/processed/phase17_paper_shadow_execution_harness.json",
+      "exists": true,
+      "size_bytes": 1424,
+      "sha256": "5d5c8e5e86b97772768ff2997b1645ef28d60087c46a3d7534fb2bccf002779e"
+    },
+    {
+      "path": "data/processed/phase17_paper_shadow_hold_state_consolidation.json",
+      "exists": true,
+      "size_bytes": 2090,
+      "sha256": "71a1c420d20876dc1f9fdce3d78911cdd8640835b8d9a364cf6917124b6adb2d"
+    },
+    {
+      "path": "data/processed/phase17_paper_shadow_manual_approval_record.json",
+      "exists": true,
+      "size_bytes": 2671,
+      "sha256": "10d7de2711d217d14143f65e21bdaf02d68be24676602342691d6946840f9e4b"
+    },
+    {
+      "path": "data/processed/phase17_paper_shadow_manual_approval_update_gate.json",
+      "exists": true,
+      "size_bytes": 2291,
+      "sha256": "1f809e4b7a62a28c7e79f03234a16abaef61c1eafb7c2c1adb04bc624aaecaf4"
+    },
+    {
+      "path": "data/processed/phase17_paper_shadow_safe_start_stub.json",
+      "exists": true,
+      "size_bytes": 2037,
+      "sha256": "991c4896c713e3c50f2d06344110a7af48bbbc80f95b77635baec65306bba0e0"
+    },
+    {
+      "path": "data/processed/phase17_paper_shadow_start_attempt_review.json",
+      "exists": true,
+      "size_bytes": 2138,
+      "sha256": "d9aa2cace264287ab7d7c0ba871987b43564840a9dc66aa3d3149869e01978a2"
+    },
+    {
+      "path": "data/processed/phase17_paper_shadow_start_gate.json",
+      "exists": true,
+      "size_bytes": 2492,
+      "sha256": "8f4badf6b7e7d4ce9e0b74678e6b1d5a29e7160284f19d683270f087a2113ccf"
+    },
+    {
+      "path": "data/processed/phase17_paper_shadow_start_readiness_check.json",
+      "exists": true,
+      "size_bytes": 2365,
+      "sha256": "6a177ef85a407a711d889f2280a838a6360016fe2c6979f2e6495bae3c5464d4"
+    },
+    {
+      "path": "data/processed/phase17_paper_shadow_start_readiness_recheck.json",
+      "exists": true,
+      "size_bytes": 2393,
+      "sha256": "7676f3ae0ea3b5745dcaae514e16c4f105d2e98c803dfe89b71a80a1387c1ce2"
+    },
+    {
+      "path": "data/processed/phase17_paper_shadow_trading_plan.json",
+      "exists": true,
+      "size_bytes": 1134,
+      "sha256": "402e82c570e15ad59576496dd5ad76054355c8a5c6edc80fadb543fdbfecb59c"
+    },
+    {
+      "path": "data/processed/phase17_parameter_sweep_backtest_runner.json",
+      "exists": true,
+      "size_bytes": 17771,
+      "sha256": "56c91c34dd804fb03a97d50e5eae6c3fcb8c71a6f520fd8337ba59474f7006a8"
+    },
+    {
+      "path": "data/processed/phase17_parameter_sweep_results_review_candidate_selection.json",
+      "exists": true,
+      "size_bytes": 15785,
+      "sha256": "8e641bad084f332d4665996addcb686ead1b6ea538743e2d12d6b562aa1bac00"
+    },
+    {
+      "path": "data/processed/phase17_safety_closeout_next_action_options.json",
+      "exists": true,
+      "size_bytes": 3341,
+      "sha256": "da30cad3c1119acec68a9a059f291d3fc9efc0fce7c6c20c5d51916df4684ccc"
+    },
+    {
+      "path": "data/processed/phase17_strategy_hardening_baseline.json",
+      "exists": true,
+      "size_bytes": 2274,
+      "sha256": "0f9cb35bf8029b252debe40ce342deaff7e83ddc3ff2d52a0da398676515f947"
+    },
+    {
+      "path": "data/processed/phase17_strategy_rework_parameter_sweep_design.json",
+      "exists": true,
+      "size_bytes": 2666,
+      "sha256": "739f4552b1985994f0a65831bc68d5d81033902c2ff710b42bd28ad6bed65d38"
+    },
+    {
+      "path": "data/processed/phase17_stress_test_results_review.json",
+      "exists": true,
+      "size_bytes": 1325,
+      "sha256": "c1c6946d40489f393528ba0fff770ebbdab19fdbb9be1988dc0bdfc1aa4074fc"
+    },
+    {
+      "path": "data/processed/phase17_walk_forward_validation_runner.json",
+      "exists": true,
+      "size_bytes": 1404,
+      "sha256": "b21b1d10f1e69e222534c7c4c974e5b06bb83542a42d67bdd0d377fa77e20ca6"
+    },
+    {
+      "path": "data/processed/phase18_final_safety_closeout.json",
+      "exists": true,
+      "size_bytes": 2689,
+      "sha256": "a0a001410bc864700b41fbc31cfbade4f40de1b6f6fa67228f6ea6bfb970e8d6"
+    },
+    {
+      "path": "data/processed/phase18_hold_state_closeout_report.json",
+      "exists": true,
+      "size_bytes": 2386,
+      "sha256": "adb06880e3fb22b46168e89401252da82adf9c4c8a2a94908fe88180a5e5763f"
+    },
+    {
+      "path": "data/processed/phase18_hold_state_continuation_evidence_snapshot.json",
+      "exists": true,
+      "size_bytes": 2623,
+      "sha256": "fff7508f55db8765ffa20974f88d1a86f5de1cf65717f36b1cc280ef93419e64"
+    },
+    {
+      "path": "data/processed/phase18_hold_state_continuation_health_check.json",
+      "exists": true,
+      "size_bytes": 3014,
+      "sha256": "ff3edc99dbfacf73a6b79c3f9798247b567971125647a357352032658ca1287b"
+    },
+    {
+      "path": "data/processed/phase18_hold_state_continuation_plan.json",
+      "exists": true,
+      "size_bytes": 2127,
+      "sha256": "fc389e7b475179c3774f855e0bf2f25934ec3bfb4fdfa8bcc66145cae85f7fb0"
+    },
+    {
+      "path": "data/processed/phase18_hold_state_daily_checklist.json",
+      "exists": true,
+      "size_bytes": 3508,
+      "sha256": "9f4d7aeff3c8a006e4472d9def2d332a88fc852d15ea47cf61b3c01ea6f3bc73"
+    },
+    {
+      "path": "data/processed/phase18_hold_state_evidence_index.json",
+      "exists": true,
+      "size_bytes": 2525,
+      "sha256": "f8d6f85a36f564eacf48c06e624bd568329fbf9879392a71c426bd3e17017f38"
+    },
+    {
+      "path": "data/processed/phase18_hold_state_final_continuation_review.json",
+      "exists": true,
+      "size_bytes": 2429,
+      "sha256": "73cc98eeb9c368e1ec6df49e49aca0e7097437474e025c002b35d63adaed9abb"
+    },
+    {
+      "path": "data/processed/phase18_hold_state_monitoring_health_check.json",
+      "exists": true,
+      "size_bytes": 2773,
+      "sha256": "c4984bd103f67d5e896971c47798231734f572e072c55aa46492ff1263b38677"
+    },
+    {
+      "path": "data/processed/phase18_hold_state_monitoring_plan.json",
+      "exists": true,
+      "size_bytes": 1913,
+      "sha256": "e7544d3a586c24ff3d95368601bad23bebb89166634adba0591940e736ffc022"
+    },
+    {
+      "path": "data/processed/phase18_hold_state_monitoring_report.json",
+      "exists": true,
+      "size_bytes": 2126,
+      "sha256": "3138a654d3fdbf06858507f108dfb5cecf1dd20ec7962b21648b25b7ea7c37bf"
+    },
+    {
+      "path": "data/processed/phase18_hold_state_weekly_dashboard_review_plan.json",
+      "exists": true,
+      "size_bytes": 2132,
+      "sha256": "77391f71fb9620a3fd5cb48d7d70ab6d58336db7b2d6c08b4f7544e0c1a6d939"
+    },
+    {
+      "path": "data/processed/phase18_hold_state_weekly_dashboard_review_snapshot.json",
+      "exists": true,
+      "size_bytes": 4053,
+      "sha256": "e43b8f365af861fc6436ad9a1019864b9555655d53bc76a1bd4fc250f1f37094"
+    },
+    {
+      "path": "data/processed/phase18_hold_state_weekly_review_summary.json",
+      "exists": true,
+      "size_bytes": 2148,
+      "sha256": "7212cc2ab148c1ab1fb541830c0e3f6136af93bbe4b835edecb482f6a78c6e93"
+    },
+    {
+      "path": "data/processed/phase18_next_action_selection.json",
+      "exists": true,
+      "size_bytes": 2017,
+      "sha256": "6abce100c507b316eee601edecd8afd32df638b17f65122d1c551060662052a6"
+    },
+    {
+      "path": "data/processed/phase19_historical_data_expansion_hold_state_consolidation.json",
+      "exists": true,
+      "size_bytes": 3454,
+      "sha256": "7c7c3f601e136704553e3c271d21e8cfcbe1d064e8c9a5cec1db6cfa01f85993"
+    },
+    {
+      "path": "data/processed/phase19_historical_data_expansion_manifest_builder.json",
+      "exists": true,
+      "size_bytes": 2576,
+      "sha256": "be944d7d7ac93a4b649453154de8988d58179334b6fd96f51f8eed3fa08a072f"
+    },
+    {
+      "path": "data/processed/phase19_historical_data_expansion_next_action_options.json",
+      "exists": true,
+      "size_bytes": 3168,
+      "sha256": "b829028729c54a601c49f40b131fdc19b9a5b3455389ea12398ae80fdb446880"
+    },
+    {
+      "path": "data/processed/phase19_historical_data_expansion_next_action_selection.json",
+      "exists": true,
+      "size_bytes": 3073,
+      "sha256": "df98da5ed1125a8f4156204a468f7f117b10c40a76131b27ec1add6383b54381"
+    },
+    {
+      "path": "data/processed/phase19_historical_data_expansion_plan.json",
+      "exists": true,
+      "size_bytes": 1999,
+      "sha256": "8c2907040af242c0333a57a9ebfefa5ed262092b9f39b0646c459ca28f4e5e63"
+    },
+    {
+      "path": "data/processed/phase19_historical_data_expansion_safety_closeout.json",
+      "exists": true,
+      "size_bytes": 3506,
+      "sha256": "a215999e22a497b637cafc60823db444ff976c504995128cbbdf841d1dc26e08"
+    },
+    {
+      "path": "data/processed/phase19_historical_data_gap_fill_plan.json",
+      "exists": true,
+      "size_bytes": 2465,
+      "sha256": "5240519d21651b36ccd954219dc0f5e825776a7841cbda2daef42ccba96f5863"
+    },
+    {
+      "path": "data/processed/phase19_historical_data_quality_rules_builder.json",
+      "exists": true,
+      "size_bytes": 2454,
+      "sha256": "8f754f611306af01b6b72ec0f88d362c89f7736fd23911b3a3e69225c5e9e895"
+    },
+    {
+      "path": "data/processed/phase19_historical_dataset_coverage_validator.json",
+      "exists": true,
+      "size_bytes": 2959,
+      "sha256": "6a89ae6b430c8756309822b51a8d3ef2ca39f3ee3248005b50c7cf2c4dd19e00"
+    },
+    {
+      "path": "data/processed/phase19_offline_historical_data_collection_approval_gate.json",
+      "exists": true,
+      "size_bytes": 2937,
+      "sha256": "c085847fa4e2a3bbb44f00c9fa0dbf51a661f711a8670727191fa3fd84edc9f9"
+    },
+    {
+      "path": "data/processed/phase19_offline_historical_data_collection_blocked_start_review.json",
+      "exists": true,
+      "size_bytes": 3253,
+      "sha256": "44874a8ef11a1e92b98d7ae9af10e7ffd5d4904eeedcc469448844085c771098"
+    },
+    {
+      "path": "data/processed/phase19_offline_historical_data_collection_dry_run.json",
+      "exists": true,
+      "size_bytes": 3858,
+      "sha256": "48870e17d5368b5c297aa43ed9803a43f881b2a0069b6b73dcedfe66954954c5"
+    },
+    {
+      "path": "data/processed/phase19_offline_historical_data_collection_hold_state_consolidation.json",
+      "exists": true,
+      "size_bytes": 3342,
+      "sha256": "ce676a90d8c5e2ebd236f2246a19d949282a706933b155e172806557b2495df1"
+    },
+    {
+      "path": "data/processed/phase19_offline_historical_data_collection_manual_approval_decision_point.json",
+      "exists": true,
+      "size_bytes": 3176,
+      "sha256": "3ded233d210f579e06b6bd9572db329cb100454ca1aac80219cf76ca29fdd8b3"
+    },
+    {
+      "path": "data/processed/phase19_offline_historical_data_collection_manual_approval_decision_review.json",
+      "exists": true,
+      "size_bytes": 3202,
+      "sha256": "a37fa4cdda48ff0e148fb8e1892d99adbfe1cae44f39faf93b1f580667ce9b0d"
+    },
+    {
+      "path": "data/processed/phase19_offline_historical_data_collection_manual_approval_record.json",
+      "exists": true,
+      "size_bytes": 2950,
+      "sha256": "1a81ae63be4ccb1da9d9bf805c93394b9f8bab5184a1f42b093fc3e572dcb25e"
+    },
+    {
+      "path": "data/processed/phase19_offline_historical_data_collection_safety_closeout.json",
+      "exists": true,
+      "size_bytes": 3391,
+      "sha256": "d0982ba418a9e4df69874fea16e509f18d765b84a808ce55ec67f39656207507"
+    },
+    {
+      "path": "data/processed/phase19_offline_historical_data_collection_script_builder.json",
+      "exists": true,
+      "size_bytes": 2761,
+      "sha256": "1b2852ca0726079fd6c794844054c1e6b71968264905c12fbf003d08a6e81c13"
+    },
+    {
+      "path": "data/processed/phase19_offline_historical_data_collection_start_gate.json",
+      "exists": true,
+      "size_bytes": 3074,
+      "sha256": "fd6a8ad3c64cdcbcaf8946be2531fb3f573bca02f459e00dc164245401da4e75"
+    },
+    {
+      "path": "data/processed/phase19_strategy_rework_historical_data_expansion_decision.json",
+      "exists": true,
+      "size_bytes": 2204,
+      "sha256": "73141fffc6d1b37d8f116b187f2702613f7605f2c9170fa4968796ae6aa780c8"
+    },
+    {
+      "path": "data/processed/phase20_candidate_rejection_rules_design.json",
+      "exists": true,
+      "size_bytes": 3038,
+      "sha256": "aace15053f0cf659466d3402ec51fc1e991b081ba4bc1fc0ad4f6572e3fee32c"
+    },
+    {
+      "path": "data/processed/phase20_offline_reworked_strategy_backtest_spec.json",
+      "exists": true,
+      "size_bytes": 2720,
+      "sha256": "b7558762143cd2629bc2dece8ab9b7b5e77e6760c09c9fccc550845cea7093f3"
+    },
+    {
+      "path": "data/processed/phase20_offline_reworked_strategy_runner_design.json",
+      "exists": true,
+      "size_bytes": 3371,
+      "sha256": "efa1c8dccdb40954a6e6119219ae83c68b741ab7575f22b6ef7c7266f13202c5"
+    },
+    {
+      "path": "data/processed/phase20_offline_reworked_strategy_runner_dry_run_approval_gate.json",
+      "exists": true,
+      "size_bytes": 3315,
+      "sha256": "20e093cf28be4213579c9c6bafa5f6eedc40d43adee94b444a54573c3f52bf28"
+    },
+    {
+      "path": "data/processed/phase20_offline_reworked_strategy_runner_dry_run_blocked_start_review.json",
+      "exists": true,
+      "size_bytes": 3493,
+      "sha256": "cf0bfa015818d399e47579af45538c89d3fdae0605b194872067208312f05be2"
+    },
+    {
+      "path": "data/processed/phase20_offline_reworked_strategy_runner_dry_run_hold_state_consolidation.json",
+      "exists": true,
+      "size_bytes": 3612,
+      "sha256": "f9b7bc76a9f7a1e356b049a16d85e058ecd2da06c1982a2620317b9ee0b68a00"
+    },
+    {
+      "path": "data/processed/phase20_offline_reworked_strategy_runner_dry_run_manual_approval_record.json",
+      "exists": true,
+      "size_bytes": 3398,
+      "sha256": "bbd2be269fa01530a033cb363d80d1f8be043edd46be9ada606d899bb8188d23"
+    },
+    {
+      "path": "data/processed/phase20_offline_reworked_strategy_runner_dry_run_plan.json",
+      "exists": true,
+      "size_bytes": 3306,
+      "sha256": "e1d2ef6831dc4ddd91dfed19ab97ddc8ebb696a8decef20e989721dd524b111b"
+    },
+    {
+      "path": "data/processed/phase20_offline_reworked_strategy_runner_dry_run_safety_closeout.json",
+      "exists": true,
+      "size_bytes": 3587,
+      "sha256": "40be9c91f68f82648ea5d8c676a0cab028bfeea0384ecb69160a9f89166f2562"
+    },
+    {
+      "path": "data/processed/phase20_offline_reworked_strategy_runner_dry_run_start_gate.json",
+      "exists": true,
+      "size_bytes": 3384,
+      "sha256": "9d8cd7cbe56a7cf0692ec523e75cd75fe4ee46cdae736b876495daac21790483"
+    },
+    {
+      "path": "data/processed/phase20_strategy_failure_review.json",
+      "exists": true,
+      "size_bytes": 5154,
+      "sha256": "6832f39807cc17211dc170bf65a99e97b5a74a05059ce6d87633eb139886fcdf"
+    },
+    {
+      "path": "data/processed/phase20_strategy_quality_gate_v2_design.json",
+      "exists": true,
+      "size_bytes": 2787,
+      "sha256": "84b417763d9b27ca10d6d17716771941dbb5bfd2634f296ec6c29197caa55aa2"
+    },
+    {
+      "path": "data/processed/phase20_strategy_rework_experiment_design.json",
+      "exists": true,
+      "size_bytes": 2745,
+      "sha256": "6c6d5d5655f869df9355e81e8b45479fe8e30ba555416c90eda9a914b337d487"
+    },
+    {
+      "path": "data/processed/phase20_strategy_rework_hold_state_consolidation.json",
+      "exists": true,
+      "size_bytes": 3999,
+      "sha256": "6f00c215abc2e962a556a806cb54c9ba212a92bd994f7a09d9beda36b0247ecd"
+    },
+    {
+      "path": "data/processed/phase20_strategy_rework_hypothesis_plan.json",
+      "exists": true,
+      "size_bytes": 2723,
+      "sha256": "7c56ed8889ea18cc5369608fab3b6450733030a38f6b92391b9a2ab162268883"
+    },
+    {
+      "path": "data/processed/phase20_strategy_rework_next_action_options.json",
+      "exists": true,
+      "size_bytes": 3816,
+      "sha256": "3d5bd97aa0c5067a5c04fe5b0fc7c9eda6b0254fd94f0e76b61d9688a2b8642a"
+    },
+    {
+      "path": "data/processed/phase20_strategy_rework_next_action_selection.json",
+      "exists": true,
+      "size_bytes": 3393,
+      "sha256": "c61981b7b5c6e1e2994f9baa10763f2954880b91696e1e69b1953842b2a0fc82"
+    },
+    {
+      "path": "data/processed/phase20_strategy_rework_readiness_review.json",
+      "exists": true,
+      "size_bytes": 2927,
+      "sha256": "271623729dbf5ef1af69b921e49b3a148e582eb3727aa99065a68c4f93813319"
+    },
+    {
+      "path": "data/processed/phase20_strategy_rework_safety_closeout.json",
+      "exists": true,
+      "size_bytes": 3784,
+      "sha256": "bad869bfd88b31aa2060aba1217d9b88e0894a2df3c3e2c630b73508da542365"
+    },
+    {
+      "path": "data/processed/phase21_post_strategy_rework_hold_monitoring_consolidation.json",
+      "exists": true,
+      "size_bytes": 3161,
+      "sha256": "86e36882f2aab8b72e6a489d940b36db5c4b9e44a09c3e5785d091f0e53a9eaa"
+    },
+    {
+      "path": "data/processed/phase21_post_strategy_rework_hold_monitoring_final_hold_state_consolidation.json",
+      "exists": true,
+      "size_bytes": 3688,
+      "sha256": "9df4ca0d5a4ed5c19ad1730bda833b0bbfd57ac1db5efc1df7c40186332d2b81"
+    },
+    {
+      "path": "data/processed/phase21_post_strategy_rework_hold_monitoring_final_safety_closeout.json",
+      "exists": true,
+      "size_bytes": 3735,
+      "sha256": "adb427be6db7b271c89a77b628c99eeeda1b0bee739f6da217b4ff4738639e3a"
+    },
+    {
+      "path": "data/processed/phase21_post_strategy_rework_hold_monitoring_health_check.json",
+      "exists": true,
+      "size_bytes": 2960,
+      "sha256": "06f62c7916db7b943095872da726894e36e20c791c3a577b3afb4d1d37ad0928"
+    },
+    {
+      "path": "data/processed/phase21_post_strategy_rework_hold_monitoring_next_action_options.json",
+      "exists": true,
+      "size_bytes": 3590,
+      "sha256": "7506e8b2d7eb82b13518aeb705970465bb3dd0eb6aa7a5613f42c7aa894041ea"
+    },
+    {
+      "path": "data/processed/phase21_post_strategy_rework_hold_monitoring_next_action_selection.json",
+      "exists": true,
+      "size_bytes": 3695,
+      "sha256": "1a084aceb3a59d26c5732650981feb9adbca12b5a53597786b65df2beadffa12"
+    },
+    {
+      "path": "data/processed/phase21_post_strategy_rework_hold_monitoring_plan.json",
+      "exists": true,
+      "size_bytes": 3437,
+      "sha256": "5c5cd3f16c0a786e9fe3bf69ba366efac2043aa13e0942457a1d5d5c8196172b"
+    },
+    {
+      "path": "data/processed/phase21_post_strategy_rework_hold_monitoring_review.json",
+      "exists": true,
+      "size_bytes": 3019,
+      "sha256": "d0b786f83da7f69c014eaa84406f094c148b1c960242d745c3a15ed599643f21"
+    },
+    {
+      "path": "data/processed/phase21_post_strategy_rework_hold_monitoring_safety_closeout.json",
+      "exists": true,
+      "size_bytes": 3368,
+      "sha256": "7ff02f8502824368d7d3bce0da7707841d4ba47bc418c2c6dca8b801c1ab71aa"
+    },
+    {
+      "path": "data/processed/phase22_project_final_hold_state_closeout.json",
+      "exists": true,
+      "size_bytes": 3296,
+      "sha256": "9ec86be433840c2b841493548573928480c8da7be4dda5703980820c2f8551ff"
+    },
+    {
+      "path": "data/processed/phase22_project_hold_state_archive_and_evidence_index.json",
+      "exists": true,
+      "size_bytes": 2782,
+      "sha256": "451743d074dc526de35a600ff08142628757467a8fd8420bd8f0b052dedebf29"
+    },
+    {
+      "path": "data/processed/phase22_project_hold_state_archive_consolidation.json",
+      "exists": true,
+      "size_bytes": 2884,
+      "sha256": "0739f21672c6883ae5fc0977925b6048838aeee4885b95f440f2d0d209a9bb2a"
+    },
+    {
+      "path": "data/processed/phase22_project_hold_state_archive_review.json",
+      "exists": true,
+      "size_bytes": 2705,
+      "sha256": "fd72eba4ec431ce47d3c25bd1daa26c8e4e25aa4f951c5c5698e1af25070c5f9"
+    },
+    {
+      "path": "data/processed/phase22_project_hold_state_archive_safety_closeout.json",
+      "exists": true,
+      "size_bytes": 2852,
+      "sha256": "65f4d13ecfd0b5135f16013284e5b55ef3600bae773d5ccec94367a6e237bfe8"
+    },
+    {
+      "path": "data/processed/phase22_project_hold_state_final_summary.json",
+      "exists": true,
+      "size_bytes": 3268,
+      "sha256": "b262d22dd8ae027ae2117aa605dd3ec1473a9f719a563aa92f03ace62cb1f9b3"
+    },
+    {
+      "path": "data/processed/phase20_strategy_rework/candidate_rejection_rules_design.json",
+      "exists": true,
+      "size_bytes": 6097,
+      "sha256": "53271fb1b407a8a47a8bed9e0a8079ed03005bea8f73b8e50794ebb4cdeb077a"
+    },
+    {
+      "path": "data/processed/phase20_strategy_rework/offline_reworked_strategy_backtest_spec.json",
+      "exists": true,
+      "size_bytes": 4778,
+      "sha256": "99a0544e63f7c3a577cbcfcba867d9124921e0d583e0682afb7225cc5a1c57ff"
+    },
+    {
+      "path": "data/processed/phase20_strategy_rework/offline_reworked_strategy_runner_design.json",
+      "exists": true,
+      "size_bytes": 5209,
+      "sha256": "784549ad4c39e880f51caea40b6b9914d6d4fff983474c5fb868a5ce35a5648c"
+    },
+    {
+      "path": "data/processed/phase20_strategy_rework/offline_reworked_strategy_runner_dry_run_approval_gate.json",
+      "exists": true,
+      "size_bytes": 2592,
+      "sha256": "2479a52a59eea42d9cbd2fdea7a91791e0f2af2de95315ab7d98abc0f6e3c098"
+    },
+    {
+      "path": "data/processed/phase20_strategy_rework/offline_reworked_strategy_runner_dry_run_blocked_start_review.json",
+      "exists": true,
+      "size_bytes": 2948,
+      "sha256": "f4f2482382f256235fcc1781d92d3e50a11d8df2ed54e05b2bcfdd0e466b5b35"
+    },
+    {
+      "path": "data/processed/phase20_strategy_rework/offline_reworked_strategy_runner_dry_run_hold_state_consolidation.json",
+      "exists": true,
+      "size_bytes": 3615,
+      "sha256": "95e66dd2d54cf81d44d4e5ad6ced0393549ee4417303ed4e32f0dfaeece04436"
+    },
+    {
+      "path": "data/processed/phase20_strategy_rework/offline_reworked_strategy_runner_dry_run_manual_approval_record.json",
+      "exists": true,
+      "size_bytes": 2976,
+      "sha256": "1f50f08b6b1a2a97ba4cab349d9adcdcf5d9552d3c73c23b7ccad22fc7e57b06"
+    },
+    {
+      "path": "data/processed/phase20_strategy_rework/offline_reworked_strategy_runner_dry_run_manual_approval_template.json",
+      "exists": true,
+      "size_bytes": 624,
+      "sha256": "3f1a5427cbcc789b0269c1dd14d89ad67ab228d764fd061a43631f4ec399d6c9"
+    },
+    {
+      "path": "data/processed/phase20_strategy_rework/offline_reworked_strategy_runner_dry_run_plan.json",
+      "exists": true,
+      "size_bytes": 4420,
+      "sha256": "0bee92b47367c52ec8e4598f7cebba1b2d348fbdd39f1f50a9eff92b679f5eec"
+    },
+    {
+      "path": "data/processed/phase20_strategy_rework/offline_reworked_strategy_runner_dry_run_safety_closeout.json",
+      "exists": true,
+      "size_bytes": 3669,
+      "sha256": "90de1ee06c39e3dd808f831e6ad5a5ec0b54f03ca88a3f9dcaef843d93899744"
+    },
+    {
+      "path": "data/processed/phase20_strategy_rework/offline_reworked_strategy_runner_dry_run_start_gate.json",
+      "exists": true,
+      "size_bytes": 2870,
+      "sha256": "6ff617e52dc2edadf35a47c6a5921917e8e3099db6c777e9e8ec239c44c1d03b"
+    },
+    {
+      "path": "data/processed/phase20_strategy_rework/strategy_failure_review.json",
+      "exists": true,
+      "size_bytes": 6788,
+      "sha256": "cd8f4b98382010c161abbf67e69e3979e1de7a3bb8c53b98e671bd2f2c8b454c"
+    },
+    {
+      "path": "data/processed/phase20_strategy_rework/strategy_quality_gate_v2_design.json",
+      "exists": true,
+      "size_bytes": 3762,
+      "sha256": "2d1697001d8f9f90949acc16468d0230227dc1beafa48d70b30d755fdaa26252"
+    },
+    {
+      "path": "data/processed/phase20_strategy_rework/strategy_rework_experiment_design.json",
+      "exists": true,
+      "size_bytes": 4761,
+      "sha256": "87f42e827b123f4bc78c822fd31c4a44d0c957715046030f1fffb9cbb7927cf1"
+    },
+    {
+      "path": "data/processed/phase20_strategy_rework/strategy_rework_hold_state_consolidation.json",
+      "exists": true,
+      "size_bytes": 4176,
+      "sha256": "68124cee2e516b0072385204185b39ad6172d677b22915046981464645fdb0dd"
+    },
+    {
+      "path": "data/processed/phase20_strategy_rework/strategy_rework_hypothesis_plan.json",
+      "exists": true,
+      "size_bytes": 6333,
+      "sha256": "e7ff5f5eccdd8d75d42abb18bc5ef7d18e0d51ba9054fb8cc14b2b9e2e99e22c"
+    },
+    {
+      "path": "data/processed/phase20_strategy_rework/strategy_rework_next_action_options.json",
+      "exists": true,
+      "size_bytes": 4136,
+      "sha256": "e80ad27a335b74b586f26e671c7cdc8564db48992d2aad26e2238d1f39c3a942"
+    },
+    {
+      "path": "data/processed/phase20_strategy_rework/strategy_rework_next_action_selection.json",
+      "exists": true,
+      "size_bytes": 2952,
+      "sha256": "90ec42882c52e73f7c7a880f55b505b5e19fdf9de93f693a1da8715ea458e999"
+    },
+    {
+      "path": "data/processed/phase20_strategy_rework/strategy_rework_readiness_review.json",
+      "exists": true,
+      "size_bytes": 2524,
+      "sha256": "255a0ba00e47d896ad2d99b3a4722e5da6d717d96ef6d8ced8af7ee64b99ae5a"
+    },
+    {
+      "path": "data/processed/phase20_strategy_rework/strategy_rework_safety_closeout.json",
+      "exists": true,
+      "size_bytes": 4012,
+      "sha256": "c806215a9490938cbd8a8c72c6463c6bd78baf0c00d8200f7d5141f082a7edaf"
+    },
+    {
+      "path": "data/processed/phase21_hold_monitoring/post_strategy_rework_hold_monitoring_consolidation.json",
+      "exists": true,
+      "size_bytes": 3281,
+      "sha256": "c32aae547b7afe00392f579d5f560c0b4065bbb28db0f8571923d1fcd345534a"
+    },
+    {
+      "path": "data/processed/phase21_hold_monitoring/post_strategy_rework_hold_monitoring_final_hold_state_consolidation.json",
+      "exists": true,
+      "size_bytes": 3869,
+      "sha256": "af1c73d50588b3277dc7a47b0bdbc30e547398a9acf9bc58a9cc53746575187c"
+    },
+    {
+      "path": "data/processed/phase21_hold_monitoring/post_strategy_rework_hold_monitoring_final_safety_closeout.json",
+      "exists": true,
+      "size_bytes": 3935,
+      "sha256": "e213f1ac2341d007d2d4ffd17b7c56445a1289292cef7feadeae57b53a779287"
+    },
+    {
+      "path": "data/processed/phase21_hold_monitoring/post_strategy_rework_hold_monitoring_health_check.json",
+      "exists": true,
+      "size_bytes": 2042,
+      "sha256": "fb523a4eac15c0709d938c30fbcd674df2abfc78819213597a887224ef6611ce"
+    },
+    {
+      "path": "data/processed/phase21_hold_monitoring/post_strategy_rework_hold_monitoring_next_action_options.json",
+      "exists": true,
+      "size_bytes": 3926,
+      "sha256": "c7c7ad339258c8b34ff7011fe983fd98031446ec92f4d32fa2b7ae23448d546b"
+    },
+    {
+      "path": "data/processed/phase21_hold_monitoring/post_strategy_rework_hold_monitoring_next_action_selection.json",
+      "exists": true,
+      "size_bytes": 3157,
+      "sha256": "d395b76db52e5ca5f82907f237d75270a1d1807a51f3724573a6d1663bb6a6e3"
+    },
+    {
+      "path": "data/processed/phase21_hold_monitoring/post_strategy_rework_hold_monitoring_plan.json",
+      "exists": true,
+      "size_bytes": 3856,
+      "sha256": "8a048219b04f84d1da1574faf41f357e7181e322319790442bb7e64a8fcd348a"
+    },
+    {
+      "path": "data/processed/phase21_hold_monitoring/post_strategy_rework_hold_monitoring_review.json",
+      "exists": true,
+      "size_bytes": 2100,
+      "sha256": "bca7a79577c6f5915b1c275f3f3e995b78ef8b991711d1d9267cb311e30f7213"
+    },
+    {
+      "path": "data/processed/phase21_hold_monitoring/post_strategy_rework_hold_monitoring_safety_closeout.json",
+      "exists": true,
+      "size_bytes": 3576,
+      "sha256": "1f88daeb6ba3d2b51bd964b4e2ab84c61b6f5564c0ae7e8bcc98459ba3c3f42f"
+    },
+    {
+      "path": "data/processed/phase22_project_archive/project_final_hold_state_closeout.json",
+      "exists": true,
+      "size_bytes": 3925,
+      "sha256": "1c53384f9441167285b8694ba2df1bd8ad76c85d0c2761a7e49ca6fad8677c8c"
+    },
+    {
+      "path": "data/processed/phase22_project_archive/project_hold_state_archive_consolidation.json",
+      "exists": true,
+      "size_bytes": 2390,
+      "sha256": "e69128a792c4d253371a8f53745ccaf349fc507c286f07c67c807dd73a841283"
+    },
+    {
+      "path": "data/processed/phase22_project_archive/project_hold_state_archive_manifest.json",
+      "exists": true,
+      "size_bytes": 66723,
+      "sha256": "930ea507daa60b445a82ab93f9f268e22c9e62a3e31932bb75b9b4f288db69bb"
+    },
+    {
+      "path": "data/processed/phase22_project_archive/project_hold_state_archive_review.json",
+      "exists": true,
+      "size_bytes": 2246,
+      "sha256": "906d1404d205fb39c01c172dd627e09e13234ca0be3f1cf2029bb388802b0927"
+    },
+    {
+      "path": "data/processed/phase22_project_archive/project_hold_state_archive_safety_closeout.json",
+      "exists": true,
+      "size_bytes": 3566,
+      "sha256": "1298776069e48e9afaa9e8486d35e4b2b98b4ca275098f6444480f5a9d34f92c"
+    },
+    {
+      "path": "data/processed/phase22_project_archive/project_hold_state_evidence_index.json",
+      "exists": true,
+      "size_bytes": 3323,
+      "sha256": "8f0c155795bdff4588e2f583ccb5be25b5b4005a36b634d6181a56f999e66dad"
+    },
+    {
+      "path": "data/processed/phase22_project_archive/project_hold_state_final_summary.json",
+      "exists": true,
+      "size_bytes": 3895,
+      "sha256": "2344cf08dec40cd887694c00ca7e6b9d2277d59901a2f5df910a935419e5314e"
+    }
+  ],
+  "sealed_runtime_files": [
+    {
+      "path": "runtime/phase17_paper_shadow_approval_decision_point.json",
+      "exists": true,
+      "size_bytes": 1463,
+      "sha256": "d8f1b1e65c657d5edd5d9d5d4af63876d5535b70c385b305f85e66812ffce7ef"
+    },
+    {
+      "path": "runtime/phase17_paper_shadow_approval_decision_review.json",
+      "exists": true,
+      "size_bytes": 558,
+      "sha256": "d15b0337988c6fb03a11055687008d2bf93370e4875b5ac44c10f78170beb6e3"
+    },
+    {
+      "path": "runtime/phase17_paper_shadow_hold_state.json",
+      "exists": true,
+      "size_bytes": 1116,
+      "sha256": "f3f83dd3dbd9f8f8321c7a19e7334171616484cc8de9e8e1215c4ac1ed2674da"
+    },
+    {
+      "path": "runtime/phase17_paper_shadow_manual_approval_record.json",
+      "exists": true,
+      "size_bytes": 387,
+      "sha256": "26663733cd0e597c43f266108c51f11fd26a0183917fda63e9490e5bb1f1d65e"
+    },
+    {
+      "path": "runtime/phase17_paper_shadow_manual_approval_update_gate.json",
+      "exists": true,
+      "size_bytes": 997,
+      "sha256": "b06238236104524a987ac597287450a9fe51a83eb868bca389afd7668049074a"
+    },
+    {
+      "path": "runtime/phase17_paper_shadow_safe_start_stub.json",
+      "exists": true,
+      "size_bytes": 1184,
+      "sha256": "0f591ea9e6f35c7314ec04915c7db248660c890c2e81cf7cffaeaa762a388890"
+    },
+    {
+      "path": "runtime/phase17_paper_shadow_start_attempt_review.json",
+      "exists": true,
+      "size_bytes": 667,
+      "sha256": "b056933f32a6a920e4ff9c6a27c770cf1930e2a64a7da76be5ca6cce2b4f3109"
+    },
+    {
+      "path": "runtime/phase17_paper_shadow_start_gate.json",
+      "exists": true,
+      "size_bytes": 418,
+      "sha256": "f528bd54dd1dd3d73b47e50a0d4fe5eb26ebc3ee2e9c5d352777e4460e3a6fd9"
+    },
+    {
+      "path": "runtime/phase17_paper_shadow_start_readiness_check.json",
+      "exists": true,
+      "size_bytes": 523,
+      "sha256": "f0608d3c9680e98eb2802d2a4c044b66f5b09aa706b2e342c123d8bf33578c0a"
+    },
+    {
+      "path": "runtime/phase17_paper_shadow_start_readiness_recheck.json",
+      "exists": true,
+      "size_bytes": 682,
+      "sha256": "3af37a2f4dec576411caccf78bf2b687de9382633603b731cd890a492f5d7616"
+    },
+    {
+      "path": "runtime/phase17_paper_shadow_state.json",
+      "exists": true,
+      "size_bytes": 479,
+      "sha256": "ed5ad7a2323bf00e5b58421ad3743389f90f62f859ee54a1cca0f897e8b91b1d"
+    },
+    {
+      "path": "runtime/phase17_safety_closeout_state.json",
+      "exists": true,
+      "size_bytes": 3908,
+      "sha256": "c446abe7eaadf6673c4a95bd89ff72faf2333d17e3dcd567a80e63bf3a45b0e8"
+    },
+    {
+      "path": "runtime/phase18_final_safety_closeout_state.json",
+      "exists": true,
+      "size_bytes": 2416,
+      "sha256": "ab9fd58b2ad105c5f3093d69661395fc9f2e68c2bfc88d9dc9b4e98f80dd3244"
+    },
+    {
+      "path": "runtime/phase18_hold_state_closeout_report_state.json",
+      "exists": true,
+      "size_bytes": 1996,
+      "sha256": "cbc75047295bd79964596a848ae34e699bdddd453bbcfb019e12545c6e2fa249"
+    },
+    {
+      "path": "runtime/phase18_hold_state_continuation_evidence_snapshot_state.json",
+      "exists": true,
+      "size_bytes": 4651,
+      "sha256": "14d28356360e61c9b37681e160dbeea15ebf0f98f2ce47c4189e4c70ae8af676"
+    },
+    {
+      "path": "runtime/phase18_hold_state_continuation_health_check_state.json",
+      "exists": true,
+      "size_bytes": 2221,
+      "sha256": "986f15a6ff4a50bd63f84eb35878013f5d2de954675720ecf49a241855fb2e20"
+    },
+    {
+      "path": "runtime/phase18_hold_state_continuation_plan_state.json",
+      "exists": true,
+      "size_bytes": 2657,
+      "sha256": "615af142b038dbe0345fe8460d55a5b1fcce6809785ce665eb66f216d699395e"
+    },
+    {
+      "path": "runtime/phase18_hold_state_daily_checklist_state.json",
+      "exists": true,
+      "size_bytes": 2685,
+      "sha256": "20bb26410c96ddc46cdce71647016232a744597df4bac00d9e552e453d36a9c4"
+    },
+    {
+      "path": "runtime/phase18_hold_state_evidence_index_state.json",
+      "exists": true,
+      "size_bytes": 3762,
+      "sha256": "f5094a7745c5a82b20856fd2d1baa77d5919d1e161d3862ac0a5c427ff9ba1d3"
+    },
+    {
+      "path": "runtime/phase18_hold_state_final_continuation_review_state.json",
+      "exists": true,
+      "size_bytes": 2061,
+      "sha256": "93ef953e7e80fcb411b4007894564c775a1a314dc27a09d7eec8a9362b55b01d"
+    },
+    {
+      "path": "runtime/phase18_hold_state_monitoring_health_check_state.json",
+      "exists": true,
+      "size_bytes": 1771,
+      "sha256": "41801af9804fbb1b54713f8f9ae0bd21a554fc6e35ed2423e24609f5e0e5a863"
+    },
+    {
+      "path": "runtime/phase18_hold_state_monitoring_plan_state.json",
+      "exists": true,
+      "size_bytes": 1589,
+      "sha256": "3d6feaf09973b98504595946e328519a470f3c3e888a8a9cbb58f5f2fec92d04"
+    },
+    {
+      "path": "runtime/phase18_hold_state_monitoring_report_state.json",
+      "exists": true,
+      "size_bytes": 1660,
+      "sha256": "e0665f9ec08dc4a52c66c1cfd45ca6c3fddcebc279632a9b9467687affb92403"
+    },
+    {
+      "path": "runtime/phase18_hold_state_weekly_dashboard_review_plan_state.json",
+      "exists": true,
+      "size_bytes": 2442,
+      "sha256": "f7b1ca1e00e8f4c2e3c9337e3a104ce4bd4e37b089d315322647fe390e4e8831"
+    },
+    {
+      "path": "runtime/phase18_hold_state_weekly_dashboard_review_snapshot_state.json",
+      "exists": true,
+      "size_bytes": 3164,
+      "sha256": "034028083df14c87e4694ed1067befc4f644297e3b9f2cbb3b3f33bc2ddaf351"
+    },
+    {
+      "path": "runtime/phase18_hold_state_weekly_review_summary_state.json",
+      "exists": true,
+      "size_bytes": 1760,
+      "sha256": "6f0c0fcad9289cdc330e7c2d38e95ce08e3c5ef8254361c4f4533cbce50240ff"
+    },
+    {
+      "path": "runtime/phase18_next_action_selection_state.json",
+      "exists": true,
+      "size_bytes": 1124,
+      "sha256": "9f439c045f246137892d406ab4d60f7699f4bc7d45ce495964a998636239b686"
+    },
+    {
+      "path": "runtime/phase19_historical_data_expansion_hold_state_consolidation_state.json",
+      "exists": true,
+      "size_bytes": 3285,
+      "sha256": "422e574fc27e098f9b2a5e363679ab0a11a6d7656433cfb92cb0aa77c6d0d222"
+    },
+    {
+      "path": "runtime/phase19_historical_data_expansion_manifest_builder_state.json",
+      "exists": true,
+      "size_bytes": 12647,
+      "sha256": "0e4a14edf5b8d49e00001683448544cbc52c3b927a406e71aa2c4624da1b3a05"
+    },
+    {
+      "path": "runtime/phase19_historical_data_expansion_next_action_options_state.json",
+      "exists": true,
+      "size_bytes": 3513,
+      "sha256": "b74c6d834f7225269fe6489531bc9173a765e75929573f2497ccebd9746ebea4"
+    },
+    {
+      "path": "runtime/phase19_historical_data_expansion_next_action_selection_state.json",
+      "exists": true,
+      "size_bytes": 2539,
+      "sha256": "6ff83512c0509e90847688b232c50627077aeea53bdd93a7098d1dcc405e8087"
+    },
+    {
+      "path": "runtime/phase19_historical_data_expansion_plan_state.json",
+      "exists": true,
+      "size_bytes": 1999,
+      "sha256": "8c2907040af242c0333a57a9ebfefa5ed262092b9f39b0646c459ca28f4e5e63"
+    },
+    {
+      "path": "runtime/phase19_historical_data_expansion_safety_closeout_state.json",
+      "exists": true,
+      "size_bytes": 3611,
+      "sha256": "bd6d874659ead70be89b03d02c1e64074a6fa8cb338d5a88d0662313de01daf7"
+    },
+    {
+      "path": "runtime/phase19_historical_data_gap_fill_plan_state.json",
+      "exists": true,
+      "size_bytes": 10639,
+      "sha256": "7845a1382cb9e49505b266f27fb251ae6068d5bad026df8040be141ddd3a0d93"
+    },
+    {
+      "path": "runtime/phase19_historical_data_quality_rules_builder_state.json",
+      "exists": true,
+      "size_bytes": 5688,
+      "sha256": "b4c1170ea8f7c886f2af87e715e31e5e18bc4a89da453ce3ca491cbb504a8b0d"
+    },
+    {
+      "path": "runtime/phase19_historical_dataset_coverage_validator_state.json",
+      "exists": true,
+      "size_bytes": 9543,
+      "sha256": "e1fb6cf1516794794789a3aa0d5cf31b1edab3a7c7ce84abba906ed818767159"
+    },
+    {
+      "path": "runtime/phase19_offline_historical_data_collection_approval_gate_state.json",
+      "exists": true,
+      "size_bytes": 1823,
+      "sha256": "1f86c2e27ba3d3ac2419d2e17b5843f5985d782cdd485fa78dd9052614b77c36"
+    },
+    {
+      "path": "runtime/phase19_offline_historical_data_collection_blocked_start_review_state.json",
+      "exists": true,
+      "size_bytes": 2535,
+      "sha256": "0f12fd6089405380ebd23aa0a5fc862d0d648aeb0c4e8d3b9afa58cd1a477990"
+    },
+    {
+      "path": "runtime/phase19_offline_historical_data_collection_dry_run_state.json",
+      "exists": true,
+      "size_bytes": 12557,
+      "sha256": "ab9f0d6c903d6523b626b03390e95f72508a1ce6ff4aaac8100059bf9df25b3c"
+    },
+    {
+      "path": "runtime/phase19_offline_historical_data_collection_hold_state_consolidation_state.json",
+      "exists": true,
+      "size_bytes": 2966,
+      "sha256": "28d74bafd6bb8f90c37b4b4d1219069bf26a67178c4235124480e1d46a6fbdd6"
+    },
+    {
+      "path": "runtime/phase19_offline_historical_data_collection_manual_approval_decision_point_state.json",
+      "exists": true,
+      "size_bytes": 2584,
+      "sha256": "e4090cde0e5a83f7927e0386a50e2337225bc1b80676ac151da5a77d3d2a10d3"
+    },
+    {
+      "path": "runtime/phase19_offline_historical_data_collection_manual_approval_decision_review_state.json",
+      "exists": true,
+      "size_bytes": 2636,
+      "sha256": "73c5f834aaac21f6c4854ec8b4e51d2364635679bd54fa84b840cc6b6d5e7333"
+    },
+    {
+      "path": "runtime/phase19_offline_historical_data_collection_manual_approval_record_state.json",
+      "exists": true,
+      "size_bytes": 2410,
+      "sha256": "9d2cbc21ddb25b3b43756f57e4dc2fba5e21fa29f8e976b8b5e907333afcf99f"
+    },
+    {
+      "path": "runtime/phase19_offline_historical_data_collection_safety_closeout_state.json",
+      "exists": true,
+      "size_bytes": 3093,
+      "sha256": "8c939bdf5902d9d3f004c890a7f7ba11511badcb121a5caf9e0008314f654091"
+    },
+    {
+      "path": "runtime/phase19_offline_historical_data_collection_script_builder_state.json",
+      "exists": true,
+      "size_bytes": 1825,
+      "sha256": "369f4ff30db5f9fb9ee8ab408565900419fb485dea5507a0a04d2c6e9e33c162"
+    },
+    {
+      "path": "runtime/phase19_offline_historical_data_collection_start_gate_state.json",
+      "exists": true,
+      "size_bytes": 2455,
+      "sha256": "a10f172f30fcc55ea583ed0ad2310715cdcf6f931324d1fe35ef2a6faeaab7b2"
+    },
+    {
+      "path": "runtime/phase19_strategy_rework_historical_data_expansion_decision_state.json",
+      "exists": true,
+      "size_bytes": 2422,
+      "sha256": "d8daf4f93d5d35dd4b6042c1bbd20726d4eac1af99dbc9ac6779422e5424ef11"
+    },
+    {
+      "path": "runtime/phase20_candidate_rejection_rules_design_state.json",
+      "exists": true,
+      "size_bytes": 6097,
+      "sha256": "53271fb1b407a8a47a8bed9e0a8079ed03005bea8f73b8e50794ebb4cdeb077a"
+    },
+    {
+      "path": "runtime/phase20_offline_reworked_strategy_backtest_spec_state.json",
+      "exists": true,
+      "size_bytes": 4778,
+      "sha256": "99a0544e63f7c3a577cbcfcba867d9124921e0d583e0682afb7225cc5a1c57ff"
+    },
+    {
+      "path": "runtime/phase20_offline_reworked_strategy_runner_design_state.json",
+      "exists": true,
+      "size_bytes": 5209,
+      "sha256": "784549ad4c39e880f51caea40b6b9914d6d4fff983474c5fb868a5ce35a5648c"
+    },
+    {
+      "path": "runtime/phase20_offline_reworked_strategy_runner_dry_run_approval_gate_state.json",
+      "exists": true,
+      "size_bytes": 2592,
+      "sha256": "2479a52a59eea42d9cbd2fdea7a91791e0f2af2de95315ab7d98abc0f6e3c098"
+    },
+    {
+      "path": "runtime/phase20_offline_reworked_strategy_runner_dry_run_blocked_start_review_state.json",
+      "exists": true,
+      "size_bytes": 2948,
+      "sha256": "f4f2482382f256235fcc1781d92d3e50a11d8df2ed54e05b2bcfdd0e466b5b35"
+    },
+    {
+      "path": "runtime/phase20_offline_reworked_strategy_runner_dry_run_hold_state_consolidation_state.json",
+      "exists": true,
+      "size_bytes": 3615,
+      "sha256": "95e66dd2d54cf81d44d4e5ad6ced0393549ee4417303ed4e32f0dfaeece04436"
+    },
+    {
+      "path": "runtime/phase20_offline_reworked_strategy_runner_dry_run_manual_approval_record_state.json",
+      "exists": true,
+      "size_bytes": 2976,
+      "sha256": "1f50f08b6b1a2a97ba4cab349d9adcdcf5d9552d3c73c23b7ccad22fc7e57b06"
+    },
+    {
+      "path": "runtime/phase20_offline_reworked_strategy_runner_dry_run_plan_state.json",
+      "exists": true,
+      "size_bytes": 4420,
+      "sha256": "0bee92b47367c52ec8e4598f7cebba1b2d348fbdd39f1f50a9eff92b679f5eec"
+    },
+    {
+      "path": "runtime/phase20_offline_reworked_strategy_runner_dry_run_safety_closeout_state.json",
+      "exists": true,
+      "size_bytes": 3669,
+      "sha256": "90de1ee06c39e3dd808f831e6ad5a5ec0b54f03ca88a3f9dcaef843d93899744"
+    },
+    {
+      "path": "runtime/phase20_offline_reworked_strategy_runner_dry_run_start_gate_state.json",
+      "exists": true,
+      "size_bytes": 2870,
+      "sha256": "6ff617e52dc2edadf35a47c6a5921917e8e3099db6c777e9e8ec239c44c1d03b"
+    },
+    {
+      "path": "runtime/phase20_strategy_failure_review_state.json",
+      "exists": true,
+      "size_bytes": 6788,
+      "sha256": "cd8f4b98382010c161abbf67e69e3979e1de7a3bb8c53b98e671bd2f2c8b454c"
+    },
+    {
+      "path": "runtime/phase20_strategy_quality_gate_v2_design_state.json",
+      "exists": true,
+      "size_bytes": 3762,
+      "sha256": "2d1697001d8f9f90949acc16468d0230227dc1beafa48d70b30d755fdaa26252"
+    },
+    {
+      "path": "runtime/phase20_strategy_rework_experiment_design_state.json",
+      "exists": true,
+      "size_bytes": 4761,
+      "sha256": "87f42e827b123f4bc78c822fd31c4a44d0c957715046030f1fffb9cbb7927cf1"
+    },
+    {
+      "path": "runtime/phase20_strategy_rework_hold_state_consolidation_state.json",
+      "exists": true,
+      "size_bytes": 4176,
+      "sha256": "68124cee2e516b0072385204185b39ad6172d677b22915046981464645fdb0dd"
+    },
+    {
+      "path": "runtime/phase20_strategy_rework_hypothesis_plan_state.json",
+      "exists": true,
+      "size_bytes": 6333,
+      "sha256": "e7ff5f5eccdd8d75d42abb18bc5ef7d18e0d51ba9054fb8cc14b2b9e2e99e22c"
+    },
+    {
+      "path": "runtime/phase20_strategy_rework_next_action_options_state.json",
+      "exists": true,
+      "size_bytes": 4136,
+      "sha256": "e80ad27a335b74b586f26e671c7cdc8564db48992d2aad26e2238d1f39c3a942"
+    },
+    {
+      "path": "runtime/phase20_strategy_rework_next_action_selection_state.json",
+      "exists": true,
+      "size_bytes": 2952,
+      "sha256": "90ec42882c52e73f7c7a880f55b505b5e19fdf9de93f693a1da8715ea458e999"
+    },
+    {
+      "path": "runtime/phase20_strategy_rework_readiness_review_state.json",
+      "exists": true,
+      "size_bytes": 2524,
+      "sha256": "255a0ba00e47d896ad2d99b3a4722e5da6d717d96ef6d8ced8af7ee64b99ae5a"
+    },
+    {
+      "path": "runtime/phase20_strategy_rework_safety_closeout_state.json",
+      "exists": true,
+      "size_bytes": 4012,
+      "sha256": "c806215a9490938cbd8a8c72c6463c6bd78baf0c00d8200f7d5141f082a7edaf"
+    },
+    {
+      "path": "runtime/phase21_post_strategy_rework_hold_monitoring_consolidation_state.json",
+      "exists": true,
+      "size_bytes": 3281,
+      "sha256": "c32aae547b7afe00392f579d5f560c0b4065bbb28db0f8571923d1fcd345534a"
+    },
+    {
+      "path": "runtime/phase21_post_strategy_rework_hold_monitoring_final_hold_state_consolidation_state.json",
+      "exists": true,
+      "size_bytes": 3869,
+      "sha256": "af1c73d50588b3277dc7a47b0bdbc30e547398a9acf9bc58a9cc53746575187c"
+    },
+    {
+      "path": "runtime/phase21_post_strategy_rework_hold_monitoring_final_safety_closeout_state.json",
+      "exists": true,
+      "size_bytes": 3935,
+      "sha256": "e213f1ac2341d007d2d4ffd17b7c56445a1289292cef7feadeae57b53a779287"
+    },
+    {
+      "path": "runtime/phase21_post_strategy_rework_hold_monitoring_health_check_state.json",
+      "exists": true,
+      "size_bytes": 2042,
+      "sha256": "fb523a4eac15c0709d938c30fbcd674df2abfc78819213597a887224ef6611ce"
+    },
+    {
+      "path": "runtime/phase21_post_strategy_rework_hold_monitoring_next_action_options_state.json",
+      "exists": true,
+      "size_bytes": 3926,
+      "sha256": "c7c7ad339258c8b34ff7011fe983fd98031446ec92f4d32fa2b7ae23448d546b"
+    },
+    {
+      "path": "runtime/phase21_post_strategy_rework_hold_monitoring_next_action_selection_state.json",
+      "exists": true,
+      "size_bytes": 3157,
+      "sha256": "d395b76db52e5ca5f82907f237d75270a1d1807a51f3724573a6d1663bb6a6e3"
+    },
+    {
+      "path": "runtime/phase21_post_strategy_rework_hold_monitoring_plan_state.json",
+      "exists": true,
+      "size_bytes": 3856,
+      "sha256": "8a048219b04f84d1da1574faf41f357e7181e322319790442bb7e64a8fcd348a"
+    },
+    {
+      "path": "runtime/phase21_post_strategy_rework_hold_monitoring_review_state.json",
+      "exists": true,
+      "size_bytes": 2100,
+      "sha256": "bca7a79577c6f5915b1c275f3f3e995b78ef8b991711d1d9267cb311e30f7213"
+    },
+    {
+      "path": "runtime/phase21_post_strategy_rework_hold_monitoring_safety_closeout_state.json",
+      "exists": true,
+      "size_bytes": 3576,
+      "sha256": "1f88daeb6ba3d2b51bd964b4e2ab84c61b6f5564c0ae7e8bcc98459ba3c3f42f"
+    },
+    {
+      "path": "runtime/phase22_project_final_hold_state_closeout_state.json",
+      "exists": true,
+      "size_bytes": 3925,
+      "sha256": "1c53384f9441167285b8694ba2df1bd8ad76c85d0c2761a7e49ca6fad8677c8c"
+    },
+    {
+      "path": "runtime/phase22_project_hold_state_archive_and_evidence_index_state.json",
+      "exists": true,
+      "size_bytes": 2409,
+      "sha256": "0f11a9d810c5f87213ccd1b60108443f17a9065117461b2a44a8fc135b9287db"
+    },
+    {
+      "path": "runtime/phase22_project_hold_state_archive_consolidation_state.json",
+      "exists": true,
+      "size_bytes": 2390,
+      "sha256": "e69128a792c4d253371a8f53745ccaf349fc507c286f07c67c807dd73a841283"
+    },
+    {
+      "path": "runtime/phase22_project_hold_state_archive_review_state.json",
+      "exists": true,
+      "size_bytes": 2246,
+      "sha256": "906d1404d205fb39c01c172dd627e09e13234ca0be3f1cf2029bb388802b0927"
+    },
+    {
+      "path": "runtime/phase22_project_hold_state_archive_safety_closeout_state.json",
+      "exists": true,
+      "size_bytes": 3566,
+      "sha256": "1298776069e48e9afaa9e8486d35e4b2b98b4ca275098f6444480f5a9d34f92c"
+    },
+    {
+      "path": "runtime/phase22_project_hold_state_final_summary_state.json",
+      "exists": true,
+      "size_bytes": 3895,
+      "sha256": "2344cf08dec40cd887694c00ca7e6b9d2277d59901a2f5df910a935419e5314e"
+    }
+  ],
+  "sealed_documentation_files": [
+    {
+      "path": "docs/PHASE_17_10_OUT_OF_SAMPLE_CANDIDATE_VALIDATION_RUNNER.md",
+      "exists": true,
+      "size_bytes": 914,
+      "sha256": "45b480c93214aa861c1df504c1665c114c4b3ee658e8511b710a72e4be226853"
+    },
+    {
+      "path": "docs/PHASE_17_11_OOS_RESULTS_REVIEW_OVERFITTING_CHECK.md",
+      "exists": true,
+      "size_bytes": 1141,
+      "sha256": "dac4c0d8da6f124853f2175f5dd760695ff46178cbac2e2c5234195be16e8f6e"
+    },
+    {
+      "path": "docs/PHASE_17_12_WALK_FORWARD_VALIDATION_RUNNER.md",
+      "exists": true,
+      "size_bytes": 915,
+      "sha256": "8655c5c364027c1086fb4ec038bb9caf72a4fd43e03db5372e126cc05aee3707"
+    },
+    {
+      "path": "docs/PHASE_17_13_FINAL_STRATEGY_CANDIDATE_REVIEW.md",
+      "exists": true,
+      "size_bytes": 1011,
+      "sha256": "afb53afa652b275523b9008f0a6fe2980ab2ac27c3ebb442bda73bfef1082cc3"
+    },
+    {
+      "path": "docs/PHASE_17_14_CANDIDATE_RISK_SIZING_STRESS_TEST_PLAN.md",
+      "exists": true,
+      "size_bytes": 791,
+      "sha256": "074bd1353980cec765f58fe6fb336009d29737464e525001157e1bc9664e6d96"
+    },
+    {
+      "path": "docs/PHASE_17_15_CANDIDATE_STRESS_TEST_RUNNER.md",
+      "exists": true,
+      "size_bytes": 950,
+      "sha256": "d02249d762365b236a31f8b04a14cf60d30b2012fb105be63b1ef8a797959e9a"
+    },
+    {
+      "path": "docs/PHASE_17_16_STRESS_TEST_RESULTS_REVIEW.md",
+      "exists": true,
+      "size_bytes": 952,
+      "sha256": "8b43b7cae944830c33ba474ec8ebc35621ee421abfe210fba8c154a28dbb9c6b"
+    },
+    {
+      "path": "docs/PHASE_17_17_PAPER_SHADOW_TRADING_PLAN.md",
+      "exists": true,
+      "size_bytes": 949,
+      "sha256": "2d72d3bfd998c5b7c1e8c4ee750426576590dac7bb41c2b5c70cfa4906ec2608"
+    },
+    {
+      "path": "docs/PHASE_17_18_PAPER_SHADOW_EXECUTION_HARNESS.md",
+      "exists": true,
+      "size_bytes": 830,
+      "sha256": "3b37dad6345195f96a3fa7176ec6d88b63967bc102a29a5d619074a20bf9c078"
+    },
+    {
+      "path": "docs/PHASE_17_19_PAPER_SHADOW_START_GATE.md",
+      "exists": true,
+      "size_bytes": 895,
+      "sha256": "908193626d6a8b0f9e992ce6358a681a40891306c777d9709067e4f2eca295e9"
+    },
+    {
+      "path": "docs/PHASE_17_1_STRATEGY_HARDENING_BASELINE.md",
+      "exists": true,
+      "size_bytes": 577,
+      "sha256": "c87720743f67949d3cc412a6aa4acab12bc72a42c603752501ebaa0e8df0f4cf"
+    },
+    {
+      "path": "docs/PHASE_17_20_PAPER_SHADOW_MANUAL_APPROVAL_RECORD.md",
+      "exists": true,
+      "size_bytes": 906,
+      "sha256": "29fb2b8be00bb6d490e270be416bf0f308ebff859c97276a2558192db7a438c5"
+    },
+    {
+      "path": "docs/PHASE_17_21_PAPER_SHADOW_START_READINESS_CHECK.md",
+      "exists": true,
+      "size_bytes": 1158,
+      "sha256": "8ffe5f0f7a0eea621779b0ba3e1bb942de61148e5af1e6b3c5fe32da4569d39d"
+    },
+    {
+      "path": "docs/PHASE_17_22_PAPER_SHADOW_SAFE_START_STUB.md",
+      "exists": true,
+      "size_bytes": 896,
+      "sha256": "41c52701674d0763458d035d1c5cf7c71508a28ad4aa3027f0726ba44da137f2"
+    },
+    {
+      "path": "docs/PHASE_17_23_PAPER_SHADOW_BLOCKED_START_REVIEW.md",
+      "exists": true,
+      "size_bytes": 1048,
+      "sha256": "9b0e836befdd264e17b578b756a020533a05d4c8ccee8c935f614a644de47b1d"
+    },
+    {
+      "path": "docs/PHASE_17_24_PAPER_SHADOW_MANUAL_APPROVAL_UPDATE_GATE.md",
+      "exists": true,
+      "size_bytes": 1118,
+      "sha256": "3d0db2610e967cfbbddbc084e99b4838402fa6153541e1c076524e9578c5bdd8"
+    },
+    {
+      "path": "docs/PHASE_17_25_PAPER_SHADOW_START_READINESS_RECHECK.md",
+      "exists": true,
+      "size_bytes": 1185,
+      "sha256": "a13e255d6dd20e5c85dde0b244350bcaf72eb8a0d017fd0838d8edcddca73ded"
+    },
+    {
+      "path": "docs/PHASE_17_26_PAPER_SHADOW_START_ATTEMPT_REVIEW.md",
+      "exists": true,
+      "size_bytes": 1014,
+      "sha256": "1ad371b82d409b2caaed4c6a5646368027209b066d2a34ef3d0e1c9e4f79f6db"
+    },
+    {
+      "path": "docs/PHASE_17_27_PAPER_SHADOW_APPROVAL_DECISION_POINT.md",
+      "exists": true,
+      "size_bytes": 1120,
+      "sha256": "c339482244f618306a3074308d321d9cdd4ed4290af841d5e8fb6e678f0b3848"
+    },
+    {
+      "path": "docs/PHASE_17_28_PAPER_SHADOW_APPROVAL_DECISION_REVIEW.md",
+      "exists": true,
+      "size_bytes": 1077,
+      "sha256": "ea1b98c5ba0c67ba91a93a86ff329efeed1b77621388c27295500b45065a9eb7"
+    },
+    {
+      "path": "docs/PHASE_17_29_PAPER_SHADOW_HOLD_STATE_CONSOLIDATION.md",
+      "exists": true,
+      "size_bytes": 1061,
+      "sha256": "70e461e4620f6790b4f426a9675e3e7b412e0834f173a06ba30aab527f218078"
+    },
+    {
+      "path": "docs/PHASE_17_2_HISTORICAL_DATA_COVERAGE_AUDIT.md",
+      "exists": true,
+      "size_bytes": 581,
+      "sha256": "3d8a28f92dd43a55229ccc89e507182c2f1293f6345f366fe7399a92909078dc"
+    },
+    {
+      "path": "docs/PHASE_17_30_SAFETY_CLOSEOUT_NEXT_ACTION_OPTIONS.md",
+      "exists": true,
+      "size_bytes": 1103,
+      "sha256": "dca7e16818b3a60ae895334bcc61b8fad403de7bc797b8b373ef0cf47a6b22e0"
+    },
+    {
+      "path": "docs/PHASE_17_3_HISTORICAL_BACKTEST_DATASET_BUILDER.md",
+      "exists": true,
+      "size_bytes": 657,
+      "sha256": "7b59495382fa0d876fd3d8309eaf34d2dcc57fd290011b7c1488fc22a0685601"
+    },
+    {
+      "path": "docs/PHASE_17_4_BASELINE_HISTORICAL_BACKTEST_RUNNER.md",
+      "exists": true,
+      "size_bytes": 760,
+      "sha256": "d58c567f953f6bc65f9d27325cf045a0bee2e7cb9fedd415f6886ac3b6b652f8"
+    },
+    {
+      "path": "docs/PHASE_17_5_BACKTEST_RESULTS_REVIEW_QUALITY_GATE.md",
+      "exists": true,
+      "size_bytes": 701,
+      "sha256": "c071a22a4f2c0e4b0247c80f4bd3f1af8585534e093694bf9fc5458c24c3c120"
+    },
+    {
+      "path": "docs/PHASE_17_6_STRATEGY_REWORK_PARAMETER_SWEEP_DESIGN.md",
+      "exists": true,
+      "size_bytes": 720,
+      "sha256": "779d629bbc2a15dd98a3cfee88e8c98e39ed0ae4026cf4365a71c896c5f7382c"
+    },
+    {
+      "path": "docs/PHASE_17_7_PARAMETER_SWEEP_BACKTEST_RUNNER.md",
+      "exists": true,
+      "size_bytes": 761,
+      "sha256": "94773d8ad4f79d5cf7137503e7965a1efda8e5d7d395d0a4326810eff4c07efc"
+    },
+    {
+      "path": "docs/PHASE_17_8_PARAMETER_SWEEP_RESULTS_REVIEW_CANDIDATE_SELECTION.md",
+      "exists": true,
+      "size_bytes": 861,
+      "sha256": "b215415b8ecc232c79c5d592af1df255b4a726f7dbc4cb0d7da7d9fe8e36d1a9"
+    },
+    {
+      "path": "docs/PHASE_17_9_OUT_OF_SAMPLE_VALIDATION_DATASET_SPLIT.md",
+      "exists": true,
+      "size_bytes": 676,
+      "sha256": "68875c52623c38191bc7241d25f40cf3ec2c0df7fe4ced50da5fcf635d8dccae"
+    },
+    {
+      "path": "docs/PHASE_18_10_HOLD_STATE_CLOSEOUT_REPORT.md",
+      "exists": true,
+      "size_bytes": 1221,
+      "sha256": "5831c21dce8b42fc1680d87b222b8c1dd5ece06f6420b30cd352488556477ed2"
+    },
+    {
+      "path": "docs/PHASE_18_11_HOLD_STATE_CONTINUATION_PLAN.md",
+      "exists": true,
+      "size_bytes": 1121,
+      "sha256": "6819cd3f806e639830fb035d9009631957ad353046b94c8d08784f27fba6a7e2"
+    },
+    {
+      "path": "docs/PHASE_18_12_HOLD_STATE_CONTINUATION_HEALTH_CHECK.md",
+      "exists": true,
+      "size_bytes": 1237,
+      "sha256": "c02335b9200a83fece17393917301b91aec520c122831030c9014c9aa44929bb"
+    },
+    {
+      "path": "docs/PHASE_18_13_HOLD_STATE_CONTINUATION_EVIDENCE_SNAPSHOT.md",
+      "exists": true,
+      "size_bytes": 1325,
+      "sha256": "7afe014206189d6841766e6fcdb70157f9d4dfd3b1f5102c1f667c4a1163f7d0"
+    },
+    {
+      "path": "docs/PHASE_18_14_HOLD_STATE_FINAL_CONTINUATION_REVIEW.md",
+      "exists": true,
+      "size_bytes": 1302,
+      "sha256": "d2079e468e9de0a2567cfc1698c58f15e50244faec20af100eaa15a14d51c919"
+    },
+    {
+      "path": "docs/PHASE_18_15_FINAL_SAFETY_CLOSEOUT.md",
+      "exists": true,
+      "size_bytes": 1371,
+      "sha256": "54e663ac186570bcd69b8b161c1e607e029311b6ba451857eca5a993268a4d0b"
+    },
+    {
+      "path": "docs/PHASE_18_1_NEXT_ACTION_SELECTION.md",
+      "exists": true,
+      "size_bytes": 860,
+      "sha256": "efca56b181249a942f6fcb6b6862ee4bb7edb87145fed9e73c253a50b7619c29"
+    },
+    {
+      "path": "docs/PHASE_18_2_HOLD_STATE_MONITORING_PLAN.md",
+      "exists": true,
+      "size_bytes": 958,
+      "sha256": "8e4f9e1082dbc8aff2f6ec414e626a49e283478c631b125c429a1d371883b22d"
+    },
+    {
+      "path": "docs/PHASE_18_3_HOLD_STATE_MONITORING_HEALTH_CHECK.md",
+      "exists": true,
+      "size_bytes": 1412,
+      "sha256": "dd0c3a3904a136d733f2ee3cd4a466e55b95153724afb6681d06fc8eaceb282f"
+    },
+    {
+      "path": "docs/PHASE_18_4_HOLD_STATE_MONITORING_REPORT.md",
+      "exists": true,
+      "size_bytes": 1070,
+      "sha256": "c97f1fdee8e94cc2e5341b7602426f24d8026bac160d83edc75f7423f46ed454"
+    },
+    {
+      "path": "docs/PHASE_18_5_HOLD_STATE_DAILY_CHECKLIST.md",
+      "exists": true,
+      "size_bytes": 1099,
+      "sha256": "48cf8f19f3aa6d32a9c8d132d766e81f0f3ebcaa02e6800ded02a5644a60ef4a"
+    },
+    {
+      "path": "docs/PHASE_18_6_HOLD_STATE_WEEKLY_DASHBOARD_REVIEW_PLAN.md",
+      "exists": true,
+      "size_bytes": 679,
+      "sha256": "905c8b37890505e644ca6f05206aa67ca3611c7194f591915b1e6dea76434ec3"
+    },
+    {
+      "path": "docs/PHASE_18_7_HOLD_STATE_WEEKLY_DASHBOARD_REVIEW_SNAPSHOT.md",
+      "exists": true,
+      "size_bytes": 1301,
+      "sha256": "3684c5b26128da9d42378dce7cd44889772943967e008f42b2f21065061c96fd"
+    },
+    {
+      "path": "docs/PHASE_18_8_HOLD_STATE_WEEKLY_REVIEW_SUMMARY.md",
+      "exists": true,
+      "size_bytes": 1126,
+      "sha256": "fa7771230e0aff5cd37a36c2e165f96ec16386bd48aa95fb0f90035151493f44"
+    },
+    {
+      "path": "docs/PHASE_18_9_HOLD_STATE_EVIDENCE_INDEX.md",
+      "exists": true,
+      "size_bytes": 1347,
+      "sha256": "5fa246e5a87436892cee4d9d68a370b0434befbce0d50cef458e75eaaf3ed8be"
+    },
+    {
+      "path": "docs/PHASE_19_10_OFFLINE_HISTORICAL_DATA_COLLECTION_MANUAL_APPROVAL_RECORD.md",
+      "exists": true,
+      "size_bytes": 1024,
+      "sha256": "fdb8f8350577147433b8c8722fd8b41885f430db88ee6cbfb40c2e3c92a17a3b"
+    },
+    {
+      "path": "docs/PHASE_19_11_OFFLINE_HISTORICAL_DATA_COLLECTION_START_GATE.md",
+      "exists": true,
+      "size_bytes": 1011,
+      "sha256": "dd40e1223704e51b9ee1b704d596bffd3ed1502f567b2013291586bf3c045b46"
+    },
+    {
+      "path": "docs/PHASE_19_12_OFFLINE_HISTORICAL_DATA_COLLECTION_BLOCKED_START_REVIEW.md",
+      "exists": true,
+      "size_bytes": 1097,
+      "sha256": "9e3bdac93b5b30dabebcf751676ea09100f5e572307ae934c448b391d41d1fbc"
+    },
+    {
+      "path": "docs/PHASE_19_13_OFFLINE_HISTORICAL_DATA_COLLECTION_MANUAL_APPROVAL_DECISION_POINT.md",
+      "exists": true,
+      "size_bytes": 2417,
+      "sha256": "cf7e7ea5aa54b91c6c946ffabe8995e1315e869a1062c1e569b81c7cc4ad02b3"
+    },
+    {
+      "path": "docs/PHASE_19_14_OFFLINE_HISTORICAL_DATA_COLLECTION_MANUAL_APPROVAL_DECISION_REVIEW.md",
+      "exists": true,
+      "size_bytes": 1152,
+      "sha256": "76628a9299e7273b18aaab191aa224871c62062a706542e6a5d52d49adc36802"
+    },
+    {
+      "path": "docs/PHASE_19_15_OFFLINE_HISTORICAL_DATA_COLLECTION_HOLD_STATE_CONSOLIDATION.md",
+      "exists": true,
+      "size_bytes": 1096,
+      "sha256": "1fcc160d29de2d347923e207c5c58362dd20bf7fec28c967d10b04854f581adc"
+    },
+    {
+      "path": "docs/PHASE_19_16_OFFLINE_HISTORICAL_DATA_COLLECTION_SAFETY_CLOSEOUT.md",
+      "exists": true,
+      "size_bytes": 1046,
+      "sha256": "70f3848d9f5c91ded5376f679de4cb6422c6a01b94eaa3493dd507cb555eeed2"
+    },
+    {
+      "path": "docs/PHASE_19_17_HISTORICAL_DATA_EXPANSION_NEXT_ACTION_OPTIONS.md",
+      "exists": true,
+      "size_bytes": 1033,
+      "sha256": "801371566179628d881eb1bfde9c062f980a07592f74c79df280dbc5140e2783"
+    },
+    {
+      "path": "docs/PHASE_19_18_HISTORICAL_DATA_EXPANSION_NEXT_ACTION_SELECTION.md",
+      "exists": true,
+      "size_bytes": 936,
+      "sha256": "394ddc517ad93c5fb0225118694725892a303eb5a77c7987d087265744e5662d"
+    },
+    {
+      "path": "docs/PHASE_19_19_HISTORICAL_DATA_EXPANSION_HOLD_STATE_CONSOLIDATION.md",
+      "exists": true,
+      "size_bytes": 1062,
+      "sha256": "cd2bee38dc07391d7fdf92dd7c57aadc1aeeab58dae9b0fc1998db7be21052e1"
+    },
+    {
+      "path": "docs/PHASE_19_1_STRATEGY_REWORK_HISTORICAL_DATA_EXPANSION_DECISION.md",
+      "exists": true,
+      "size_bytes": 1220,
+      "sha256": "5d86bd2cca2a17a3bfa4676e907edd5bd99d8cacb50ec1876a99259a2e465611"
+    },
+    {
+      "path": "docs/PHASE_19_20_HISTORICAL_DATA_EXPANSION_SAFETY_CLOSEOUT.md",
+      "exists": true,
+      "size_bytes": 1109,
+      "sha256": "f5ba7857b8a40cacacc9c46120906e786ccce51fe26adb21d56ebede6080e38e"
+    },
+    {
+      "path": "docs/PHASE_19_3_HISTORICAL_DATA_EXPANSION_MANIFEST_BUILDER.md",
+      "exists": true,
+      "size_bytes": 884,
+      "sha256": "90c72c7f6229dd714bd1b23024a80580df237825883991236011c93cf48035fd"
+    },
+    {
+      "path": "docs/PHASE_19_4_HISTORICAL_DATA_QUALITY_RULES_BUILDER.md",
+      "exists": true,
+      "size_bytes": 742,
+      "sha256": "11f560b8a8e8f73cfab521b4eff74fe8406a475d98c0a117ba3d6dbfda141a69"
+    },
+    {
+      "path": "docs/PHASE_19_5_HISTORICAL_DATASET_COVERAGE_VALIDATOR.md",
+      "exists": true,
+      "size_bytes": 1116,
+      "sha256": "58a96c0d079f57860de8816089e521670ef00f3a3dbf7e42c15b10b11a2484cb"
+    },
+    {
+      "path": "docs/PHASE_19_6_HISTORICAL_DATA_GAP_FILL_PLAN.md",
+      "exists": true,
+      "size_bytes": 883,
+      "sha256": "86b4b2694ca3850ac8f779d7344106b71baee9d4aacd23d56336c924ce2daaa5"
+    },
+    {
+      "path": "docs/PHASE_19_7_OFFLINE_HISTORICAL_DATA_COLLECTION_SCRIPT_BUILDER.md",
+      "exists": true,
+      "size_bytes": 1070,
+      "sha256": "7c34ed58704ac695cfd6dbe5be40a1e012388b91ea55aad6f76c712dba3487d4"
+    },
+    {
+      "path": "docs/PHASE_19_8_OFFLINE_HISTORICAL_DATA_COLLECTION_DRY_RUN.md",
+      "exists": true,
+      "size_bytes": 1514,
+      "sha256": "bf8124eca9418f2ed08925038800f7a94bd80e456e8828e0ab9c747813aa8d30"
+    },
+    {
+      "path": "docs/PHASE_19_9_OFFLINE_HISTORICAL_DATA_COLLECTION_APPROVAL_GATE.md",
+      "exists": true,
+      "size_bytes": 1044,
+      "sha256": "82e1fc1a46e88d928ef73eb77636af931b5e7daef39a31fd3182678a876e33c2"
+    },
+    {
+      "path": "docs/PHASE_20_10_OFFLINE_REWORKED_STRATEGY_RUNNER_DRY_RUN_APPROVAL_GATE.md",
+      "exists": true,
+      "size_bytes": 1176,
+      "sha256": "7d2ff22099b1f9d139bb2af3e689e51aa83d02624cde0014c67e227c3ea613f1"
+    },
+    {
+      "path": "docs/PHASE_20_11_OFFLINE_REWORKED_STRATEGY_RUNNER_DRY_RUN_MANUAL_APPROVAL_RECORD.md",
+      "exists": true,
+      "size_bytes": 1063,
+      "sha256": "40a9f58f2906e321cfe22d03c0a8de575159072ea38caa33aa2c0c33afad81ef"
+    },
+    {
+      "path": "docs/PHASE_20_12_OFFLINE_REWORKED_STRATEGY_RUNNER_DRY_RUN_START_GATE.md",
+      "exists": true,
+      "size_bytes": 1067,
+      "sha256": "1af8ffff6534a99d47ff9337189f779ab2c7ac57476a0a39221824ca314eeace"
+    },
+    {
+      "path": "docs/PHASE_20_13_OFFLINE_REWORKED_STRATEGY_RUNNER_DRY_RUN_BLOCKED_START_REVIEW.md",
+      "exists": true,
+      "size_bytes": 1115,
+      "sha256": "6e1ea05c858bffc30daccaa94c80f744b34a552b9952033a384155b068a2db88"
+    },
+    {
+      "path": "docs/PHASE_20_14_OFFLINE_REWORKED_STRATEGY_RUNNER_DRY_RUN_HOLD_STATE_CONSOLIDATION.md",
+      "exists": true,
+      "size_bytes": 1136,
+      "sha256": "c381e21175528d87f1d91db30a800950067cc7e6b68d2f180910fd90debbe4d1"
+    },
+    {
+      "path": "docs/PHASE_20_15_OFFLINE_REWORKED_STRATEGY_RUNNER_DRY_RUN_SAFETY_CLOSEOUT.md",
+      "exists": true,
+      "size_bytes": 1125,
+      "sha256": "2fc734b03d0631619978c3dda93b37f8aa2ae8bd215b108feb35cb8050332efe"
+    },
+    {
+      "path": "docs/PHASE_20_16_STRATEGY_REWORK_NEXT_ACTION_OPTIONS.md",
+      "exists": true,
+      "size_bytes": 1042,
+      "sha256": "966dc37180f5ae1468947fa30e955e7c3a3eafe1a6dae554b84dd5bc50bbda98"
+    },
+    {
+      "path": "docs/PHASE_20_17_STRATEGY_REWORK_NEXT_ACTION_SELECTION.md",
+      "exists": true,
+      "size_bytes": 1014,
+      "sha256": "d714dc4035d2015b052c213211b3826b094783aa5d4f527aed94a9c007ecdc26"
+    },
+    {
+      "path": "docs/PHASE_20_18_STRATEGY_REWORK_HOLD_STATE_CONSOLIDATION.md",
+      "exists": true,
+      "size_bytes": 1019,
+      "sha256": "e6203e032dcf6dbaf39cd01c8a6b62bf66aca3875c8bcb5a8d1aaf86ba75081a"
+    },
+    {
+      "path": "docs/PHASE_20_19_STRATEGY_REWORK_SAFETY_CLOSEOUT.md",
+      "exists": true,
+      "size_bytes": 1014,
+      "sha256": "ffd75a61d019b898c10e37d31aefb38e227deb7b091408a9a14bf7d60d44220b"
+    },
+    {
+      "path": "docs/PHASE_20_1_STRATEGY_REWORK_READINESS_REVIEW.md",
+      "exists": true,
+      "size_bytes": 912,
+      "sha256": "6bf78edf13eed25d6e54534875c6f547f3740ab34c35e0488be524ec3a91c6a2"
+    },
+    {
+      "path": "docs/PHASE_20_2_STRATEGY_FAILURE_REVIEW.md",
+      "exists": true,
+      "size_bytes": 955,
+      "sha256": "03f9a3290c3351117ebc12480de7e2047341df92d50700d3222eeb953c590d73"
+    },
+    {
+      "path": "docs/PHASE_20_3_STRATEGY_REWORK_HYPOTHESIS_PLAN.md",
+      "exists": true,
+      "size_bytes": 971,
+      "sha256": "3d8a33dba434c6261d263de19397e56108c904381ef7259f868fa77124656c76"
+    },
+    {
+      "path": "docs/PHASE_20_4_STRATEGY_REWORK_EXPERIMENT_DESIGN.md",
+      "exists": true,
+      "size_bytes": 935,
+      "sha256": "60cfa9334a9f62418bddec8c13b0cc35a51fbad2cd2d00afa55ac421255a7a49"
+    },
+    {
+      "path": "docs/PHASE_20_5_OFFLINE_REWORKED_STRATEGY_BACKTEST_SPEC.md",
+      "exists": true,
+      "size_bytes": 1043,
+      "sha256": "c15fbb736b36c5569a889c6a1da215178bb39f78a1d85fcdbe7450fe19e08386"
+    },
+    {
+      "path": "docs/PHASE_20_6_STRATEGY_QUALITY_GATE_V2_DESIGN.md",
+      "exists": true,
+      "size_bytes": 1076,
+      "sha256": "0138c7e6b9dceed2f1797162275aeb81b19d6aa4648b1fdb131ab5b3351f0b3d"
+    },
+    {
+      "path": "docs/PHASE_20_7_CANDIDATE_REJECTION_RULES_DESIGN.md",
+      "exists": true,
+      "size_bytes": 1127,
+      "sha256": "1be72b247abca4429be9dcac0ffec04a7689c75be2f1c329d761fd8e136f073f"
+    },
+    {
+      "path": "docs/PHASE_20_8_OFFLINE_REWORKED_STRATEGY_RUNNER_DESIGN.md",
+      "exists": true,
+      "size_bytes": 1163,
+      "sha256": "127097b2c8efa2216994880e1f8d448b03c1ebc1f9f064c2f5e8bfb8935101cb"
+    },
+    {
+      "path": "docs/PHASE_20_9_OFFLINE_REWORKED_STRATEGY_RUNNER_DRY_RUN_PLAN.md",
+      "exists": true,
+      "size_bytes": 1204,
+      "sha256": "b7596fcaf16419b9c1f9f90210339254c842ffc6119ecc8c9bdd137a02e02da8"
+    },
+    {
+      "path": "docs/PHASE_21_1_POST_STRATEGY_REWORK_HOLD_MONITORING_PLAN.md",
+      "exists": true,
+      "size_bytes": 1088,
+      "sha256": "40f28c5baa68708315b307af9f6d3be1cf4ff1bb43b0bb992519ffb8ec2a7f46"
+    },
+    {
+      "path": "docs/PHASE_21_2_POST_STRATEGY_REWORK_HOLD_MONITORING_HEALTH_CHECK.md",
+      "exists": true,
+      "size_bytes": 1100,
+      "sha256": "b8d8151d0c0c4c18b4e03265d2bc938bb2f6f6e4f6077e8f9e5c44a4a1189f78"
+    },
+    {
+      "path": "docs/PHASE_21_3_POST_STRATEGY_REWORK_HOLD_MONITORING_REVIEW.md",
+      "exists": true,
+      "size_bytes": 1084,
+      "sha256": "2eccba1a0f50ffa843a09f9f20ecceb8b1925d417fc25e4401c1aef11ae45158"
+    },
+    {
+      "path": "docs/PHASE_21_4_POST_STRATEGY_REWORK_HOLD_MONITORING_CONSOLIDATION.md",
+      "exists": true,
+      "size_bytes": 1144,
+      "sha256": "c45967cdf69312a4de988800a0f5dabcd69965546fe1addf5460d77474b03ba9"
+    },
+    {
+      "path": "docs/PHASE_21_5_POST_STRATEGY_REWORK_HOLD_MONITORING_SAFETY_CLOSEOUT.md",
+      "exists": true,
+      "size_bytes": 1210,
+      "sha256": "a5ee5234d8b998e254a10a692974c1aa76700e418fd67f89e9ae7af959a590ad"
+    },
+    {
+      "path": "docs/PHASE_21_6_POST_STRATEGY_REWORK_HOLD_MONITORING_NEXT_ACTION_OPTIONS.md",
+      "exists": true,
+      "size_bytes": 1288,
+      "sha256": "12705c584b03427cb908a6852aeb11331e08be3f136f4b23eadb5baba52dd692"
+    },
+    {
+      "path": "docs/PHASE_21_7_POST_STRATEGY_REWORK_HOLD_MONITORING_NEXT_ACTION_SELECTION.md",
+      "exists": true,
+      "size_bytes": 1276,
+      "sha256": "dda536ecafbcf4fb157e06abded8415e8f41b89cb8f16aa33e77f3a28ddcb1c3"
+    },
+    {
+      "path": "docs/PHASE_21_8_POST_STRATEGY_REWORK_HOLD_MONITORING_FINAL_HOLD_STATE_CONSOLIDATION.md",
+      "exists": true,
+      "size_bytes": 1292,
+      "sha256": "6dd5b93d9a0bec222747f78ac7ab976432fabc9708a1ba77de83b7ce5d5ebb7e"
+    },
+    {
+      "path": "docs/PHASE_21_9_POST_STRATEGY_REWORK_HOLD_MONITORING_FINAL_SAFETY_CLOSEOUT.md",
+      "exists": true,
+      "size_bytes": 1251,
+      "sha256": "1b8b46b4957090b19bf489b2815a747a8a85cecbaf8303ec81ccf4afcc582e2b"
+    },
+    {
+      "path": "docs/PHASE_22_1_PROJECT_HOLD_STATE_ARCHIVE_AND_EVIDENCE_INDEX.md",
+      "exists": true,
+      "size_bytes": 1224,
+      "sha256": "3c14e0b2785078f077b0398f31c9ef7639c15ae0b6997e2c58bd7f4073e0f639"
+    },
+    {
+      "path": "docs/PHASE_22_2_PROJECT_HOLD_STATE_ARCHIVE_REVIEW.md",
+      "exists": true,
+      "size_bytes": 1086,
+      "sha256": "4a0608196d36a9432427c545447a42c728edb0ceba93cdc04920722744990110"
+    },
+    {
+      "path": "docs/PHASE_22_3_PROJECT_HOLD_STATE_ARCHIVE_CONSOLIDATION.md",
+      "exists": true,
+      "size_bytes": 1130,
+      "sha256": "9f98f6a6277070cb511629c38cf7e950f7b91d1d44e88e986dcad002e3081085"
+    },
+    {
+      "path": "docs/PHASE_22_4_PROJECT_HOLD_STATE_ARCHIVE_SAFETY_CLOSEOUT.md",
+      "exists": true,
+      "size_bytes": 1167,
+      "sha256": "155ef26f2ecf6b91fd6818fe1a70dbf2b0b1e5473dae26fd38e8185b05c9b2a3"
+    },
+    {
+      "path": "docs/PHASE_22_5_PROJECT_HOLD_STATE_FINAL_SUMMARY.md",
+      "exists": true,
+      "size_bytes": 1088,
+      "sha256": "650aee17418939b01076d10ecf122f89f89cc32fe23c30a9416670e0c5cf9e1b"
+    },
+    {
+      "path": "docs/PHASE_22_6_PROJECT_FINAL_HOLD_STATE_CLOSEOUT.md",
+      "exists": true,
+      "size_bytes": 1167,
+      "sha256": "a7eb0958317c5ba192abac01becaa714e141a73f2e43b9493347c6012c132d2d"
+    },
+    {
+      "path": "docs/PHASE_22_7_PROJECT_FINAL_EVIDENCE_SEAL.md",
+      "exists": true,
+      "size_bytes": 1114,
+      "sha256": "483934f18816502cafb043a34978a33e9fbdf212bcfe1a96d4e67233b5cad6e7"
+    }
+  ],
+  "previous_manifest_counts": {
+    "evidence_file_count": 122,
+    "runtime_file_count": 75,
+    "documentation_file_count": 92
+  },
+  "monitoring_started": false,
+  "run_dry_run_now": false,
+  "run_backtest_now": false,
+  "execution_allowed": false,
+  "approved_for_execution": false,
+  "approved_for_paper_shadow": false,
+  "approved_for_live": false,
+  "paper_shadow_started": false,
+  "approved_for_paper_shadow_start": false,
+  "exchange_order_submission": false,
+  "approved_for_micro_live_execution": false,
+  "approved_for_real_live_trading": false,
+  "decision": "PHASE_22_PROJECT_FINAL_EVIDENCE_SEAL_CREATED_REMAIN_ON_HOLD_NOT_APPROVED_FOR_EXECUTION",
+  "next_phase": "Phase 22.8 \u2014 Project Final Evidence Seal Review"
+}
