@@ -1,11 +1,11 @@
 {
   "phase": "phase_22_20_project_final_archive_lock_record",
-  "created_at_unix": 1784499522,
-  "git_head": "90df965e1871dd02e1ee288b0a6c1498c09effba",
+  "created_at_unix": 1784501174,
+  "git_head": "0186b4b43b06673747d44b3f7ddfc821b2cd2ede",
   "git_branch": "main",
   "git_remote_origin": "https://github.com/Zabiii316/Trading_Bot",
-  "git_status_short_before_outputs": "",
-  "git_working_tree_clean_before_outputs": true,
+  "git_status_short_before_outputs": "M data/processed/phase22_project_archive/project_final_archive_lock_review.json\n M data/processed/phase22_project_final_archive_lock_review.json\n M runtime/phase22_project_final_archive_lock_review_state.json",
+  "git_working_tree_clean_before_outputs": false,
   "system_state": "HOLD_RESEARCH_ONLY",
   "project_status": "remain_on_hold_not_approved_for_execution",
   "phase20_status": "closed_remain_on_hold",
@@ -20,7 +20,7 @@
     "git_head_present": true,
     "git_branch_present": true,
     "git_remote_origin_present": true,
-    "git_working_tree_clean_before_outputs": true,
+    "git_working_tree_clean_before_outputs": false,
     "archive_completion_review_present": true,
     "archive_completion_review_runtime_present": true,
     "archive_completion_review_file_present": true,
@@ -60,6 +60,7 @@
     "real_live_not_approved": true
   },
   "blockers": [
+    "git_working_tree_clean_before_outputs",
     "archive_completion_review_passed",
     "archive_completion_record_created",
     "repository_evidence_review_passed",
