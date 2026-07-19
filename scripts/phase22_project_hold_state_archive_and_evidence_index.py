@@ -34,18 +34,21 @@ def load_json(path):
     except Exception:
         return {}
 
-def file_sha256(path):
-    try:
-        return hashlib.sha256(path.read_bytes()).hexdigest()
-    except Exception:
+def sha256(path):
+    if not path.exists():
         return None
+    h = hashlib.sha256()
+    with path.open("rb") as f:
+        for chunk in iter(lambda: f.read(1024 * 1024), b""):
+            h.update(chunk)
+    return h.hexdigest()
 
 def file_entry(path):
     return {
         "path": str(path),
         "exists": path.exists(),
         "size_bytes": path.stat().st_size if path.exists() else 0,
-        "sha256": file_sha256(path) if path.exists() else None
+        "sha256": sha256(path) if path.exists() else None
     }
 
 def write_json(path, data):
@@ -53,19 +56,14 @@ def write_json(path, data):
     path.write_text(json.dumps(data, indent=2))
 
 def collect_files(patterns):
-    found = []
+    items = []
+    seen = set()
     for pattern in patterns:
         for p in sorted(Path(".").glob(pattern)):
-            if p.is_file():
-                found.append(p)
-    unique = []
-    seen = set()
-    for p in found:
-        s = str(p)
-        if s not in seen:
-            unique.append(p)
-            seen.add(s)
-    return unique
+            if p.is_file() and str(p) not in seen:
+                items.append(p)
+                seen.add(str(p))
+    return items
 
 flags = {
     "BINANCE_TESTNET": os.getenv("BINANCE_TESTNET", ""),
@@ -84,7 +82,7 @@ phase21_file = load_json(PHASE21_FINAL_FILE)
 phase20 = load_json(PHASE20_CLOSEOUT)
 phase20_file = load_json(PHASE20_CLOSEOUT_FILE)
 
-final_safety_closeout_passed = (
+phase21_final_passed = (
     phase21.get("final_safety_closeout_passed") is True
     or phase21_runtime.get("final_safety_closeout_passed") is True
     or phase21_file.get("final_safety_closeout_passed") is True
@@ -141,68 +139,6 @@ doc_files = collect_files([
     "docs/PHASE_21*.md",
 ])
 
-archive_manifest = {
-    "manifest_id": "phase22_project_hold_state_archive_manifest_v1",
-    "created_at_unix": int(time.time()),
-    "git_head": current_git_head,
-    "archive_mode": "index_only_no_file_copy_no_execution",
-    "system_state": "HOLD_RESEARCH_ONLY",
-    "phase20_status": phase20_status,
-    "phase21_status": phase21_status,
-    "selected_phase21_next_action": selected_phase21_next_action,
-    "evidence_file_count": len(evidence_files),
-    "runtime_file_count": len(runtime_files),
-    "documentation_file_count": len(doc_files),
-    "evidence_files": [file_entry(p) for p in evidence_files],
-    "runtime_files": [file_entry(p) for p in runtime_files],
-    "documentation_files": [file_entry(p) for p in doc_files],
-}
-
-archive_index = {
-    "index_id": "phase22_project_hold_state_evidence_index_v1",
-    "created_at_unix": int(time.time()),
-    "git_head": current_git_head,
-    "system_state": "HOLD_RESEARCH_ONLY",
-    "final_project_state": {
-        "phase20_status": phase20_status,
-        "phase21_status": "closed_final_remain_on_hold",
-        "selected_phase21_next_action": selected_phase21_next_action,
-        "monitoring_started": False,
-        "run_dry_run_now": False,
-        "run_backtest_now": False,
-        "execution_allowed": False,
-        "approved_for_execution": False,
-       1",
-    "created_at_unix": int(time.time()),
-    "git_head": current_git_head,
-    "system_state": "HOLD_RESEARCH_ONLY",
-    "final_project_state": {
-        "phase20_status": phase20_status,
-        "phase21_status": "closed_final_remain_on_hold",
-        "selected_phase21_next_action": selected_phase21_next_action,
-        "monitoring_started": False,
-        "run_dry_run_now": False,
-        "run_backtest_now": False,
-        "execution_allowed": False,
-        "approved_for_execution": False,
-        "approved_for_paper_shadow": False,
-        "approved_for_live": False,
-        "paper_shadow_started": False,
-        "approved_for_paper_shadow_start": False,
-        "exchange_order_submission": False,
-        "approved_for_micro_live_execution": False,
-        "approved_for_real_live_trading": False
-    },
-    "key_closeout_files": {
-        "phase17": file_entry(PHASE17_CLOSEOUT),
-        "phase18": file_entry(PHASE18_CLOSEOUT),
-        "phase19": file_entry(PHASE19_CLOSEOUT),
-        "phase20": file_entry(PHASE20_CLOSEOUT),
-        "phase21": file_entry(PHASE21_FINAL)
-    },
-    "archive_manifest_file": "data/processed/phase22_project_archive/project_hold_state_archive_manifest.json"
-}
-
 archive_checks = {
     "safe_mode_active": safe_mode,
     "phase21_final_present": PHASE21_FINAL.exists(),
@@ -210,7 +146,7 @@ archive_checks = {
     "phase21_final_file_present": PHASE21_FINAL_FILE.exists(),
     "phase20_closeout_present": PHASE20_CLOSEOUT.exists(),
     "phase20_closeout_file_present": PHASE20_CLOSEOUT_FILE.exists(),
-    "phase21_final_safety_closeout_passed": final_safety_closeout_passed,
+    "phase21_final_safety_closeout_passed": phase21_final_passed,
     "phase20_closeout_passed": phase20_closeout_passed,
     "phase20_status_closed_remain_on_hold": phase20_status == "closed_remain_on_hold",
     "phase21_status_closed_final_remain_on_hold": phase21_status == "closed_final_remain_on_hold",
@@ -245,14 +181,56 @@ else:
 manifest_file = PHASE22_DIR / "project_hold_state_archive_manifest.json"
 index_file = PHASE22_DIR / "project_hold_state_evidence_index.json"
 
-archive_index["archive_checks"] = archive_checks
-archive_index["blockers"] = blockers
-archive_index["archive_index_ready"] = archive_index_ready
-archive_index["decision"] = decision
-archive_index["next_phase"] = next_phase
+manifest = {
+    "manifest_id": "phase22_project_hold_state_archive_manifest_v1",
+    "created_at_unix": int(time.time()),
+    "git_head": current_git_head,
+    "archive_mode": "index_only_no_file_copy_no_execution",
+    "system_state": "HOLD_RESEARCH_ONLY",
+    "phase20_status": phase20_status,
+    "phase21_status": phase21_status,
+    "selected_phase21_next_action": selected_phase21_next_action,
+    "evidence_file_count": len(evidence_files),
+    "runtime_file_count": len(runtime_files),
+    "documentation_file_count": len(doc_files),
+    "evidence_files": [file_entry(p) for p in evidence_files],
+    "runtime_files": [file_entry(p) for p in runtime_files],
+    "documentation_files": [file_entry(p) for p in doc_files],
+}
 
-write_json(manifest_file, archive_manifest)
-write_json(index_file, archive_index)
+index = {
+    "index_id": "phase22_project_hold_state_evidence_index_v1",
+    "created_at_unix": int(time.time()),
+    "git_head": current_git_head,
+    "system_state": "HOLD_RESEARCH_ONLY",
+    "phase20_status": phase20_status,
+    "phase21_status": phase21_status,
+    "selected_phase21_next_action": selected_phase21_next_action,
+    "archive_index_ready": archive_index_ready,
+    "archive_checks": archive_checks,
+    "blockers": blockers,
+    "key_closeout_files": {
+        "phase17": file_entry(PHASE17_CLOSEOUT),
+        "phase18": file_entry(PHASE18_CLOSEOUT),
+        "phase19": file_entry(PHASE19_CLOSEOUT),
+        "phase20": file_entry(PHASE20_CLOSEOUT),
+        "phase21": file_entry(PHASE21_FINAL),
+    },
+    "monitoring_started": False,
+    "run_dry_run_now": False,
+    "run_backtest_now": False,
+    "execution_allowed": False,
+    "approved_for_execution": False,
+    "approved_for_paper_shadow": False,
+    "approved_for_live": False,
+    "paper_shadow_started": False,
+    "approved_for_paper_shadow_start": False,
+    "exchange_order_submission": False,
+    "approved_for_micro_live_execution": False,
+    "approved_for_real_live_trading": False,
+    "decision": decision,
+    "next_phase": next_phase,
+}
 
 runtime_record = {
     "phase": "phase_22_1_project_hold_state_archive_and_evidence_index_record",
@@ -283,10 +261,8 @@ runtime_record = {
     "approved_for_micro_live_execution": False,
     "approved_for_real_live_trading": False,
     "decision": decision,
-    "next_phase": next_phase
+    "next_phase": next_phase,
 }
-
-write_json(RUNTIME_OUT, runtime_record)
 
 report = {
     "phase": "phase_22_1_project_hold_state_archive_and_evidence_index",
@@ -322,19 +298,11 @@ report = {
     "approved_for_real_live_trading": False,
     "decision": decision,
     "next_phase": next_phase,
-    "safety_notes": [
-        "This phase creates a project hold-state archive index only.",
-        "This phase does not copy secrets.",
-        "This phase does not start monitoring jobs.",
-        "This phase does not execute a dry run.",
-        "This phase does not run a backtest.",
-        "This phase does not start paper shadow execution.",
-        "This phase does not approve micro-live execution.",
-        "This phase does not approve real live trading.",
-        "This phase does not submit exchange orders."
-    ]
 }
 
+write_json(manifest_file, manifest)
+write_json(index_file, index)
+write_json(RUNTIME_OUT, runtime_record)
 write_json(OUT, report)
 
 print(f"Report written to: {OUT}")
