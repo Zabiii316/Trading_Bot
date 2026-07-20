@@ -1,0 +1,428 @@
+{
+  "phase": "phase_23_6_kill_switch_revalidation",
+  "generated_at_unix": 1784511940,
+  "git_head": "78abad3dd5f6fdd909027d9b826e0a0af564ddb6",
+  "git_branch": "main",
+  "git_remote_origin": "https://github.com/Zabiii316/Trading_Bot",
+  "git_working_tree_clean_before_outputs": true,
+  "requested_transition": "on_hold_to_micro_trading_validation",
+  "current_transition_status": "kill_switch_revalidation_only_not_approved_for_execution",
+  "kill_switch_revalidation_passed": true,
+  "revalidation_checks": {
+    "git_head_present": true,
+    "git_branch_present": true,
+    "git_remote_origin_present": true,
+    "git_working_tree_clean_before_outputs": true,
+    "phase22_final_end_state_present": true,
+    "phase22_closed_on_hold": true,
+    "phase23_5_risk_review_present": true,
+    "phase23_5_risk_review_passed": true,
+    "phase23_5_risk_limits_ready": true,
+    "safe_flags_active": true,
+    "live_trading_flag_false": true,
+    "live_trading_allowed_false": true,
+    "risk_env_file_present": true,
+    "kill_switch_env_enabled": true,
+    "risk_env_contains_kill_switch": true,
+    "exchange_order_submission_false": true,
+    "production_api_key_usage_false": true,
+    "approved_for_micro_live_execution_false": true,
+    "approved_for_real_live_trading_false": true
+  },
+  "blockers": [],
+  "revalidation_warnings": [],
+  "safe_flags": {
+    "BINANCE_TESTNET": "true",
+    "BINANCE_USE_TESTNET": "true",
+    "BINANCE_ENABLE_LIVE_TRADING": "false",
+    "LIVE_TRADING_ALLOWED": "false",
+    "KILL_SWITCH_ENABLED": "true"
+  },
+  "safe_flags_active": true,
+  "kill_switch": {
+    "risk_env_file": "runtime/micro_trading_risk_limits.env",
+    "risk_env_file_present": true,
+    "kill_switch_env_enabled": true,
+    "risk_env_contains_kill_switch": true,
+    "risk_env_sets_kill_switch_true": true,
+    "kill_switch_reference_count": 189,
+    "kill_switch_references": [
+      {
+        "path": "scripts/phase19_offline_historical_data_collection_safety_closeout.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase19_offline_historical_data_collection_hold_state_consolidation.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase20_offline_reworked_strategy_runner_dry_run_plan.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase18_hold_state_monitoring_plan.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase22_project_final_archive_lock_review.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase20_offline_reworked_strategy_runner_dry_run_blocked_start_review.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase23_kill_switch_revalidation.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "KILL_SWITCH_ENABLED",
+          "LIVE_TRADING_ALLOWED",
+          "kill switch",
+          "kill_switch"
+        ]
+      },
+      {
+        "path": "scripts/phase17_out_of_sample_candidate_validation_runner.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase18_hold_state_daily_checklist.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase21_post_strategy_rework_hold_monitoring_review.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase22_project_final_repository_status_review.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase16_final_micro_live_go_no_go_gate_spec.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase17_parameter_sweep_results_review_candidate_selection.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase18_final_safety_closeout.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase17_paper_shadow_start_gate.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase18_hold_state_weekly_dashboard_review_snapshot.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED",
+          "kill switch"
+        ]
+      },
+      {
+        "path": "scripts/phase16_secrets_manager_key_handling_controls.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase22_project_hold_state_archive_review.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase19_offline_historical_data_collection_approval_gate.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase16_micro_live_controls_spec.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED",
+          "kill_switch"
+        ]
+      },
+      {
+        "path": "scripts/phase17_paper_shadow_execution_harness.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase18_hold_state_evidence_index.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase22_project_final_seal_summary_review.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase22_project_final_end_state_record.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase22_project_final_archive_completion_record.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase22_project_final_completion_closeout.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase22_project_final_closeout_consolidation.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase19_offline_historical_data_collection_blocked_start_review.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase19_offline_historical_data_collection_dry_run.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase20_strategy_failure_review.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase17_paper_shadow_approval_decision_point.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase19_offline_historical_data_collection_manual_approval_decision_review.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase22_project_final_hold_state_closeout.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase17_paper_shadow_manual_approval_record.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase18_hold_state_weekly_dashboard_review_plan.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED",
+          "kill_switch"
+        ]
+      },
+      {
+        "path": "scripts/phase17_baseline_historical_backtest_runner.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase22_project_final_closed_hold_state_seal.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase18_hold_state_continuation_health_check.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase21_post_strategy_rework_hold_monitoring_consolidation.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase20_offline_reworked_strategy_runner_dry_run_safety_closeout.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase16_capital_limits_loss_limit_controls.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED",
+          "kill switch"
+        ]
+      },
+      {
+        "path": "scripts/phase22_project_hold_state_archive_and_evidence_index.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase22_project_final_evidence_seal_consolidation.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase18_hold_state_monitoring_report.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase19_historical_data_gap_fill_plan.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase20_strategy_rework_safety_closeout.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase19_historical_dataset_coverage_validator.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase22_project_final_closeout_review.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase21_post_strategy_rework_hold_monitoring_health_check.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      },
+      {
+        "path": "scripts/phase17_out_of_sample_validation_dataset_split.py",
+        "matched_terms": [
+          "BINANCE_ENABLE_LIVE_TRADING",
+          "LIVE_TRADING_ALLOWED"
+        ]
+      }
+    ]
+  },
+  "phase23_5_risk_review_passed": true,
+  "phase23_5_risk_limits_ready": true,
+  "micro_live_deployment_started": false,
+  "monitoring_started": false,
+  "run_dry_run_now": false,
+  "run_backtest_now": false,
+  "execution_allowed": false,
+  "approved_for_execution": false,
+  "approved_for_paper_shadow": false,
+  "approved_for_live": false,
+  "paper_shadow_started": false,
+  "approved_for_paper_shadow_start": false,
+  "exchange_order_submission": false,
+  "approved_for_micro_live_execution": false,
+  "approved_for_real_live_trading": false,
+  "production_api_key_usage": false,
+  "real_capital_usage": false,
+  "decision": "PHASE_23_KILL_SWITCH_REVALIDATION_COMPLETE_READY_FOR_SECRETS_AUDIT_NOT_APPROVED_FOR_EXECUTION",
+  "next_phase": "Phase 23.7 \u2014 Secrets / API Key Mapping Audit"
+}
