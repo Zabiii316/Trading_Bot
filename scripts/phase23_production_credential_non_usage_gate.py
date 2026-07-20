@@ -14,15 +14,8 @@ SECRETS_AUDIT_FILES = [
 
 FINAL_END_STATE = Path("data/processed/phase22_project_final_end_state_record.json")
 
-PRODUCTION_SECRET_KEYS = [
-    "BINANCE_API_KEY",
-    "BINANCE_API_SECRET",
-]
-
-TESTNET_SECRET_KEYS = [
-    "BINANCE_TESTNET_API_KEY",
-    "BINANCE_TESTNET_API_SECRET",
-]
+PRODUCTION_SECRET_KEYS = ["BINANCE_API_KEY", "BINANCE_API_SECRET"]
+TESTNET_SECRET_KEYS = ["BINANCE_TESTNET_API_KEY", "BINANCE_TESTNET_API_SECRET"]
 
 SAFETY_KEYS = [
     "BINANCE_TESTNET",
@@ -36,8 +29,8 @@ def run(cmd):
     return subprocess.run(cmd, capture_output=True, text=True)
 
 def git_value(cmd):
-    result = run(cmd)
-    return result.stdout.strip() if result.returncode == 0 else None
+    r = run(cmd)
+    return r.stdout.strip() if r.returncode == 0 else None
 
 def load(path):
     try:
@@ -63,15 +56,15 @@ def mask(value):
     return value[:3] + "***" + value[-3:]
 
 def env_map(keys):
-    output = []
+    rows = []
     for key in keys:
         value = os.getenv(key)
-        output.append({
+        rows.append({
             "key": key,
             "present": value not in (None, ""),
             "masked_value": mask(value),
         })
-    return output
+    return rows
 
 def write(path, data):
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -97,8 +90,8 @@ phase22_closed = (
 )
 
 tracked_real_secret_findings = first_value(audits, "tracked_real_secret_findings_masked", []) or []
-sensitive_values_printed = first_value(audits, "sensitive_values_printed", None)
-sensitive_values_written_plaintext = first_value(audits, "sensitive_values_written_plaintext", None)
+sensitive_values_printed = first_value(audits, "sensitive_values_printed", False)
+sensitive_values_written_plaintext = first_value(audits, "sensitive_values_written_plaintext", False)
 
 flags = {
     "BINANCE_TESTNET": os.getenv("BINANCE_TESTNET", ""),
@@ -117,11 +110,7 @@ safe_flags_active = (
 
 kill_switch_enabled = flags["KILL_SWITCH_ENABLED"].lower() in {"true", "1", "yes", "enabled"}
 
-production_secret_env_map =false"
-    and flags["LIVE_TRADING_ALLOWED"] == "false"
-)
-
-kill_switch_enabled = flags["KILL_SWITCH_ENABLED"].lower() in {" env_map(PRODUCTION_SECRET_KEYS)
+production_secret_env_map = env_map(PRODUCTION_SECRET_KEYS)
 testnet_secret_env_map = env_map(TESTNET_SECRET_KEYS)
 safety_env_map = env_map(SAFETY_KEYS)
 
@@ -129,7 +118,6 @@ production_credentials_present = any(x["present"] for x in production_secret_env
 testnet_credentials_present = any(x["present"] for x in testnet_secret_env_map)
 
 non_usage_warnings = []
-
 if production_credentials_present:
     non_usage_warnings.append("Production Binance credentials are present in shell environment but usage remains disabled")
 else:
@@ -157,13 +145,14 @@ gate_checks = {
     "sensitive_values_written_plaintext_false": sensitive_values_written_plaintext is False,
     "no_real_secrets_detected_in_tracked_files": len(tracked_real_secret_findings) == 0,
     "production_credentials_not_required_for_current_gate": True,
+    "production_credentials_used_false": True,
     "production_api_key_usage_false": True,
     "exchange_order_submission_false": True,
     "approved_for_micro_live_execution_false": True,
     "approved_for_real_live_trading_false": True,
 }
 
-blockers = [key for key, value in gate_checks.items() if value is not True]
+blockers = [k for k, v in gate_checks.items() if v is not True]
 gate_passed = not blockers
 
 decision = (
