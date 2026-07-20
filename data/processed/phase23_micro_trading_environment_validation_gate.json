@@ -1,0 +1,153 @@
+{
+  "phase": "phase_23_2_micro_trading_environment_validation_gate",
+  "generated_at_unix": 1784509718,
+  "git_head": "e2e4f7c00f939078aa3091438b9283c150f567c4",
+  "git_branch": "main",
+  "git_remote_origin": "https://github.com/Zabiii316/Trading_Bot",
+  "git_working_tree_clean_before_outputs": true,
+  "previous_project_status": "remain_on_hold_not_approved_for_execution",
+  "previous_phase22_status": "project_final_end_state_record_created",
+  "requested_transition": "on_hold_to_micro_trading_validation",
+  "current_transition_status": "environment_validation_gate_only_not_approved_for_execution",
+  "environment_validation_passed": true,
+  "validation_checks": {
+    "git_head_present": true,
+    "git_branch_present": true,
+    "git_remote_origin_present": true,
+    "git_working_tree_clean_before_outputs": true,
+    "phase22_final_end_state_present": true,
+    "phase22_closed_on_hold": true,
+    "phase23_1_audit_present": true,
+    "phase23_1_audit_passed": true,
+    "safe_flags_active": true,
+    "safety_env_keys_present": true,
+    "live_trading_flag_false": true,
+    "live_trading_allowed_false": true,
+    "binance_testnet_true": true,
+    "binance_use_testnet_true": true,
+    "micro_config_mapping_created": true,
+    "production_credentials_not_used": true,
+    "exchange_order_submission_disabled": true
+  },
+  "blockers": [],
+  "warnings": [
+    "TRADING_SYMBOLS not set yet",
+    "MICRO_TRADE_NOTIONAL_USDT not set or not positive yet",
+    "MAX_ORDER_NOTIONAL_USDT not set or not positive yet",
+    "MAX_DAILY_LOSS_USDT not set or not positive yet",
+    "MAX_POSITION_SIZE_USDT not set or not positive yet",
+    "KILL_SWITCH_ENABLED not set to true/enabled yet"
+  ],
+  "safe_flags": {
+    "BINANCE_TESTNET": "true",
+    "BINANCE_USE_TESTNET": "true",
+    "BINANCE_ENABLE_LIVE_TRADING": "false",
+    "LIVE_TRADING_ALLOWED": "false"
+  },
+  "safe_flags_active": true,
+  "safety_env_map": [
+    {
+      "key": "BINANCE_TESTNET",
+      "present": true,
+      "masked_value": "***"
+    },
+    {
+      "key": "BINANCE_USE_TESTNET",
+      "present": true,
+      "masked_value": "***"
+    },
+    {
+      "key": "BINANCE_ENABLE_LIVE_TRADING",
+      "present": true,
+      "masked_value": "***"
+    },
+    {
+      "key": "LIVE_TRADING_ALLOWED",
+      "present": true,
+      "masked_value": "***"
+    }
+  ],
+  "micro_config_env_map_masked": [
+    {
+      "key": "TRADING_SYMBOLS",
+      "present": false,
+      "masked_value": null
+    },
+    {
+      "key": "MICRO_TRADE_NOTIONAL_USDT",
+      "present": false,
+      "masked_value": null
+    },
+    {
+      "key": "MAX_ORDER_NOTIONAL_USDT",
+      "present": false,
+      "masked_value": null
+    },
+    {
+      "key": "MAX_DAILY_LOSS_USDT",
+      "present": false,
+      "masked_value": null
+    },
+    {
+      "key": "MAX_POSITION_SIZE_USDT",
+      "present": false,
+      "masked_value": null
+    },
+    {
+      "key": "KILL_SWITCH_ENABLED",
+      "present": false,
+      "masked_value": null
+    },
+    {
+      "key": "BINANCE_BASE_URL",
+      "present": false,
+      "masked_value": null
+    },
+    {
+      "key": "BINANCE_TESTNET_BASE_URL",
+      "present": false,
+      "masked_value": null
+    }
+  ],
+  "sensitive_env_map_masked": [
+    {
+      "key": "BINANCE_API_KEY",
+      "present": false,
+      "masked_value": null
+    },
+    {
+      "key": "BINANCE_API_SECRET",
+      "present": false,
+      "masked_value": null
+    }
+  ],
+  "parsed_micro_limits": {
+    "micro_trade_notional_usdt": null,
+    "max_order_notional_usdt": null,
+    "max_daily_loss_usdt": null,
+    "max_position_size_usdt": null,
+    "micro_notional_within_order_limit": false,
+    "kill_switch_enabled": false,
+    "trading_symbols_present": false
+  },
+  "micro_trading_environment_validation_requested": true,
+  "micro_trading_environment_validation_completed": true,
+  "micro_trading_environment_validation_started": false,
+  "micro_live_deployment_started": false,
+  "monitoring_started": false,
+  "run_dry_run_now": false,
+  "run_backtest_now": false,
+  "execution_allowed": false,
+  "approved_for_execution": false,
+  "approved_for_paper_shadow": false,
+  "approved_for_live": false,
+  "paper_shadow_started": false,
+  "approved_for_paper_shadow_start": false,
+  "exchange_order_submission": false,
+  "approved_for_micro_live_execution": false,
+  "approved_for_real_live_trading": false,
+  "production_api_key_usage": false,
+  "real_capital_usage": false,
+  "decision": "PHASE_23_MICRO_TRADING_ENVIRONMENT_VALIDATION_GATE_COMPLETE_NOT_APPROVED_FOR_EXECUTION",
+  "next_phase": "Phase 23.3 \u2014 Micro-Trading Configuration Mapping Review"
+}
