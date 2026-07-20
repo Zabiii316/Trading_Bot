@@ -17,8 +17,8 @@ export BINANCE_TESTNET=true
 export BINANCE_USE_TESTNET=true
 export BINANCE_ENABLE_LIVE_TRADING=false
 export LIVE_TRADING_ALLOWED=false
-export BINANCE_API_KEY=phase16_dummy_api_key
-export BINANCE_API_SECRET=phase16_dummy_api_secret
+export BINANCE_API_KEY="your_key_here"
+export BINANCE_API_SECRET="your_secret_here"
 Shadow Execution Command
 python scripts/run_binance_live_execution.py \
   --signal data/processed/live_signal_dryrun.json \

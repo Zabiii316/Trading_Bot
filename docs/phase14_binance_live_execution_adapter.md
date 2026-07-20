@@ -72,8 +72,8 @@ Any discrepancy should trigger a hard trading halt in production orchestration.
 ## Required Environment
 
 ```env
-BINANCE_API_KEY=...
-BINANCE_API_SECRET=...
+BINANCE_API_KEY="your_key_here"
+BINANCE_API_SECRET="your_secret_here"
 BINANCE_TESTNET=true
 BINANCE_ENABLE_LIVE_TRADING=false
 BINANCE_RECV_WINDOW_MS=5000

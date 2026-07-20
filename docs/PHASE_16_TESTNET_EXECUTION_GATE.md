@@ -26,8 +26,8 @@ export BINANCE_USE_TESTNET=true
 export BINANCE_ENABLE_LIVE_TRADING=true
 export LIVE_TRADING_ALLOWED=true
 
-export BINANCE_API_KEY=your_binance_testnet_api_key
-export BINANCE_API_SECRET=your_binance_testnet_api_secret
+export BINANCE_API_KEY="your_key_here"
+export BINANCE_API_SECRET="your_secret_here"
 Execution Command
 ./scripts/phase16_testnet_execution_gate.sh
 

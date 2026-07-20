@@ -500,8 +500,8 @@ export BINANCE_TESTNET=true
 export BINANCE_ENABLE_LIVE_TRADING=true
 export LIVE_TRADING_ALLOWED=true
 
-export BINANCE_API_KEY="your_testnet_key"
-export BINANCE_API_SECRET="your_testnet_secret"
+export BINANCE_API_KEY="your_key_here"
+export BINANCE_API_SECRET="your_secret_here"
 Then submit one controlled testnet order:
 python scripts/run_binance_live_execution.py \
   --signal data/processed/live_signal_dryrun.json \
@@ -664,8 +664,8 @@ export BINANCE_ENABLE_LIVE_TRADING=false
 export LIVE_TRADING_ALLOWED=false
 
 Binance credentials:
-export BINANCE_API_KEY="your_key"
-export BINANCE_API_SECRET="your_secret"
+export BINANCE_API_KEY="your_key_here"
+export BINANCE_API_SECRET="your_secret_here"
 Monitoring: export PYTHONPATH="$PWD/libs/python:$PWD/services/monitoring/python"
 ClickHouse:
 export CLICKHOUSE_URL="http://localhost:8123"

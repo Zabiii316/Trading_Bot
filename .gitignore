@@ -23,3 +23,14 @@ data/raw/
 runtime/
 deploy/phase16/*.env
 !deploy/phase16/*.env.example
+
+# local secrets / exchange credentials
+.env
+.env.local
+.env.production
+.env.testnet
+runtime/*secret*.env
+runtime/*secrets*.env
+runtime/*api_key*.env
+runtime/*credentials*.env
+runtime/binance*.env
