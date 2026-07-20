@@ -1,0 +1,102 @@
+{
+  "phase": "phase_23_4_micro_trading_risk_limit_configuration_gate",
+  "generated_at_unix": 1784510964,
+  "git_head": "2211d898ff41fd0a6e96758c67b4632cf1c4733d",
+  "git_branch": "main",
+  "git_remote_origin": "https://github.com/Zabiii316/Trading_Bot",
+  "git_working_tree_clean_before_outputs": true,
+  "requested_transition": "on_hold_to_micro_trading_validation",
+  "current_transition_status": "risk_limit_configuration_gate_only_not_approved_for_execution",
+  "risk_limit_gate_created": true,
+  "risk_limits_defined": false,
+  "gate_checks": {
+    "git_head_present": true,
+    "git_branch_present": true,
+    "git_remote_origin_present": true,
+    "git_working_tree_clean_before_outputs": true,
+    "phase22_final_end_state_present": true,
+    "phase22_closed_on_hold": true,
+    "phase23_3_configuration_review_present": true,
+    "phase23_3_configuration_review_passed": true,
+    "safe_flags_active": true,
+    "live_trading_flag_false": true,
+    "live_trading_allowed_false": true,
+    "exchange_order_submission_false": true,
+    "production_api_key_usage_false": true
+  },
+  "blockers": [],
+  "risk_limit_warnings": [
+    "TRADING_SYMBOLS is not configured",
+    "MICRO_TRADE_NOTIONAL_USDT is missing or invalid",
+    "MAX_ORDER_NOTIONAL_USDT is missing or invalid",
+    "MAX_DAILY_LOSS_USDT is missing or invalid",
+    "MAX_POSITION_SIZE_USDT is missing or invalid",
+    "KILL_SWITCH_ENABLED is not true/enabled"
+  ],
+  "risk_env_map_masked": [
+    {
+      "key": "TRADING_SYMBOLS",
+      "present": false,
+      "masked_value": null
+    },
+    {
+      "key": "MICRO_TRADE_NOTIONAL_USDT",
+      "present": false,
+      "masked_value": null
+    },
+    {
+      "key": "MAX_ORDER_NOTIONAL_USDT",
+      "present": false,
+      "masked_value": null
+    },
+    {
+      "key": "MAX_DAILY_LOSS_USDT",
+      "present": false,
+      "masked_value": null
+    },
+    {
+      "key": "MAX_POSITION_SIZE_USDT",
+      "present": false,
+      "masked_value": null
+    },
+    {
+      "key": "KILL_SWITCH_ENABLED",
+      "present": false,
+      "masked_value": null
+    }
+  ],
+  "parsed_risk_limits": {
+    "trading_symbols": "",
+    "micro_trade_notional_usdt": null,
+    "max_order_notional_usdt": null,
+    "max_daily_loss_usdt": null,
+    "max_position_size_usdt": null,
+    "kill_switch_enabled": false,
+    "micro_notional_within_order_limit": false
+  },
+  "safe_flags": {
+    "BINANCE_TESTNET": "true",
+    "BINANCE_USE_TESTNET": "true",
+    "BINANCE_ENABLE_LIVE_TRADING": "false",
+    "LIVE_TRADING_ALLOWED": "false"
+  },
+  "safe_flags_active": true,
+  "micro_trading_risk_limit_configuration_started": false,
+  "micro_live_deployment_started": false,
+  "monitoring_started": false,
+  "run_dry_run_now": false,
+  "run_backtest_now": false,
+  "execution_allowed": false,
+  "approved_for_execution": false,
+  "approved_for_paper_shadow": false,
+  "approved_for_live": false,
+  "paper_shadow_started": false,
+  "approved_for_paper_shadow_start": false,
+  "exchange_order_submission": false,
+  "approved_for_micro_live_execution": false,
+  "approved_for_real_live_trading": false,
+  "production_api_key_usage": false,
+  "real_capital_usage": false,
+  "decision": "PHASE_23_MICRO_TRADING_RISK_LIMIT_CONFIGURATION_GATE_CREATED_RISK_VALUES_REQUIRED_NOT_APPROVED_FOR_EXECUTION",
+  "next_phase": "Phase 23.5 \u2014 Micro-Trading Risk Limit Review"
+}
