@@ -1,0 +1,17 @@
+{
+  "phase": "phase_23_23_soak_test_execution",
+  "soak_test_started": true,
+  "soak_test_completed": false,
+  "samples_collected": 119,
+  "successful_samples": 119,
+  "failed_samples": 0,
+  "consecutive_errors": 0,
+  "maximum_consecutive_errors_seen": 0,
+  "latest_sample_ok": true,
+  "latest_latency_ms": 339,
+  "abort_reason": null,
+  "testnet_order_submission": false,
+  "production_exchange_order_submission": false,
+  "approved_for_micro_live_execution": false,
+  "approved_for_real_live_trading": false
+}
