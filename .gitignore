@@ -34,3 +34,10 @@ runtime/*secrets*.env
 runtime/*api_key*.env
 runtime/*credentials*.env
 runtime/binance*.env
+
+# --- Phase 1 refactor: generated artifacts are never tracked ---
+data/
+runtime/
+*.jsonl
+*.jsonlrm
+!tests/fixtures/**/*.jsonl

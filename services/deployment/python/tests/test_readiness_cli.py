@@ -13,7 +13,7 @@ def test_readiness_cli_passes_example():
     result = subprocess.run(
         [
             sys.executable,
-            str(ROOT / "scripts" / "run_production_readiness_check.py"),
+            str(ROOT / "ops" / "cli" / "run_production_readiness_check.py"),
             "--snapshot",
             str(ROOT / "examples" / "deployment" / "readiness_pass_snapshot.json"),
             "--capital",
@@ -33,7 +33,7 @@ def test_readiness_cli_fails_bad_example():
     result = subprocess.run(
         [
             sys.executable,
-            str(ROOT / "scripts" / "run_production_readiness_check.py"),
+            str(ROOT / "ops" / "cli" / "run_production_readiness_check.py"),
             "--snapshot",
             str(ROOT / "examples" / "deployment" / "readiness_fail_snapshot.json"),
             "--capital",

@@ -1,7 +1,7 @@
 [project]
-name = "trading-bot-phase15-controlled-live-deployment"
-version = "0.15.0"
-description = "Phase 15 controlled live deployment framework for an institutional trading bot"
+name = "trading-bot"
+version = "1.0.0-alpha"
+description = "Deterministic Binance USD-M futures trading system with enforced backtest/live parity"
 requires-python = ">=3.11"
 dependencies = [
   "pydantic>=2.7",
@@ -29,10 +29,23 @@ streaming = [
   "aiokafka>=0.10",
 ]
 
-[tool.pytest.ini_options]
-pythonpath = ["libs/python", "services/market_data/python", "services/order_book/python", "services/storage/python", "services/features/python", "services/liquidity/python", "services/sweep/python", "services/avwap/python", "services/signals/python", "services/backtest/python", "services/risk/python", "services/paper_execution/python", "services/monitoring/python", "services/live_execution/python", "services/deployment/python"]
-testpaths = ["tests", "services/market_data/python/tests", "services/order_book/python/tests", "services/storage/python/tests", "services/features/python/tests", "services/liquidity/python/tests", "services/sweep/python/tests", "services/avwap/python/tests", "services/backtest/python/tests", "services/risk/python/tests", "services/paper_execution/python/tests", "services/monitoring/python/tests", "services/live_execution/python/tests", "services/deployment/python/tests"]
-
 [tool.ruff]
 line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "C4", "RUF"]
+# UP042 (StrEnum): the 20+ enums in trading_contracts use (str, Enum) and are
+# serialised on the wire with those semantics. New enums match them rather than
+# splitting the codebase across two conventions. Revisit as one migration.
+ignore = ["UP042"]
+
+[tool.ruff.lint.per-file-ignores]
+"ops/cli/*" = ["E402"]
+"services/*" = ["ALL"]      # legacy tree; lifted per-module during Phase 2
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["core", "adapters"]
 

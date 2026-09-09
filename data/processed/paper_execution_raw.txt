@@ -1,5 +1,0 @@
-orders=1
-positions=1
-emitted_events=3
-rejected=0
-reconciliation_healthy=True

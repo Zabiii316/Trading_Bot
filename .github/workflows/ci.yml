@@ -1,0 +1,96 @@
+name: CI
+
+on:
+  push:
+    branches: [main, "refactor/**"]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHONPATH: .:libs/python
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+          pip install ruff mypy
+
+      - name: Lint
+        run: ruff check core/ adapters/ tests/
+
+      - name: Format check
+        run: ruff format --check core/ adapters/ tests/
+
+      # The core is the parity guarantee. It gets strict typing; the legacy
+      # services/ tree does not yet, and is migrated in Phase 2.
+      - name: Types (strict on core and adapters)
+        run: mypy --strict core/ adapters/binance/endpoints.py
+
+      # Fails the build if anything under core/ imports time, asyncio, httpx,
+      # os, random, or an outer layer. This is what makes backtest/live parity
+      # structural rather than aspirational.
+      - name: Core purity guard
+        run: pytest tests/parity/test_core_purity.py -q
+
+      # No module outside adapters/binance/endpoints.py may hardcode a Binance
+      # hostname, and nothing anywhere may reference the spot testnet.
+      - name: Endpoint separation guard
+        run: pytest tests/parity/test_endpoints.py -q
+
+      - name: Tests
+        run: pytest -q
+
+  hygiene:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: No phase scripts may return
+        run: |
+          if git ls-files | grep -qiE '(^|/)phase[0-9]+'; then
+            echo "::error::phase-numbered files are tracked again"
+            git ls-files | grep -iE '(^|/)phase[0-9]+'
+            exit 1
+          fi
+
+      - name: No generated artifacts or runtime state tracked
+        run: |
+          bad=$(git ls-files | grep -E '^(data|runtime)/' || true)
+          if [ -n "$bad" ]; then
+            echo "::error::generated artifacts are tracked:"
+            echo "$bad"
+            exit 1
+          fi
+
+      - name: No float step-rounding idiom in sizing paths
+        run: |
+          # The audited bug: floor(qty / step) * step returns 0.2 for 0.3/0.1.
+          # Strip comments and docstring lines so the modules that *document*
+          # this bug do not trip the guard that prevents it.
+          if grep -rnE 'floor\([^)]*/[^)]*\)\s*\*' --include='*.py' core/ adapters/ \
+               | grep -vE ':\s*#' | grep -v '``'; then
+            echo "::error::float step rounding found; use core.models.quantize_down"
+            exit 1
+          fi
+
+      - name: No secrets committed
+        run: |
+          if git ls-files | grep -E '\.env$|\.env\.(local|production|testnet)$'; then
+            echo "::error::env file tracked"
+            exit 1
+          fi

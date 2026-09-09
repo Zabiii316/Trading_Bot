@@ -3,14 +3,13 @@ from uuid import UUID
 
 import pytest
 from pydantic import ValidationError
-
 from trading_contracts.events import (
     DepthUpdateEvent,
+    OrderFlowFeatureEvent,
+    PriceLevel,
     RawAggTradeEvent,
     ReconstructedBookEvent,
-    PriceLevel,
     SignalEvent,
-    OrderFlowFeatureEvent,
 )
 
 
