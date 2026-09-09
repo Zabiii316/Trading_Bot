@@ -1,3 +1,7 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "trading-bot"
 version = "1.0.0-alpha"
@@ -28,6 +32,18 @@ dev = [
 streaming = [
   "aiokafka>=0.10",
 ]
+
+[tool.setuptools]
+# Explicit, because flat-layout auto-discovery cannot distinguish packages from
+# data directories (it picked up data/, runtime/, deploy/, infra/).
+# Phase 2.2 replaces this with proper per-service packaging.
+packages = ["core", "adapters", "adapters.binance", "trading_contracts"]
+
+[tool.setuptools.package-dir]
+core = "core"
+adapters = "adapters"
+"adapters.binance" = "adapters/binance"
+trading_contracts = "libs/python/trading_contracts"
 
 [tool.ruff]
 line-length = 100
