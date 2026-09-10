@@ -118,6 +118,7 @@ class OrderStatus(str, Enum):
     CREATED = "created"
     RISK_APPROVED = "risk_approved"
     SUBMITTED = "submitted"
+    SUBMIT_UNKNOWN = "submit_unknown"  # POST timed out; position may exist
     ACKNOWLEDGED = "acknowledged"
     PARTIALLY_FILLED = "partially_filled"
     FILLED = "filled"
