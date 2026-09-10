@@ -41,3 +41,8 @@ runtime/
 *.jsonl
 *.jsonlrm
 !tests/fixtures/**/*.jsonl
+
+# setuptools build output
+*.egg-info/
+build/
+dist/
